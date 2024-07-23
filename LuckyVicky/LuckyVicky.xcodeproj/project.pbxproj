@@ -14,6 +14,7 @@
 		7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */; };
 		7716507D2C4E3A45004D5868 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716507C2C4E3A45004D5868 /* Image+.swift */; };
 		7716507F2C4E417B004D5868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7716507E2C4E417B004D5868 /* Assets.xcassets */; };
+		77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */; };
 		77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */; };
 		77EFFD702C3F841F009E64BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */; };
 		77EFFD7A2C3F8420009E64BB /* LuckyVickyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD792C3F8420009E64BB /* LuckyVickyTests.swift */; };
@@ -48,6 +49,7 @@
 		7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyImage.swift; sourceTree = "<group>"; };
 		7716507C2C4E3A45004D5868 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
 		7716507E2C4E417B004D5868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyButton.swift; sourceTree = "<group>"; };
 		77EFFD652C3F8418009E64BB /* LuckyVicky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyVicky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyApp.swift; sourceTree = "<group>"; };
 		77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -84,6 +86,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				77D65EF52C4F634200B4A2EC /* Components */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		77D65EF52C4F634200B4A2EC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		77EFFD5C2C3F8418009E64BB = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +125,7 @@
 		77EFFD672C3F8418009E64BB /* LuckyVicky */ = {
 			isa = PBXGroup;
 			children = (
+				77D65EF42C4F632E00B4A2EC /* DesignSystem */,
 				77EFFD932C3F84A2009E64BB /* Utils */,
 				77EFFD922C3F8497009E64BB /* Application */,
 				77EFFD972C3F8586009E64BB /* Domain */,
@@ -435,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				771650762C4E331C004D5868 /* Font+.swift in Sources */,
+				77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */,
 				7716507D2C4E3A45004D5868 /* Image+.swift in Sources */,
 				7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
