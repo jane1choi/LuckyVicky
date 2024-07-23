@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
+		771650702C4E3061004D5868 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */; };
+		771650722C4E3074004D5868 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771650712C4E3074004D5868 /* Pretendard-Regular.otf */; };
+		771650742C4E3081004D5868 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771650732C4E3081004D5868 /* Pretendard-SemiBold.otf */; };
+		771650762C4E331C004D5868 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771650752C4E331C004D5868 /* Font+.swift */; };
+		771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771650782C4E38A3004D5868 /* CharacterEntity.swift */; };
+		7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */; };
+		7716507D2C4E3A45004D5868 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716507C2C4E3A45004D5868 /* Image+.swift */; };
+		7716507F2C4E417B004D5868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7716507E2C4E417B004D5868 /* Assets.xcassets */; };
+		77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */; };
 		77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */; };
-		77EFFD6B2C3F8418009E64BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD6A2C3F8418009E64BB /* ContentView.swift */; };
-		77EFFD6D2C3F841F009E64BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFFD6C2C3F841F009E64BB /* Assets.xcassets */; };
 		77EFFD702C3F841F009E64BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */; };
 		77EFFD7A2C3F8420009E64BB /* LuckyVickyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD792C3F8420009E64BB /* LuckyVickyTests.swift */; };
 		77EFFD842C3F8420009E64BB /* LuckyVickyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD832C3F8420009E64BB /* LuckyVickyUITests.swift */; };
@@ -35,10 +43,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
+		7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		771650712C4E3074004D5868 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		771650732C4E3081004D5868 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		771650752C4E331C004D5868 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		771650772C4E3465004D5868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		771650782C4E38A3004D5868 /* CharacterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEntity.swift; sourceTree = "<group>"; };
+		7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyImage.swift; sourceTree = "<group>"; };
+		7716507C2C4E3A45004D5868 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
+		7716507E2C4E417B004D5868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyButton.swift; sourceTree = "<group>"; };
 		77EFFD652C3F8418009E64BB /* LuckyVicky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyVicky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyApp.swift; sourceTree = "<group>"; };
-		77EFFD6A2C3F8418009E64BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		77EFFD6C2C3F841F009E64BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		77EFFD752C3F8420009E64BB /* LuckyVickyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuckyVickyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFFD792C3F8420009E64BB /* LuckyVickyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyTests.swift; sourceTree = "<group>"; };
@@ -73,6 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				77D65EF52C4F634200B4A2EC /* Components */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		77D65EF52C4F634200B4A2EC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		77EFFD5C2C3F8418009E64BB = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +129,7 @@
 		77EFFD672C3F8418009E64BB /* LuckyVicky */ = {
 			isa = PBXGroup;
 			children = (
+				77D65EF42C4F632E00B4A2EC /* DesignSystem */,
 				77EFFD932C3F84A2009E64BB /* Utils */,
 				77EFFD922C3F8497009E64BB /* Application */,
 				77EFFD972C3F8586009E64BB /* Domain */,
@@ -153,6 +187,7 @@
 		77EFFD952C3F852B009E64BB /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -160,6 +195,8 @@
 		77EFFD962C3F854C009E64BB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				771650752C4E331C004D5868 /* Font+.swift */,
+				7716507C2C4E3A45004D5868 /* Image+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -177,6 +214,7 @@
 		77EFFD982C3F859E009E64BB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				771650782C4E38A3004D5868 /* CharacterEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -198,7 +236,7 @@
 		77EFFD9B2C3F85E8009E64BB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				77EFFD6A2C3F8418009E64BB /* ContentView.swift */,
+				7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -254,6 +292,7 @@
 		77EFFDA22C3F8778009E64BB /* Supports */ = {
 			isa = PBXGroup;
 			children = (
+				771650772C4E3465004D5868 /* Info.plist */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -261,7 +300,7 @@
 		77EFFDA32C3F87A6009E64BB /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				77EFFD6C2C3F841F009E64BB /* Assets.xcassets */,
+				7716507E2C4E417B004D5868 /* Assets.xcassets */,
 				77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */,
 			);
 			path = Images;
@@ -278,6 +317,9 @@
 		77EFFDA72C3F87D1009E64BB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				771650712C4E3074004D5868 /* Pretendard-Regular.otf */,
+				7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */,
+				771650732C4E3081004D5868 /* Pretendard-SemiBold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -387,8 +429,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				77EFFD702C3F841F009E64BB /* Preview Assets.xcassets in Resources */,
-				77EFFD6D2C3F841F009E64BB /* Assets.xcassets in Resources */,
+				7716507F2C4E417B004D5868 /* Assets.xcassets in Resources */,
+				771650722C4E3074004D5868 /* Pretendard-Regular.otf in Resources */,
+				771650742C4E3081004D5868 /* Pretendard-SemiBold.otf in Resources */,
 				77EFFDA62C3F87C5009E64BB /* Color.xcassets in Resources */,
+				771650702C4E3061004D5868 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +458,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77EFFD6B2C3F8418009E64BB /* ContentView.swift in Sources */,
+				771650762C4E331C004D5868 /* Font+.swift in Sources */,
+				77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */,
+				7716507D2C4E3A45004D5868 /* Image+.swift in Sources */,
+				7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */,
+				7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */,
+				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,6 +631,7 @@
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LuckyVicky/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -610,6 +661,7 @@
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LuckyVicky/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
