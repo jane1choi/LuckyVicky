@@ -20,6 +20,7 @@
 		77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */; };
 		77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */; };
 		77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */; };
+		77D65EFD2C538FE900B4A2EC /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFC2C538FE900B4A2EC /* ResultView.swift */; };
 		77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65F002C549BE500B4A2EC /* SplashView.swift */; };
 		77D65F032C54A04900B4A2EC /* AppRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65F022C54A04900B4A2EC /* AppRoot.swift */; };
 		77D65EFF2C53948600B4A2EC /* LuckyVickyNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationView.swift */; };
@@ -63,6 +64,7 @@
 		77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyButton.swift; sourceTree = "<group>"; };
 		77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTroubleView.swift; sourceTree = "<group>"; };
 		77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyTextEditor.swift; sourceTree = "<group>"; };
+		77D65EFC2C538FE900B4A2EC /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyNavigationView.swift; sourceTree = "<group>"; };
 		77D65F002C549BE500B4A2EC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		77D65F022C54A04900B4A2EC /* AppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoot.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */,
 				77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */,
+				77D65EFC2C538FE900B4A2EC /* ResultView.swift */,
 				77D65F002C549BE500B4A2EC /* SplashView.swift */,
 			);
 			path = Presentation;
@@ -486,6 +489,7 @@
 				7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */,
 				7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */,
 				77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */,
+				77D65EFD2C538FE900B4A2EC /* ResultView.swift in Sources */,
 				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,
