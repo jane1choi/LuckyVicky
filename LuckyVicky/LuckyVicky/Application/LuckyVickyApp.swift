@@ -9,9 +9,23 @@ import SwiftUI
 
 @main
 struct LuckyVickyApp: App {
+    @State private var appRootManager = AppRootManager()
+    
     var body: some Scene {
         WindowGroup {
-            SelectCharacterView()
+            Group {
+                switch appRootManager.currentroot {
+                case .splash:
+                    SplashView()
+                case .main:
+                    SelectCharacterView()
+                }
+            }
+            .environment(appRootManager)
         }
     }
+}
+
+@Observable final class AppRootManager {
+    var currentroot: AppRoot = .splash
 }
