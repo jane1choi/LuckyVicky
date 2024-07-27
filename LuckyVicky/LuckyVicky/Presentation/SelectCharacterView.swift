@@ -13,7 +13,7 @@ struct SelectCharacterView: View {
         ZStack {
             Color(.mainBlack).ignoresSafeArea()
             
-            VStack {
+            VStack(spacing: 0) {
                 Spacer()
                 HStack {
                     VStack(alignment: .leading) {

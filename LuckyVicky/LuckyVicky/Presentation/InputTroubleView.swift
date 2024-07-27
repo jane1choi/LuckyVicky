@@ -14,8 +14,14 @@ struct InputTroubleView: View {
         ZStack {
             Color(.mainBlack).ignoresSafeArea()
             
-            VStack {
-                Spacer()
+            VStack(spacing: 0) {
+                LuckyVickyNavigationView(
+                    leftItem: (LuckyVickyImage.backArrow, {
+                        
+                    })
+                )
+                .padding(.bottom, 8)
+                
                 HStack {
                     VStack(alignment: .leading) {
                         Text("털어버리고 싶은\n힘들었던 일을 입력해주세요")
