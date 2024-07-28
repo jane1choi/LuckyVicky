@@ -23,7 +23,7 @@
 		77D65EFD2C538FE900B4A2EC /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFC2C538FE900B4A2EC /* ResultView.swift */; };
 		77D65EFF2C53948600B4A2EC /* LuckyVickyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationBar.swift */; };
 		77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65F002C549BE500B4A2EC /* SplashView.swift */; };
-		77D65F032C54A04900B4A2EC /* AppRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65F022C54A04900B4A2EC /* AppRoot.swift */; };
+		77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65F022C54A04900B4A2EC /* AppFlow.swift */; };
 		77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */; };
 		77EFFD702C3F841F009E64BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */; };
 		77EFFD7A2C3F8420009E64BB /* LuckyVickyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD792C3F8420009E64BB /* LuckyVickyTests.swift */; };
@@ -67,7 +67,7 @@
 		77D65EFC2C538FE900B4A2EC /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyNavigationBar.swift; sourceTree = "<group>"; };
 		77D65F002C549BE500B4A2EC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		77D65F022C54A04900B4A2EC /* AppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoot.swift; sourceTree = "<group>"; };
+		77D65F022C54A04900B4A2EC /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		77EFFD652C3F8418009E64BB /* LuckyVicky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyVicky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyApp.swift; sourceTree = "<group>"; };
 		77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */,
-				77D65F022C54A04900B4A2EC /* AppRoot.swift */,
+				77D65F022C54A04900B4A2EC /* AppFlow.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -479,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77D65F032C54A04900B4A2EC /* AppRoot.swift in Sources */,
+				77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */,
 				77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */,
 				771650762C4E331C004D5868 /* Font+.swift in Sources */,
 				77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */,
