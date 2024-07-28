@@ -7,8 +7,14 @@
 
 import SwiftUI
 
+enum Route {
+    case inputResultView
+    case resultView
+}
+
 struct SelectCharacterView: View {
     @State private var selectedId: Int?
+    @State private var path = NavigationPath()
     
     private var characters: [CharacterEntity] = [
         CharacterEntity(id: 0, name: "원영", introduction: "완전 럭키비키잖앙~", imageName: .wonyoung),
@@ -18,42 +24,56 @@ struct SelectCharacterView: View {
     ]
     
     var body: some View {
-        ZStack {
-            Color(.mainBlack).ignoresSafeArea()
-            
-            VStack(spacing: 0) {
-                Spacer()
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("오늘 하루\n힘든 일이 있었나요?")
-                            .font(.pretendardSB(22))
-                            .foregroundStyle(.white)
-                            .lineSpacing(10)
-                            .padding(.bottom, 15)
-                        Text("다른 사고 방식으로 생각해보며 털어버리는건 어떨까요?")
-                            .font(.pretendardM(12))
-                            .foregroundStyle(.white)
-                    }
-                    .padding(.leading, 28)
+        NavigationStack(path: $path) {
+            ZStack {
+                Color(.mainBlack).ignoresSafeArea()
+                VStack(spacing: 0) {
                     Spacer()
-                }
-                
-                Spacer()
-                VStack(spacing: 15) {
-                    ForEach(characters, id: \.self) { character in
-                        characterCell(entity: character)
-                            .onTapGesture {
-                                selectedId = character.id
-                            }
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("오늘 하루\n힘든 일이 있었나요?")
+                                .font(.pretendardSB(22))
+                                .foregroundStyle(.white)
+                                .lineSpacing(10)
+                                .padding(.bottom, 15)
+                            Text("다른 사고 방식으로 생각해보며 털어버리는건 어떨까요?")
+                                .font(.pretendardM(12))
+                                .foregroundStyle(.white)
+                        }
+                        .padding(.leading, 28)
+                        Spacer()
+                    }
+                    
+                    Spacer()
+                    VStack(spacing: 15) {
+                        ForEach(characters, id: \.self) { character in
+                            characterCell(entity: character)
+                                .onTapGesture {
+                                    selectedId = character.id
+                                }
+                        }
+                    }
+                    .padding(.horizontal, 29)
+                    
+                    Spacer()
+                    LuckyVickyButton(
+                        title: "선택하기",
+                        isActive: selectedId != nil,
+                        action: {
+                            path.append(Route.inputResultView)
+                        }
+                    )
+                    .padding(.horizontal, 22)
+                    .navigationBarBackButtonHidden()
+                    .navigationDestination(for: Route.self) { route in
+                        switch route {
+                        case .inputResultView:
+                            InputTroubleView(path: $path, selectedId: selectedId ?? 0)
+                        case .resultView:
+                            ResultView(path: $path)
+                        }
                     }
                 }
-                .padding(.horizontal, 29)
-                
-                Spacer()
-                LuckyVickyButton(title: "선택하기",
-                                 isActive: selectedId != nil,
-                                 action: {})
-                .padding(.horizontal, 22)
             }
         }
     }

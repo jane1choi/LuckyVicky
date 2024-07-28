@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ResultView: View {
+    @Binding var path: NavigationPath
     
     var body: some View {
         ZStack {
@@ -71,15 +72,16 @@ struct ResultView: View {
                 .padding(.trailing, 22)
                 
                 Spacer()
-                LuckyVickyButton(title: "처음으로",
-                                 isActive: true,
-                                 action: {})
+                LuckyVickyButton(
+                    title: "처음으로",
+                    isActive: true,
+                    action: {
+                        path.removeLast(path.count)
+                    }
+                )
                 .padding(.horizontal, 22)
             }
         }
+        .navigationBarBackButtonHidden()
     }
-}
-
-#Preview {
-    ResultView()
 }
