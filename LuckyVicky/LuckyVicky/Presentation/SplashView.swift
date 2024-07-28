@@ -20,7 +20,7 @@ struct SplashView: View {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation(.easeIn(duration: 2)) {
-                    appRootManager.currentroot = .main
+                    appRootManager.currentflow = .main
                 }
             }
         }
