@@ -41,9 +41,19 @@ struct InputTroubleView: View {
                     Spacer()
                 }
                 
-                LuckyVickyTextEditor(text: $inputText,
-                                     placeholder: "어떤 일이 있었나요?")
+                LuckyVickyTextEditor(
+                    text: $inputText,
+                    placeholder: "어떤 일이 있었나요?",
+                    maxCharacterCount: 100
+                )
                 .frame(height: 374)
+                .overlay(alignment: .bottomTrailing) {
+                    Text("\(inputText.count)/100")
+                        .font(.pretendardM(14))
+                        .foregroundStyle(Color(.gray1))
+                        .padding(.trailing, 22)
+                        .padding(.bottom, 20)
+                }
                 .padding(.top, 52)
                 .padding(.horizontal, 26)
                 
