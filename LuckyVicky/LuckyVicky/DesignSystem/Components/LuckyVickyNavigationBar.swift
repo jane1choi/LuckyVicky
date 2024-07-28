@@ -1,5 +1,5 @@
 //
-//  LuckyVickyNavigationView.swift
+//  LuckyVickyNavigationBar.swift
 //  LuckyVicky
 //
 //  Created by EUNJU on 7/26/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LuckyVickyNavigationView: View {
+struct LuckyVickyNavigationBar: View {
     private let leftItem: (LuckyVickyImage, () -> Void)?
     private let rightItemList: [(LuckyVickyImage, () -> Void)]?
     

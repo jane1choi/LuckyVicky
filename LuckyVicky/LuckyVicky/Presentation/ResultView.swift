@@ -14,7 +14,7 @@ struct ResultView: View {
             Color(.mainBlack).ignoresSafeArea()
             
             VStack(spacing: 0) {
-                LuckyVickyNavigationView(rightItemList: [(LuckyVickyImage.save, {}), (LuckyVickyImage.share, {})]
+                LuckyVickyNavigationBar(rightItemList: [(LuckyVickyImage.save, {}), (LuckyVickyImage.share, {})]
                 )
                 .padding(.bottom, 8)
                 

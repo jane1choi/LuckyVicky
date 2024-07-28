@@ -15,7 +15,7 @@ struct InputTroubleView: View {
             Color(.mainBlack).ignoresSafeArea()
             
             VStack(spacing: 0) {
-                LuckyVickyNavigationView(
+                LuckyVickyNavigationBar(
                     leftItem: (LuckyVickyImage.backArrow, {
                         
                     })
