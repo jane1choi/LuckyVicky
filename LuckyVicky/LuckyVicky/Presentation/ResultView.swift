@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ResultView: View {
+    @Binding var path: NavigationPath
     
     var body: some View {
         ZStack {
             Color(.mainBlack).ignoresSafeArea()
             
             VStack(spacing: 0) {
-                LuckyVickyNavigationView(rightItemList: [(LuckyVickyImage.save, {}), (LuckyVickyImage.share, {})]
+                LuckyVickyNavigationBar(rightItemList: [(LuckyVickyImage.save, {}), (LuckyVickyImage.share, {})]
                 )
                 .padding(.bottom, 8)
                 
@@ -71,15 +72,16 @@ struct ResultView: View {
                 .padding(.trailing, 22)
                 
                 Spacer()
-                LuckyVickyButton(title: "처음으로",
-                                 isActive: true,
-                                 action: {})
+                LuckyVickyButton(
+                    title: "처음으로",
+                    isActive: true,
+                    action: {
+                        path.removeLast(path.count)
+                    }
+                )
                 .padding(.horizontal, 22)
             }
         }
+        .navigationBarBackButtonHidden()
     }
-}
-
-#Preview {
-    ResultView()
 }

@@ -9,16 +9,20 @@ import SwiftUI
 
 struct InputTroubleView: View {
     @State private var inputText: String = ""
+    @Binding var path: NavigationPath
+    let selectedId: Int
     
     var body: some View {
         ZStack {
             Color(.mainBlack).ignoresSafeArea()
             
             VStack(spacing: 0) {
-                LuckyVickyNavigationView(
-                    leftItem: (LuckyVickyImage.backArrow, {
-                        
-                    })
+                LuckyVickyNavigationBar(
+                    leftItem: (
+                        LuckyVickyImage.backArrow, {
+                            path.removeLast()
+                        }
+                    )
                 )
                 .padding(.bottom, 8)
                 
@@ -44,15 +48,16 @@ struct InputTroubleView: View {
                 .padding(.horizontal, 26)
                 
                 Spacer()
-                LuckyVickyButton(title: "변환하기",
-                                 action: {})
+                LuckyVickyButton(
+                    title: "변환하기",
+                    isActive: !inputText.isEmpty,
+                    action: {
+                        path.append(Route.resultView)
+                    }
+                )
                 .padding(.horizontal, 22)
-
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
-}
-
-#Preview {
-    InputTroubleView()
 }

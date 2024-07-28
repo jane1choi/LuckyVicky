@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CharacterEntity {
+struct CharacterEntity: Hashable {
     let id: Int
     let name: String
     let introduction: String

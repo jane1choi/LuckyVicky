@@ -7,48 +7,78 @@
 
 import SwiftUI
 
+enum Route {
+    case inputResultView
+    case resultView
+}
+
 struct SelectCharacterView: View {
+    @State private var selectedId: Int?
+    @State private var path = NavigationPath()
+    
+    private var characters: [CharacterEntity] = [
+        CharacterEntity(id: 0, name: "원영", introduction: "완전 럭키비키잖앙~", imageName: .wonyoung),
+        CharacterEntity(id: 1, name: "희진", introduction: "맞다이로 들어와", imageName: .heejin),
+        CharacterEntity(id: 2, name: "우희", introduction: "얼마나 잘 되려고 이럴까?", imageName: .woohee),
+        CharacterEntity(id: 3, name: "흥민", introduction: "그냥 좋다고 생각하면 돼.", imageName: .heungmin)
+    ]
     
     var body: some View {
-        ZStack {
-            Color(.mainBlack).ignoresSafeArea()
-            
-            VStack(spacing: 0) {
-                Spacer()
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("오늘 하루\n힘든 일이 있었나요?")
-                            .font(.pretendardSB(22))
-                            .foregroundStyle(.white)
-                            .lineSpacing(10)
-                            .padding(.bottom, 15)
-                        Text("다른 사고 방식으로 생각해보며 털어버리는건 어떨까요?")
-                            .font(.pretendardM(12))
-                            .foregroundStyle(.white)
-                    }
-                    .padding(.leading, 28)
+        NavigationStack(path: $path) {
+            ZStack {
+                Color(.mainBlack).ignoresSafeArea()
+                VStack(spacing: 0) {
                     Spacer()
-                }
-
-                Spacer()
-                LazyVStack {
-                    characterCell(entity: CharacterEntity(id: 0, name: "원영", introduction: "완전 럭키비키잖앙~", imageName: .wonyoung))
-                    characterCell(entity: CharacterEntity(id: 1, name: "희진", introduction: "맞다이로 들어와", imageName: .heejin))
-                    characterCell(entity: CharacterEntity(id: 2, name: "우희", introduction: "얼마나 잘 되려고 이럴까?", imageName: .woohee))
-                    characterCell(entity: CharacterEntity(id: 3, name: "흥민", introduction: "그냥 좋다고 생각하면 돼.", imageName: .heungmin))
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("오늘 하루\n힘든 일이 있었나요?")
+                                .font(.pretendardSB(22))
+                                .foregroundStyle(.white)
+                                .lineSpacing(10)
+                                .padding(.bottom, 15)
+                            Text("다른 사고 방식으로 생각해보며 털어버리는건 어떨까요?")
+                                .font(.pretendardM(12))
+                                .foregroundStyle(.white)
+                        }
+                        .padding(.leading, 28)
+                        Spacer()
+                    }
                     
+                    Spacer()
+                    VStack(spacing: 15) {
+                        ForEach(characters, id: \.self) { character in
+                            characterCell(entity: character)
+                                .onTapGesture {
+                                    selectedId = character.id
+                                }
+                        }
+                    }
+                    .padding(.horizontal, 29)
+                    
+                    Spacer()
+                    LuckyVickyButton(
+                        title: "선택하기",
+                        isActive: selectedId != nil,
+                        action: {
+                            path.append(Route.inputResultView)
+                        }
+                    )
+                    .padding(.horizontal, 22)
+                    .navigationBarBackButtonHidden()
+                    .navigationDestination(for: Route.self) { route in
+                        switch route {
+                        case .inputResultView:
+                            InputTroubleView(path: $path, selectedId: selectedId ?? 0)
+                        case .resultView:
+                            ResultView(path: $path)
+                        }
+                    }
                 }
-                .padding(.horizontal, 29)
-                
-                Spacer()
-                LuckyVickyButton(title: "선택하기",
-                                 action: {})
-                .padding(.horizontal, 22)
             }
         }
     }
     
-    @ViewBuilder 
+    @ViewBuilder
     func characterCell(entity: CharacterEntity) -> some View {
         
         HStack(alignment: .center) {
@@ -70,7 +100,7 @@ struct SelectCharacterView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity)
-        .background(.white)
+        .background(selectedId == entity.id ? .mainGreen : .white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }

@@ -1,11 +1,11 @@
 //
-//  AppRoot.swift
+//  AppFlow.swift
 //  LuckyVicky
 //
 //  Created by EUNJU on 7/27/24.
 //
 
-enum AppRoot {
+enum AppFlow {
     case splash
     case main
 }

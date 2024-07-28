@@ -14,7 +14,7 @@ struct LuckyVickyApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                switch appRootManager.currentroot {
+                switch appRootManager.currentflow {
                 case .splash:
                     SplashView()
                 case .main:
@@ -27,5 +27,5 @@ struct LuckyVickyApp: App {
 }
 
 @Observable final class AppRootManager {
-    var currentroot: AppRoot = .splash
+    var currentflow: AppFlow = .splash
 }
