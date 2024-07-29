@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct LuckyVickyTextEditor: View {
-    @Binding var text: String
-    let placeholder: String
+    @Binding private var text: String
+    private let placeholder: String
+    private let maxCharacterCount: Int
     
     init(
         text: Binding<String>,
-        placeholder: String
+        placeholder: String,
+        maxCharacterCount: Int
     ) {
         self._text = text
         self.placeholder = placeholder
+        self.maxCharacterCount = maxCharacterCount
     }
     
     var body: some View {
@@ -42,5 +45,10 @@ struct LuckyVickyTextEditor: View {
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .frame(maxWidth: .infinity)
             .frame(maxHeight: .infinity)
+            .onChange(of: text) { newValue in
+                if newValue.count > maxCharacterCount {
+                    text = String(newValue.prefix(maxCharacterCount))
+                }
+            }
     }
 }

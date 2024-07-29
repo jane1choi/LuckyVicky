@@ -25,56 +25,56 @@ struct SelectCharacterView: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            ZStack {
-                Color(.mainBlack).ignoresSafeArea()
-                VStack(spacing: 0) {
-                    Spacer()
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("오늘 하루\n힘든 일이 있었나요?")
-                                .font(.pretendardSB(22))
-                                .foregroundStyle(.white)
-                                .lineSpacing(10)
-                                .padding(.bottom, 15)
-                            Text("다른 사고 방식으로 생각해보며 털어버리는건 어떨까요?")
-                                .font(.pretendardM(12))
-                                .foregroundStyle(.white)
-                        }
-                        .padding(.leading, 28)
-                        Spacer()
+            VStack(spacing: 0) {
+                Spacer()
+                    .frame(height: 52)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("오늘 하루\n힘든 일이 있었나요?")
+                            .font(.pretendardSB(22))
+                            .foregroundStyle(.white)
+                            .lineSpacing(10)
+                            .padding(.bottom, 15)
+                        Text("다른 사고 방식으로 생각해보며 털어버리는건 어떨까요?")
+                            .font(.pretendardM(12))
+                            .foregroundStyle(.white)
                     }
-                    
+                    .padding(.leading, 28)
                     Spacer()
-                    VStack(spacing: 15) {
-                        ForEach(characters, id: \.self) { character in
-                            characterCell(entity: character)
-                                .onTapGesture {
-                                    selectedId = character.id
-                                }
-                        }
+                }
+                
+                Spacer()
+                    .frame(maxHeight: 56)
+                VStack(spacing: 15) {
+                    ForEach(characters, id: \.self) { character in
+                        characterCell(entity: character)
+                            .onTapGesture {
+                                selectedId = character.id
+                            }
                     }
-                    .padding(.horizontal, 29)
-                    
-                    Spacer()
-                    LuckyVickyButton(
-                        title: "선택하기",
-                        isActive: selectedId != nil,
-                        action: {
-                            path.append(Route.inputResultView)
-                        }
-                    )
-                    .padding(.horizontal, 22)
-                    .navigationBarBackButtonHidden()
-                    .navigationDestination(for: Route.self) { route in
-                        switch route {
-                        case .inputResultView:
-                            InputTroubleView(path: $path, selectedId: selectedId ?? 0)
-                        case .resultView:
-                            ResultView(path: $path)
-                        }
+                }
+                .padding(.horizontal, 29)
+                
+                Spacer()
+                LuckyVickyButton(
+                    title: "선택하기",
+                    isActive: selectedId != nil,
+                    action: {
+                        path.append(Route.inputResultView)
+                    }
+                )
+                .padding(.horizontal, 22)
+                .navigationBarBackButtonHidden()
+                .navigationDestination(for: Route.self) { route in
+                    switch route {
+                    case .inputResultView:
+                        InputTroubleView(path: $path, selectedId: selectedId ?? 0)
+                    case .resultView:
+                        ResultView(path: $path)
                     }
                 }
             }
+            .background(Color(.mainBlack))
         }
     }
     
