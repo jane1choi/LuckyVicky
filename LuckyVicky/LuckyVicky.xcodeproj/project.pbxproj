@@ -17,7 +17,9 @@
 		7716507D2C4E3A45004D5868 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716507C2C4E3A45004D5868 /* Image+.swift */; };
 		7716507F2C4E417B004D5868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7716507E2C4E417B004D5868 /* Assets.xcassets */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
+		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
 		77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */; };
+		77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */; };
 		77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */; };
 		77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */; };
 		77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */; };
@@ -62,7 +64,9 @@
 		7716507C2C4E3A45004D5868 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
 		7716507E2C4E417B004D5868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77716EC52C5762DD00ADE967 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		77716EC92C57B48900ADE967 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyChatBubble.swift; sourceTree = "<group>"; };
+		77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyAlertView.swift; sourceTree = "<group>"; };
 		77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyButton.swift; sourceTree = "<group>"; };
 		77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTroubleView.swift; sourceTree = "<group>"; };
 		77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyTextEditor.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */,
 				77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationBar.swift */,
 				77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */,
+				77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				771650752C4E331C004D5868 /* Font+.swift */,
 				7716507C2C4E3A45004D5868 /* Image+.swift */,
 				77716EC52C5762DD00ADE967 /* UIApplication+.swift */,
+				77716EC92C57B48900ADE967 /* View+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -494,7 +500,9 @@
 				7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */,
 				77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */,
 				77D65EFD2C538FE900B4A2EC /* ResultView.swift in Sources */,
+				77716ECA2C57B48900ADE967 /* View+.swift in Sources */,
 				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
+				77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,
 			);
@@ -664,11 +672,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LuckyVicky/Supports/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "럭키비키";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -694,11 +705,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LuckyVicky/Supports/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "럭키비키";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
