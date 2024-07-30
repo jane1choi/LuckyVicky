@@ -17,6 +17,8 @@ struct LuckyVickyApp: App {
                 switch appRootManager.currentflow {
                 case .splash:
                     SplashView()
+                case .login:
+                    LoginView()
                 case .main:
                     SelectCharacterView()
                 }

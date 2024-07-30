@@ -17,4 +17,6 @@ enum LuckyVickyImage: String {
     case share
     case save
     case profileWonyoung
+    case appleLogo
+    case chatExample
 }

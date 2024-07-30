@@ -7,5 +7,6 @@
 
 enum AppFlow {
     case splash
+    case login
     case main
 }

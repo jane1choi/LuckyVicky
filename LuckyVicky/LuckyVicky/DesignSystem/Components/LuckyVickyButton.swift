@@ -9,17 +9,20 @@ import SwiftUI
 
 struct LuckyVickyButton: View {
     private let size: ButtonSize
+    private let image: LuckyVickyImage?
     private let title: String
     private let isActive: Bool
     private let action: () -> Void
     
     init(
         size: ButtonSize = .normal,
+        image: LuckyVickyImage? = .none,
         title: String,
         isActive: Bool = false,
         action: @escaping () -> Void
     ) {
         self.size = size
+        self.image = image
         self.title = title
         self.isActive = isActive
         self.action = action
@@ -30,10 +33,17 @@ struct LuckyVickyButton: View {
             guard isActive else { return }
             action()
         }, label: {
-            Text(title)
-                .font(size.font)
-                .frame(maxWidth: .infinity)
-                .frame(height: size.height)
+            HStack(spacing: 8) {
+                if let image {
+                    Image(image)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                Text(title)
+                    .font(size.font)
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: size.height)
         })
         .buttonStyle(CommonButtonStyle(isActive: isActive))
     }

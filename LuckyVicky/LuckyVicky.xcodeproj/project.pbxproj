@@ -20,6 +20,7 @@
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
 		77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */; };
 		77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */; };
+		77CEE96E2C5886060056C315 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEE96D2C5886060056C315 /* LoginView.swift */; };
 		77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */; };
 		77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */; };
 		77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */; };
@@ -67,6 +68,7 @@
 		77716EC92C57B48900ADE967 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyChatBubble.swift; sourceTree = "<group>"; };
 		77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyAlertView.swift; sourceTree = "<group>"; };
+		77CEE96D2C5886060056C315 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyButton.swift; sourceTree = "<group>"; };
 		77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTroubleView.swift; sourceTree = "<group>"; };
 		77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyTextEditor.swift; sourceTree = "<group>"; };
@@ -110,6 +112,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		773B6EFD2C58BA110035524B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				77D65F002C549BE500B4A2EC /* SplashView.swift */,
+				77CEE96D2C5886060056C315 /* LoginView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		773B6EFE2C58BA200035524B /* ConvertThought */ = {
+			isa = PBXGroup;
+			children = (
+				7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */,
+				77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */,
+				77D65EFC2C538FE900B4A2EC /* ResultView.swift */,
+			);
+			path = ConvertThought;
+			sourceTree = "<group>";
+		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,10 +284,8 @@
 		77EFFD9B2C3F85E8009E64BB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */,
-				77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */,
-				77D65EFC2C538FE900B4A2EC /* ResultView.swift */,
-				77D65F002C549BE500B4A2EC /* SplashView.swift */,
+				773B6EFD2C58BA110035524B /* Common */,
+				773B6EFE2C58BA200035524B /* ConvertThought */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -500,6 +519,7 @@
 				7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */,
 				77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */,
 				77D65EFD2C538FE900B4A2EC /* ResultView.swift in Sources */,
+				77CEE96E2C5886060056C315 /* LoginView.swift in Sources */,
 				77716ECA2C57B48900ADE967 /* View+.swift in Sources */,
 				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
 				77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */,

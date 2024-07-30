@@ -15,18 +15,15 @@ struct SplashView: View {
             Color(.mainBlack)
                 .ignoresSafeArea()
             Image(LuckyVickyImage.clover)
+                .resizable()
                 .frame(width: 110, height: 110)
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation(.easeIn(duration: 2)) {
-                    appRootManager.currentflow = .main
+                    appRootManager.currentflow = .login
                 }
             }
         }
     }
-}
-
-#Preview {
-    SplashView()
 }
