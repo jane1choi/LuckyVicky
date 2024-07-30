@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SplashView: View {
-    @Environment(AppRootManager.self) private var appRootManager
+    @EnvironmentObject private var appRootManager: AppRootManager
     
     var body: some View {
         ZStack {
@@ -20,7 +20,7 @@ struct SplashView: View {
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation(.easeIn(duration: 2)) {
+                withAnimation(.smooth) {
                     appRootManager.currentflow = .login
                 }
             }

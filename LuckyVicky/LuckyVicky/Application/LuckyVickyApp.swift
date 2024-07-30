@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct LuckyVickyApp: App {
-    @State private var appRootManager = AppRootManager()
+    @StateObject private var appRootManager = AppRootManager()
     
     var body: some Scene {
         WindowGroup {
@@ -23,11 +23,11 @@ struct LuckyVickyApp: App {
                     SelectCharacterView()
                 }
             }
-            .environment(appRootManager)
+            .environmentObject(appRootManager)
         }
     }
 }
 
-@Observable final class AppRootManager {
-    var currentflow: AppFlow = .splash
+final class AppRootManager: ObservableObject {
+    @Published var currentflow: AppFlow = .splash
 }
