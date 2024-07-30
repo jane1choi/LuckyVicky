@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State private var isPresented: Bool = false
+    
     var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -39,12 +41,19 @@ struct LoginView: View {
                 .foregroundStyle(.white)
                 .padding(.bottom, 19)
             
-            LuckyVickyButton(image: LuckyVickyImage.appleLogo,
-                             title: "Apple로 로그인",
-                             isActive: true,
-                             action: {})
+            LuckyVickyButton(
+                image: LuckyVickyImage.appleLogo,
+                title: "Apple로 로그인",
+                isActive: true,
+                action: {
+                    isPresented = true
+                }
+            )
             .padding(.horizontal, 22)
             .padding(.bottom, 12)
+            .fullScreenCover(isPresented: $isPresented) {
+                SelectCharacterView()
+            }
         }
         .background(Color(.mainBlack))
     }
