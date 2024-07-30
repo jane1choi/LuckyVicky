@@ -10,7 +10,7 @@ import CombineMoya
 import Moya
 
 protocol Requestable {
-    associatedtype API: TargetType
+    associatedtype API: BaseAPI
     
     func request(_ endpoint: API) -> AnyPublisher<Response, MoyaError>
 }
@@ -21,7 +21,7 @@ extension Requestable {
     }
 }
 
-final class NetworkProvider<API: TargetType>: Requestable {
+final class NetworkProvider<API: BaseAPI>: Requestable {
     
     private let provider: MoyaProvider<API>
     
