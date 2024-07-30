@@ -18,6 +18,7 @@
 		7716507F2C4E417B004D5868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7716507E2C4E417B004D5868 /* Assets.xcassets */; };
 		773B6F012C5908B20035524B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 773B6F002C5908B20035524B /* CombineMoya */; };
 		773B6F032C5908B20035524B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 773B6F022C5908B20035524B /* Moya */; };
+		773B6F072C590D910035524B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B6F062C590D910035524B /* NetworkProvider.swift */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
 		77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */; };
@@ -66,6 +67,7 @@
 		7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyImage.swift; sourceTree = "<group>"; };
 		7716507C2C4E3A45004D5868 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
 		7716507E2C4E417B004D5868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		773B6F062C590D910035524B /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		77716EC52C5762DD00ADE967 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		77716EC92C57B48900ADE967 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyChatBubble.swift; sourceTree = "<group>"; };
@@ -133,6 +135,15 @@
 				77D65EFC2C538FE900B4A2EC /* ResultView.swift */,
 			);
 			path = ConvertThought;
+			sourceTree = "<group>";
+		};
+		773B6F082C590E880035524B /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				773B6F042C590CBE0035524B /* NetworkError.swift */,
+				773B6F062C590D910035524B /* NetworkProvider.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
@@ -328,6 +339,7 @@
 		77EFFDA02C3F8704009E64BB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				773B6F082C590E880035524B /* Foundation */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -527,6 +539,7 @@
 				77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */,
 				7716507D2C4E3A45004D5868 /* Image+.swift in Sources */,
 				7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */,
+				773B6F072C590D910035524B /* NetworkProvider.swift in Sources */,
 				7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */,
 				77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */,
 				77D65EFD2C538FE900B4A2EC /* ResultView.swift in Sources */,
