@@ -18,6 +18,7 @@
 		7716507F2C4E417B004D5868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7716507E2C4E417B004D5868 /* Assets.xcassets */; };
 		773B6F012C5908B20035524B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 773B6F002C5908B20035524B /* CombineMoya */; };
 		773B6F032C5908B20035524B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 773B6F022C5908B20035524B /* Moya */; };
+		773B6F052C590CBE0035524B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B6F042C590CBE0035524B /* NetworkError.swift */; };
 		773B6F072C590D910035524B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B6F062C590D910035524B /* NetworkProvider.swift */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
@@ -67,6 +68,7 @@
 		7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyImage.swift; sourceTree = "<group>"; };
 		7716507C2C4E3A45004D5868 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
 		7716507E2C4E417B004D5868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		773B6F042C590CBE0035524B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		773B6F062C590D910035524B /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		77716EC52C5762DD00ADE967 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		77716EC92C57B48900ADE967 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
@@ -549,6 +551,7 @@
 				77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,
+				773B6F052C590CBE0035524B /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
