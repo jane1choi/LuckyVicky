@@ -64,6 +64,7 @@ struct SelectCharacterView: View {
                     }
                 )
                 .padding(.horizontal, 22)
+                .padding(.bottom, 12)
                 .navigationBarBackButtonHidden()
                 .navigationDestination(for: Route.self) { route in
                     switch route {

@@ -39,6 +39,7 @@ struct LuckyVickyNavigationBar: View {
                             item.1()
                         }, label: {
                             Image(item.0)
+                                .resizable()
                                 .frame(width: 44, height: 44)
                         })
                     }

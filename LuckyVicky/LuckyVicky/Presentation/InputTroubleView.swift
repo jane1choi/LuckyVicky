@@ -63,6 +63,7 @@ struct InputTroubleView: View {
                 }
             )
             .padding(.horizontal, 22)
+            .padding(.bottom, 12)
         }
         .background(Color(.mainBlack))
         .navigationBarBackButtonHidden(true)

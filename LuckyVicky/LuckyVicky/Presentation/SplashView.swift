@@ -15,6 +15,7 @@ struct SplashView: View {
             Color(.mainBlack)
                 .ignoresSafeArea()
             Image(LuckyVickyImage.clover)
+                .resizable()
                 .frame(width: 110, height: 110)
         }
         .onAppear {
