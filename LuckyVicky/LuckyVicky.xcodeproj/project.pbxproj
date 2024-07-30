@@ -16,6 +16,8 @@
 		7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */; };
 		7716507D2C4E3A45004D5868 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716507C2C4E3A45004D5868 /* Image+.swift */; };
 		7716507F2C4E417B004D5868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7716507E2C4E417B004D5868 /* Assets.xcassets */; };
+		773B6F012C5908B20035524B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 773B6F002C5908B20035524B /* CombineMoya */; };
+		773B6F032C5908B20035524B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 773B6F022C5908B20035524B /* Moya */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
 		77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */; };
@@ -92,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				773B6F032C5908B20035524B /* Moya in Frameworks */,
+				773B6F012C5908B20035524B /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +393,10 @@
 			dependencies = (
 			);
 			name = LuckyVicky;
+			packageProductDependencies = (
+				773B6F002C5908B20035524B /* CombineMoya */,
+				773B6F022C5908B20035524B /* Moya */,
+			);
 			productName = LuckyVicky;
 			productReference = 77EFFD652C3F8418009E64BB /* LuckyVicky.app */;
 			productType = "com.apple.product-type.application";
@@ -461,6 +469,9 @@
 				Base,
 			);
 			mainGroup = 77EFFD5C2C3F8418009E64BB;
+			packageReferences = (
+				773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 77EFFD662C3F8418009E64BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -862,6 +873,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		773B6F002C5908B20035524B /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		773B6F022C5908B20035524B /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 77EFFD5D2C3F8418009E64BB /* Project object */;
 }
