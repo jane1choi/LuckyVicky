@@ -33,7 +33,7 @@ struct LoginView: View {
                 .scaledToFit()
                 .frame(width: 332 * ((screenSize?.width ?? 0) / 375),
                        height: 332 * ((screenSize?.height ?? 0) / 812))
-                .padding(.top, 48)
+                .padding(.top, 60)
             
             Spacer()
             Text("로그인하고 럭키비키 시작하기")
