@@ -112,6 +112,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		773B6EFD2C58BA110035524B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				77D65F002C549BE500B4A2EC /* SplashView.swift */,
+				77CEE96D2C5886060056C315 /* LoginView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		773B6EFE2C58BA200035524B /* ConvertThought */ = {
+			isa = PBXGroup;
+			children = (
+				7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */,
+				77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */,
+				77D65EFC2C538FE900B4A2EC /* ResultView.swift */,
+			);
+			path = ConvertThought;
+			sourceTree = "<group>";
+		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,11 +284,8 @@
 		77EFFD9B2C3F85E8009E64BB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */,
-				77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */,
-				77D65EFC2C538FE900B4A2EC /* ResultView.swift */,
-				77D65F002C549BE500B4A2EC /* SplashView.swift */,
-				77CEE96D2C5886060056C315 /* LoginView.swift */,
+				773B6EFD2C58BA110035524B /* Common */,
+				773B6EFE2C58BA200035524B /* ConvertThought */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
