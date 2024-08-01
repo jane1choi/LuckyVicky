@@ -323,8 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				77EFFD982C3F859E009E64BB /* Entities */,
-				77EFFD992C3F85A4009E64BB /* UseCases */,
-				77EFFD9A2C3F85AE009E64BB /* Interfaces */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -336,20 +334,6 @@
 				773EB1F22C5A0B2200ED1345 /* ResultEntity.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		77EFFD992C3F85A4009E64BB /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
-		77EFFD9A2C3F85AE009E64BB /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		77EFFD9B2C3F85E8009E64BB /* Presentation */ = {
