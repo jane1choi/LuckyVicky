@@ -24,7 +24,6 @@ struct LuckyVickyTextEditor: View {
     
     var body: some View {
         TextEditor(text: $text)
-            .keyboardType(.alphabet)
             .autocorrectionDisabled(true)
             .font(.pretendardM(14))
             .foregroundStyle(Color(.mainBlack))

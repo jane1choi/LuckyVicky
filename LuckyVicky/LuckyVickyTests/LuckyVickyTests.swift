@@ -2,35 +2,51 @@
 //  LuckyVickyTests.swift
 //  LuckyVickyTests
 //
-//  Created by EUNJU on 7/11/24.
+//  Created by EUNJU on 8/1/24.
 //
 
 import XCTest
+
+import Combine
 @testable import LuckyVicky
 
 final class LuckyVickyTests: XCTestCase {
-
+    var sut: GptAPIService!
+    var networkProvider: NetworkProvider<GptAPI>!
+    var cancellables: Set<AnyCancellable>!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        networkProvider = NetworkProvider(isStub: true)
+        sut = GptAPIService(provider: networkProvider)
+        cancellables = []
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        networkProvider = nil
+        cancellables = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_createChat_success() {
+        let expectation = XCTestExpectation()
+        
+        let JSONData = GptAPI
+            .createChat(systemContent: Config.wonyoungSystemContent,
+                        userContent: "갑자기 비가 너무 많이 와")
+            .sampleData
+        let expectedResult = try? JSONDecoder().decode(GptResponseDTO.self, from: JSONData)
+    
+        sut.createChat(systemContent: Config.wonyoungSystemContent, userContent: "갑자기 비가 많이 와")
+            .sink(receiveCompletion: { completion in
+                if case .failure(let error) = completion {
+                    XCTFail("Failed with error: \(error)")
+                }
+            }, receiveValue: { response in
+                XCTAssertEqual(expectedResult?.choices[0].message.content, response.choices[0].message.content)
+                expectation.fulfill()
+            })
+            .store(in: &cancellables)
+        
+        wait(for: [expectation], timeout: 2.0)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
