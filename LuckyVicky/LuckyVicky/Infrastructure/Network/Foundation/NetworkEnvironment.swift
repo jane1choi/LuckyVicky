@@ -6,7 +6,7 @@
 //
 
 enum NetworkEnvironment {
-    static let baseURL = ""
+    static let baseURL = "https://api.openai.com"
 }
 
 extension NetworkEnvironment {
@@ -14,7 +14,7 @@ extension NetworkEnvironment {
     enum HTTPHeaderFields {
         static let `default`: [String: String] = [
             "Content-Type": "application/json",
-            "Authorization": ""
+            "Authorization": "Bearer \(Config.openAiAPIKey)"
         ]
     }
 }
