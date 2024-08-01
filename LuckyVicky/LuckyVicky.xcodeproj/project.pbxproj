@@ -28,6 +28,7 @@
 		773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1EE2C59FC3400ED1345 /* GptAPI.swift */; };
 		773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F02C5A069B00ED1345 /* GptAPIService.swift */; };
 		773EB1F32C5A0B2200ED1345 /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F22C5A0B2200ED1345 /* ResultEntity.swift */; };
+		773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F42C5A0CD300ED1345 /* GptRepository.swift */; };
 		773EB1FE2C5A386100ED1345 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1FD2C5A386100ED1345 /* Config.swift */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
@@ -87,6 +88,7 @@
 		773EB1EE2C59FC3400ED1345 /* GptAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPI.swift; sourceTree = "<group>"; };
 		773EB1F02C5A069B00ED1345 /* GptAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPIService.swift; sourceTree = "<group>"; };
 		773EB1F22C5A0B2200ED1345 /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEntity.swift; sourceTree = "<group>"; };
+		773EB1F42C5A0CD300ED1345 /* GptRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptRepository.swift; sourceTree = "<group>"; };
 		773EB1FC2C5A35C100ED1345 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		773EB1FD2C5A386100ED1345 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		77716EC52C5762DD00ADE967 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 		77EFFD9D2C3F86C7009E64BB /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				773EB1F42C5A0CD300ED1345 /* GptRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */,
 				77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */,
 				773B6F0E2C591BF10035524B /* BaseAPI.swift in Sources */,
+				773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */,
 				7716507D2C4E3A45004D5868 /* Image+.swift in Sources */,
 				7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */,
 				773B6F072C590D910035524B /* NetworkProvider.swift in Sources */,
