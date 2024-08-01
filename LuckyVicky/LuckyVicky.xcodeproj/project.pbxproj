@@ -26,6 +26,7 @@
 		773EB1EA2C59F9C900ED1345 /* GptRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1E92C59F9C900ED1345 /* GptRequestDTO.swift */; };
 		773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1EB2C59FAD900ED1345 /* GptResponseDTO.swift */; };
 		773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1EE2C59FC3400ED1345 /* GptAPI.swift */; };
+		773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F02C5A069B00ED1345 /* GptAPIService.swift */; };
 		773EB1FE2C5A386100ED1345 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1FD2C5A386100ED1345 /* Config.swift */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
@@ -83,6 +84,7 @@
 		773EB1E92C59F9C900ED1345 /* GptRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptRequestDTO.swift; sourceTree = "<group>"; };
 		773EB1EB2C59FAD900ED1345 /* GptResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptResponseDTO.swift; sourceTree = "<group>"; };
 		773EB1EE2C59FC3400ED1345 /* GptAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPI.swift; sourceTree = "<group>"; };
+		773EB1F02C5A069B00ED1345 /* GptAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPIService.swift; sourceTree = "<group>"; };
 		773EB1FC2C5A35C100ED1345 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		773EB1FD2C5A386100ED1345 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		77716EC52C5762DD00ADE967 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				773EB1EE2C59FC3400ED1345 /* GptAPI.swift */,
+				773EB1F02C5A069B00ED1345 /* GptAPIService.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */,
 				773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */,
 				773EB1E82C59F98200ED1345 /* GptCommonDTO.swift in Sources */,
+				773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */,
 				77D65EFF2C53948600B4A2EC /* LuckyVickyNavigationBar.swift in Sources */,
 				77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */,
 				77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */,
