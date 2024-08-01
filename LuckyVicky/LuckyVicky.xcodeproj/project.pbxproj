@@ -21,7 +21,6 @@
 		773B6F052C590CBE0035524B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B6F042C590CBE0035524B /* NetworkError.swift */; };
 		773B6F072C590D910035524B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B6F062C590D910035524B /* NetworkProvider.swift */; };
 		773B6F0A2C5910440035524B /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B6F092C5910440035524B /* NetworkEnvironment.swift */; };
-		773B6F0C2C5914E70035524B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B6F0B2C5914E70035524B /* APIService.swift */; };
 		773B6F0E2C591BF10035524B /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B6F0D2C591BF10035524B /* BaseAPI.swift */; };
 		773EB1E82C59F98200ED1345 /* GptCommonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1E72C59F98200ED1345 /* GptCommonDTO.swift */; };
 		773EB1EA2C59F9C900ED1345 /* GptRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1E92C59F9C900ED1345 /* GptRequestDTO.swift */; };
@@ -77,7 +76,6 @@
 		773B6F042C590CBE0035524B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		773B6F062C590D910035524B /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		773B6F092C5910440035524B /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
-		773B6F0B2C5914E70035524B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		773B6F0D2C591BF10035524B /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		773EB1E72C59F98200ED1345 /* GptCommonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptCommonDTO.swift; sourceTree = "<group>"; };
 		773EB1E92C59F9C900ED1345 /* GptRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptRequestDTO.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				773B6F042C590CBE0035524B /* NetworkError.swift */,
 				773B6F062C590D910035524B /* NetworkProvider.swift */,
 				773B6F092C5910440035524B /* NetworkEnvironment.swift */,
-				773B6F0B2C5914E70035524B /* APIService.swift */,
 				773B6F0D2C591BF10035524B /* BaseAPI.swift */,
 			);
 			path = Foundation;

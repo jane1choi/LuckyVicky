@@ -5,6 +5,8 @@
 //  Created by EUNJU on 7/30/24.
 //
 
+import Foundation
+
 import Combine
 import CombineMoya
 import Moya
@@ -12,27 +14,59 @@ import Moya
 protocol Requestable {
     associatedtype API: BaseAPI
     
-    func request(_ endpoint: API) -> AnyPublisher<Response, MoyaError>
-}
-
-extension Requestable {
-    func request(_ endpoint: API) -> AnyPublisher<Response, MoyaError> {
-        self.request(endpoint)
-    }
+    func request<T: Decodable>(_ api: API) -> AnyPublisher<T, NetworkError>
 }
 
 final class NetworkProvider<API: BaseAPI>: Requestable {
-    
     private let provider: MoyaProvider<API>
     
-    init(plugins: [PluginType] = []) {
+    init(
+        plugins: [PluginType] = [],
+        isStub: Bool = false,
+        sampleStatusCode: Int = 200,
+        customEndpointClosure: ((API) -> Endpoint)? = nil
+    ) {
         let session = MoyaProvider<API>.defaultAlamofireSession()
-        session.sessionConfiguration.timeoutIntervalForRequest = 10
+        session.sessionConfiguration.timeoutIntervalForRequest = 30
         
-        self.provider = MoyaProvider(session: session, plugins: plugins)
+        if isStub {
+            let endPointClosure = { (target: API) -> Endpoint in
+                let sampleResponseClosure: () -> EndpointSampleResponse = {
+                    EndpointSampleResponse.networkResponse(sampleStatusCode, target.sampleData)
+                }
+                return Endpoint(
+                    url: URL(target: target).absoluteString,
+                    sampleResponseClosure: sampleResponseClosure,
+                    method: target.method,
+                    task: target.task,
+                    httpHeaderFields: target.headers
+                )
+            }
+            self.provider = MoyaProvider(endpointClosure: customEndpointClosure ?? endPointClosure, 
+                                         stubClosure: MoyaProvider.immediatelyStub)
+        } else {
+            self.provider = MoyaProvider(session: session, plugins: plugins)
+        }
     }
     
-    func request(_ api: API) -> AnyPublisher<Response, MoyaError> {
+    func request<T: Decodable>(_ api: API) -> AnyPublisher<T, NetworkError> {
         return provider.requestPublisher(api)
+            .tryMap { response in
+                guard let data = try? JSONDecoder().decode(T.self, from: response.data)
+                else {
+                    throw NetworkError.parsingFailed
+                }
+                return data
+            }
+            .mapError { error in
+                if let moyaError = error as? MoyaError {
+                    // TODO: 에러 핸들링
+                    print(moyaError.response?.statusCode ?? 500)
+                    return NetworkError.invalidURL // 수정 필요
+                } else {
+                    return NetworkError.serverError
+                }
+            }
+            .eraseToAnyPublisher()
     }
 }
