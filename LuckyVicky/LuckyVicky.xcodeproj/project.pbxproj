@@ -25,6 +25,7 @@
 		773EB1E82C59F98200ED1345 /* GptCommonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1E72C59F98200ED1345 /* GptCommonDTO.swift */; };
 		773EB1EA2C59F9C900ED1345 /* GptRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1E92C59F9C900ED1345 /* GptRequestDTO.swift */; };
 		773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1EB2C59FAD900ED1345 /* GptResponseDTO.swift */; };
+		773EB1FE2C5A386100ED1345 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1FD2C5A386100ED1345 /* Config.swift */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
 		77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */; };
@@ -80,6 +81,8 @@
 		773EB1E72C59F98200ED1345 /* GptCommonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptCommonDTO.swift; sourceTree = "<group>"; };
 		773EB1E92C59F9C900ED1345 /* GptRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptRequestDTO.swift; sourceTree = "<group>"; };
 		773EB1EB2C59FAD900ED1345 /* GptResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptResponseDTO.swift; sourceTree = "<group>"; };
+		773EB1FC2C5A35C100ED1345 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		773EB1FD2C5A386100ED1345 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		77716EC52C5762DD00ADE967 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		77716EC92C57B48900ADE967 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		7798B2992C59541A00BC7D1A /* LuckyVicky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LuckyVicky.entitlements; sourceTree = "<group>"; };
@@ -275,6 +278,7 @@
 			children = (
 				7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */,
 				77D65F022C54A04900B4A2EC /* AppFlow.swift */,
+				773EB1FD2C5A386100ED1345 /* Config.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -385,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				771650772C4E3465004D5868 /* Info.plist */,
+				773EB1FC2C5A35C100ED1345 /* Config.xcconfig */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */,
+				773EB1FE2C5A386100ED1345 /* Config.swift in Sources */,
 				77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */,
 				771650762C4E331C004D5868 /* Font+.swift in Sources */,
 				77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */,
@@ -620,6 +626,7 @@
 /* Begin XCBuildConfiguration section */
 		77EFFD872C3F8420009E64BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 773EB1FC2C5A35C100ED1345 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -683,6 +690,7 @@
 		};
 		77EFFD882C3F8420009E64BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 773EB1FC2C5A35C100ED1345 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
