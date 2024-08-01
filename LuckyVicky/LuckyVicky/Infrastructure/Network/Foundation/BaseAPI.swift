@@ -12,6 +12,7 @@ import Moya
 protocol BaseAPI: TargetType {
     var urlPath: String { get }
     var parameters: [String: Any]? { get }
+    var body: Encodable? { get }
 }
 
 extension BaseAPI {
@@ -36,13 +37,14 @@ extension BaseAPI {
     }
     
     var task: Task {
-        if let parameters = parameters {
-            if method == .post {
-                return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-            } else {
-                return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-            }
+        if let parameters {
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
+        
+        if let body {
+            return .requestJSONEncodable(body)
+        }
+        
         return .requestPlain
     }
 }
