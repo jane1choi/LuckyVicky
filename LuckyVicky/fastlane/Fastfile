@@ -18,8 +18,18 @@ default_platform(:ios)
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
-    increment_build_number(xcodeproj: "LuckyVicky.xcodeproj")
+    increment_build_number(build_number: latest_testflight_build_number + 1)
     build_app(scheme: "LuckyVicky")
-    upload_to_testflight
+    upload_to_testflight(
+      api_key_path: "fastlane/key.json"
+    )
+    slack(
+      message: "TestFlight 배포에 성공했습니다🍀",
+      slack_url: "https://hooks.slack.com/services/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",
+      payload: {
+        "Build Date" => Time.new.to_s,
+      },
+      success: true
+    )
   end
 end
