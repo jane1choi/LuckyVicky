@@ -42,6 +42,9 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 
+## fastlaneKey
+key.json
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
