@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004AE2C63A6E100DB130D /* ViewModelable.swift */; };
+		771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BF2C6609D700DB130D /* ImageSaveManager.swift */; };
 		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
 		771650702C4E3061004D5868 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */; };
 		771650722C4E3074004D5868 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771650712C4E3074004D5868 /* Pretendard-Regular.otf */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		771004AE2C63A6E100DB130D /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
+		771004BF2C6609D700DB130D /* ImageSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveManager.swift; sourceTree = "<group>"; };
 		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
 		7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		771650712C4E3074004D5868 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 				77D65F002C549BE500B4A2EC /* SplashView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		771004BE2C6609BA00DB130D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				771004BF2C6609D700DB130D /* ImageSaveManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		773B6EFD2C58BA110035524B /* Common */ = {
@@ -303,6 +313,7 @@
 		77EFFD932C3F84A2009E64BB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				771004BE2C6609BA00DB130D /* Manager */,
 				77EFFD942C3F84FF009E64BB /* Interface */,
 				77EFFD952C3F852B009E64BB /* Constant */,
 				77EFFD962C3F854C009E64BB /* Extension */,
@@ -608,6 +619,7 @@
 				77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */,
 				771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */,
 				771650762C4E331C004D5868 /* Font+.swift in Sources */,
+				771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */,
 				77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */,
 				773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */,
 				773EB1E82C59F98200ED1345 /* GptCommonDTO.swift in Sources */,
