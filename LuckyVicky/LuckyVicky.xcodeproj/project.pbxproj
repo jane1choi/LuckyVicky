@@ -28,7 +28,7 @@
 		773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1EB2C59FAD900ED1345 /* GptResponseDTO.swift */; };
 		773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1EE2C59FC3400ED1345 /* GptAPI.swift */; };
 		773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F02C5A069B00ED1345 /* GptAPIService.swift */; };
-		773EB1F32C5A0B2200ED1345 /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F22C5A0B2200ED1345 /* ResultEntity.swift */; };
+		773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F22C5A0B2200ED1345 /* ReplyEntity.swift */; };
 		773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F42C5A0CD300ED1345 /* GptRepository.swift */; };
 		773EB1FE2C5A386100ED1345 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1FD2C5A386100ED1345 /* Config.swift */; };
 		773EB2222C5B521100ED1345 /* LuckyVickyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB2212C5B521100ED1345 /* LuckyVickyTests.swift */; };
@@ -89,7 +89,7 @@
 		773EB1EB2C59FAD900ED1345 /* GptResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptResponseDTO.swift; sourceTree = "<group>"; };
 		773EB1EE2C59FC3400ED1345 /* GptAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPI.swift; sourceTree = "<group>"; };
 		773EB1F02C5A069B00ED1345 /* GptAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPIService.swift; sourceTree = "<group>"; };
-		773EB1F22C5A0B2200ED1345 /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEntity.swift; sourceTree = "<group>"; };
+		773EB1F22C5A0B2200ED1345 /* ReplyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyEntity.swift; sourceTree = "<group>"; };
 		773EB1F42C5A0CD300ED1345 /* GptRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptRepository.swift; sourceTree = "<group>"; };
 		773EB1FC2C5A35C100ED1345 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		773EB1FD2C5A386100ED1345 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -351,7 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				771650782C4E38A3004D5868 /* CharacterEntity.swift */,
-				773EB1F22C5A0B2200ED1345 /* ResultEntity.swift */,
+				773EB1F22C5A0B2200ED1345 /* ReplyEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -630,7 +630,7 @@
 				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
 				77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
-				773EB1F32C5A0B2200ED1345 /* ResultEntity.swift in Sources */,
+				773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,
 				773B6F052C590CBE0035524B /* NetworkError.swift in Sources */,
 			);
