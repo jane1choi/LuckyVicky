@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004AE2C63A6E100DB130D /* ViewModelable.swift */; };
+		771004B42C650D5900DB130D /* SelectCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004B32C650D5900DB130D /* SelectCharacterViewModel.swift */; };
 		771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BF2C6609D700DB130D /* ImageSaveManager.swift */; };
 		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
 		771650702C4E3061004D5868 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		771004AE2C63A6E100DB130D /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
+		771004B32C650D5900DB130D /* SelectCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterViewModel.swift; sourceTree = "<group>"; };
 		771004BF2C6609D700DB130D /* ImageSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveManager.swift; sourceTree = "<group>"; };
 		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
 		7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -165,6 +167,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		771004B22C650CB300DB130D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				771004B32C650D5900DB130D /* SelectCharacterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		771004BE2C6609BA00DB130D /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +194,7 @@
 		773B6EFE2C58BA200035524B /* ConvertThought */ = {
 			isa = PBXGroup;
 			children = (
-				7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */,
+				771004B22C650CB300DB130D /* ViewModel */,
 				771004B02C650C9100DB130D /* View */,
 			);
 			path = ConvertThought;
@@ -622,6 +632,7 @@
 				771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */,
 				77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */,
 				773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */,
+				771004B42C650D5900DB130D /* SelectCharacterViewModel.swift in Sources */,
 				773EB1E82C59F98200ED1345 /* GptCommonDTO.swift in Sources */,
 				773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */,
 				77D65EFF2C53948600B4A2EC /* LuckyVickyNavigationBar.swift in Sources */,
