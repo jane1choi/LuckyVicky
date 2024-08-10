@@ -40,7 +40,7 @@ extension View {
         return modifier(LuckyVickyAlertModifier(isPresented: isPresented, alert: alert()))
     }
     
-    func convertToImage() -> UIImage? {
+    func convertToImage() -> Data? {
         let controller = UIHostingController(rootView: self)
         
         guard let view = controller.view
@@ -53,10 +53,10 @@ extension View {
         view.backgroundColor = .clear
         
         let renderer = UIGraphicsImageRenderer(size: contentSize)
-        
-        return renderer.image { _ in
+        let image = renderer.image { _ in
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         }
+        return image.pngData()
     }
     
     func transparentFullScreenCover<Content: View>(

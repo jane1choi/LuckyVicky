@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004AE2C63A6E100DB130D /* ViewModelable.swift */; };
+		771004B42C650D5900DB130D /* SelectCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004B32C650D5900DB130D /* SelectCharacterViewModel.swift */; };
+		771004BB2C6603DE00DB130D /* InputTroubleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BA2C6603DE00DB130D /* InputTroubleViewModel.swift */; };
+		771004BD2C6607B600DB130D /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BC2C6607B600DB130D /* ResultViewModel.swift */; };
+		771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BF2C6609D700DB130D /* ImageSaveManager.swift */; };
+		771004C82C67C94500DB130D /* ConvertThoughtPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004C72C67C94500DB130D /* ConvertThoughtPath.swift */; };
 		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
 		771650702C4E3061004D5868 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */; };
 		771650722C4E3074004D5868 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771650712C4E3074004D5868 /* Pretendard-Regular.otf */; };
@@ -27,7 +33,7 @@
 		773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1EB2C59FAD900ED1345 /* GptResponseDTO.swift */; };
 		773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1EE2C59FC3400ED1345 /* GptAPI.swift */; };
 		773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F02C5A069B00ED1345 /* GptAPIService.swift */; };
-		773EB1F32C5A0B2200ED1345 /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F22C5A0B2200ED1345 /* ResultEntity.swift */; };
+		773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F22C5A0B2200ED1345 /* ReplyEntity.swift */; };
 		773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F42C5A0CD300ED1345 /* GptRepository.swift */; };
 		773EB1FE2C5A386100ED1345 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1FD2C5A386100ED1345 /* Config.swift */; };
 		773EB2222C5B521100ED1345 /* LuckyVickyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB2212C5B521100ED1345 /* LuckyVickyTests.swift */; };
@@ -68,6 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		771004AE2C63A6E100DB130D /* ViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelable.swift; sourceTree = "<group>"; };
+		771004B32C650D5900DB130D /* SelectCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterViewModel.swift; sourceTree = "<group>"; };
+		771004BA2C6603DE00DB130D /* InputTroubleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTroubleViewModel.swift; sourceTree = "<group>"; };
+		771004BC2C6607B600DB130D /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		771004BF2C6609D700DB130D /* ImageSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveManager.swift; sourceTree = "<group>"; };
+		771004C72C67C94500DB130D /* ConvertThoughtPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertThoughtPath.swift; sourceTree = "<group>"; };
 		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
 		7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		771650712C4E3074004D5868 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -87,7 +99,7 @@
 		773EB1EB2C59FAD900ED1345 /* GptResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptResponseDTO.swift; sourceTree = "<group>"; };
 		773EB1EE2C59FC3400ED1345 /* GptAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPI.swift; sourceTree = "<group>"; };
 		773EB1F02C5A069B00ED1345 /* GptAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPIService.swift; sourceTree = "<group>"; };
-		773EB1F22C5A0B2200ED1345 /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEntity.swift; sourceTree = "<group>"; };
+		773EB1F22C5A0B2200ED1345 /* ReplyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyEntity.swift; sourceTree = "<group>"; };
 		773EB1F42C5A0CD300ED1345 /* GptRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptRepository.swift; sourceTree = "<group>"; };
 		773EB1FC2C5A35C100ED1345 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		773EB1FD2C5A386100ED1345 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -104,7 +116,7 @@
 		77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyTextEditor.swift; sourceTree = "<group>"; };
 		77D65EFC2C538FE900B4A2EC /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyNavigationBar.swift; sourceTree = "<group>"; };
-		77D65F002C549BE500B4A2EC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		77D65F002C549BE500B4A2EC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashView.swift; path = ../SplashView.swift; sourceTree = "<group>"; };
 		77D65F022C54A04900B4A2EC /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		77EFFD652C3F8418009E64BB /* LuckyVicky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyVicky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyApp.swift; sourceTree = "<group>"; };
@@ -142,11 +154,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		771004B02C650C9100DB130D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */,
+				77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */,
+				77D65EFC2C538FE900B4A2EC /* ResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		771004B12C650CA300DB130D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77CEE96D2C5886060056C315 /* LoginView.swift */,
+				77D65F002C549BE500B4A2EC /* SplashView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		771004B22C650CB300DB130D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				771004B32C650D5900DB130D /* SelectCharacterViewModel.swift */,
+				771004BA2C6603DE00DB130D /* InputTroubleViewModel.swift */,
+				771004BC2C6607B600DB130D /* ResultViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		771004BE2C6609BA00DB130D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				771004BF2C6609D700DB130D /* ImageSaveManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		773B6EFD2C58BA110035524B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				77D65F002C549BE500B4A2EC /* SplashView.swift */,
-				77CEE96D2C5886060056C315 /* LoginView.swift */,
+				771004B12C650CA300DB130D /* View */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -154,9 +202,8 @@
 		773B6EFE2C58BA200035524B /* ConvertThought */ = {
 			isa = PBXGroup;
 			children = (
-				7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */,
-				77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */,
-				77D65EFC2C538FE900B4A2EC /* ResultView.swift */,
+				771004B22C650CB300DB130D /* ViewModel */,
+				771004B02C650C9100DB130D /* View */,
 			);
 			path = ConvertThought;
 			sourceTree = "<group>";
@@ -284,6 +331,7 @@
 		77EFFD932C3F84A2009E64BB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				771004BE2C6609BA00DB130D /* Manager */,
 				77EFFD942C3F84FF009E64BB /* Interface */,
 				77EFFD952C3F852B009E64BB /* Constant */,
 				77EFFD962C3F854C009E64BB /* Extension */,
@@ -294,6 +342,7 @@
 		77EFFD942C3F84FF009E64BB /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				771004AE2C63A6E100DB130D /* ViewModelable.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -304,6 +353,7 @@
 				7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */,
 				77D65F022C54A04900B4A2EC /* AppFlow.swift */,
 				773EB1FD2C5A386100ED1345 /* Config.swift */,
+				771004C72C67C94500DB130D /* ConvertThoughtPath.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -331,7 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				771650782C4E38A3004D5868 /* CharacterEntity.swift */,
-				773EB1F22C5A0B2200ED1345 /* ResultEntity.swift */,
+				773EB1F22C5A0B2200ED1345 /* ReplyEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -586,17 +636,23 @@
 				77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */,
 				773EB1FE2C5A386100ED1345 /* Config.swift in Sources */,
 				77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */,
+				771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */,
 				771650762C4E331C004D5868 /* Font+.swift in Sources */,
+				771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */,
 				77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */,
 				773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */,
+				771004B42C650D5900DB130D /* SelectCharacterViewModel.swift in Sources */,
 				773EB1E82C59F98200ED1345 /* GptCommonDTO.swift in Sources */,
 				773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */,
 				77D65EFF2C53948600B4A2EC /* LuckyVickyNavigationBar.swift in Sources */,
 				77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */,
 				77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */,
 				773B6F0E2C591BF10035524B /* BaseAPI.swift in Sources */,
+				771004C82C67C94500DB130D /* ConvertThoughtPath.swift in Sources */,
 				773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */,
 				7716507D2C4E3A45004D5868 /* Image+.swift in Sources */,
+				771004BD2C6607B600DB130D /* ResultViewModel.swift in Sources */,
+				771004BB2C6603DE00DB130D /* InputTroubleViewModel.swift in Sources */,
 				7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */,
 				773B6F072C590D910035524B /* NetworkProvider.swift in Sources */,
 				773B6F0A2C5910440035524B /* NetworkEnvironment.swift in Sources */,
@@ -609,7 +665,7 @@
 				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
 				77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
-				773EB1F32C5A0B2200ED1345 /* ResultEntity.swift in Sources */,
+				773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,
 				773B6F052C590CBE0035524B /* NetworkError.swift in Sources */,
 			);

@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct InputTroubleView: View {
-    @State private var inputText: String = ""
+    @StateObject private var viewModel: InputTroubleViewModel
     @Binding var path: NavigationPath
-    let selectedId: Int
+    
+    init(viewModel: InputTroubleViewModel, path: Binding<NavigationPath>) {
+        self._viewModel = .init(wrappedValue: viewModel)
+        self._path = path
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -39,13 +43,13 @@ struct InputTroubleView: View {
             }
             
             LuckyVickyTextEditor(
-                text: $inputText,
+                text: $viewModel.state.inputText,
                 placeholder: "어떤 일이 있었나요?",
                 maxCharacterCount: 100
             )
             .frame(height: 374)
             .overlay(alignment: .bottomTrailing) {
-                Text("\(inputText.count)/100")
+                Text("\(viewModel.state.inputText.count)/100")
                     .font(.pretendardM(14))
                     .foregroundStyle(Color(.gray1))
                     .padding(.trailing, 22)
@@ -57,9 +61,9 @@ struct InputTroubleView: View {
             Spacer()
             LuckyVickyButton(
                 title: "변환하기",
-                isActive: !inputText.isEmpty,
+                isActive: !viewModel.state.inputText.isEmpty,
                 action: {
-                    path.append(Route.resultView)
+                    path.append(ConvertThoughtPath.showResult)
                 }
             )
             .padding(.horizontal, 22)

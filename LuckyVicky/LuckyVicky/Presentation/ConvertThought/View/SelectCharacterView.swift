@@ -7,21 +7,13 @@
 
 import SwiftUI
 
-enum Route {
-    case inputResultView
-    case resultView
-}
-
 struct SelectCharacterView: View {
-    @State private var selectedId: Int?
+    @StateObject private var viewModel: SelectCharacterViewModel
     @State private var path = NavigationPath()
     
-    private var characters: [CharacterEntity] = [
-        CharacterEntity(id: 0, name: "원영", introduction: "완전 럭키비키잖앙~", imageName: .wonyoung),
-        CharacterEntity(id: 1, name: "희진", introduction: "맞다이로 들어와", imageName: .heejin),
-        CharacterEntity(id: 2, name: "우희", introduction: "얼마나 잘 되려고 이럴까?", imageName: .woohee),
-        CharacterEntity(id: 3, name: "흥민", introduction: "그냥 좋다고 생각하면 돼.", imageName: .heungmin)
-    ]
+    init(viewModel: SelectCharacterViewModel) {
+        self._viewModel = .init(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -46,11 +38,8 @@ struct SelectCharacterView: View {
                 Spacer()
                     .frame(maxHeight: 56)
                 VStack(spacing: 15) {
-                    ForEach(characters, id: \.self) { character in
+                    ForEach(viewModel.state.characterList, id: \.self) { character in
                         characterCell(entity: character)
-                            .onTapGesture {
-                                selectedId = character.id
-                            }
                     }
                 }
                 .padding(.horizontal, 29)
@@ -58,20 +47,21 @@ struct SelectCharacterView: View {
                 Spacer()
                 LuckyVickyButton(
                     title: "선택하기",
-                    isActive: selectedId != nil,
+                    isActive: viewModel.state.selectedId != nil,
                     action: {
-                        path.append(Route.inputResultView)
+                        path.append(ConvertThoughtPath.inputTrouble)
                     }
                 )
                 .padding(.horizontal, 22)
                 .padding(.bottom, 12)
-                .navigationBarBackButtonHidden()
-                .navigationDestination(for: Route.self) { route in
-                    switch route {
-                    case .inputResultView:
-                        InputTroubleView(path: $path, selectedId: selectedId ?? 0)
-                    case .resultView:
-                        ResultView(path: $path)
+                .navigationDestination(for: ConvertThoughtPath.self) { path in
+                    switch path {
+                    case .inputTrouble:
+                        let viewModel = InputTroubleViewModel()
+                        InputTroubleView(viewModel: viewModel, path: $path)
+                    case .showResult:
+                        let viewModel = ResultViewModel()
+                        ResultView(viewModel: viewModel, path: $path)
                     }
                 }
             }
@@ -101,11 +91,12 @@ struct SelectCharacterView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity)
-        .background(selectedId == entity.id ? .mainGreen : .white)
+        .background(viewModel.state.selectedId == entity.id ? .mainGreen : .white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
+        .onTapGesture {
+            viewModel.action(.onTapCharacterCell(id: entity.id))
+        }
     }
+    
 }
 
-#Preview {
-    SelectCharacterView()
-}
