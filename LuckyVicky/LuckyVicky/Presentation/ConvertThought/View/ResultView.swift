@@ -8,20 +8,24 @@
 import SwiftUI
 
 struct ResultView: View {
+    @StateObject private var viewModel: ResultViewModel
     @Binding var path: NavigationPath
-    @State private var hasImageSaved: Bool = false
+    
+    init(viewModel: ResultViewModel, path: Binding<NavigationPath>) {
+        self._viewModel = .init(wrappedValue: viewModel)
+        self._path = path
+    }
     
     var body: some View {
         VStack(spacing: 0) {
             LuckyVickyNavigationBar(
                 rightItemList: [
                     (LuckyVickyImage.save, {
-                        guard let image = resultChatView().convertToImage()
+                        guard let imageData = resultChatView().convertToImage()
                         else {
                             return
                         }
-                        ImageSaver(isCompleted: $hasImageSaved)
-                            .saveToPhotoAlbum(image: image)
+                        viewModel.action(.onTapSaveImageButton(data: imageData))
                     }), (LuckyVickyImage.share, {})]
             )
             
@@ -39,10 +43,10 @@ struct ResultView: View {
         }
         .background(Color(.mainBlack))
         .navigationBarBackButtonHidden()
-        .presentAlert(isPresented: $hasImageSaved) {
+        .presentAlert(isPresented: $viewModel.state.isAlertPresented) {
             LuckyVickyAlertView(
-                isPresented: $hasImageSaved,
-                message: "이미지가 사진 앨범에\n저장되었습니다."
+                isPresented: $viewModel.state.isAlertPresented,
+                message: viewModel.state.alertMessage
             )
         }
     }
@@ -107,24 +111,4 @@ func resultChatView() -> some View {
         Spacer()
     }
     .background(Color(.mainBlack))
-}
-
-final class ImageSaver: NSObject {
-    @Binding var isCompleted: Bool
-    
-    init(isCompleted: Binding<Bool>) {
-        self._isCompleted = isCompleted
-    }
-    
-    func saveToPhotoAlbum(image: UIImage) {
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCompleted), nil)
-    }
-    
-    @objc func saveCompleted(
-        _ image: UIImage,
-        didFinishSavingWithError error: Error?,
-        contextInfo: UnsafeRawPointer
-    ) {
-        isCompleted = true
-    }
 }
