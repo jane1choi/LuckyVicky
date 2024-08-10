@@ -54,8 +54,8 @@ struct Usage: Decodable {
 }
 
 extension GptResponseDTO {
-    func toEntity() -> ResultEntity {
+    func toEntity() -> ReplyEntity {
         let result = self.choices[0].message.content
-        return ResultEntity(result: result)
+        return ReplyEntity(reply: result)
     }
 }

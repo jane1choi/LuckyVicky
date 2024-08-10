@@ -13,7 +13,7 @@ protocol GptRepository {
     func fetchResultData(
         systemContent: String,
         userContent: String
-    ) -> AnyPublisher<ResultEntity, NetworkError>
+    ) -> AnyPublisher<ReplyEntity, NetworkError>
 }
 
 final class GptRepositoryImpl: GptRepository {
@@ -26,7 +26,7 @@ final class GptRepositoryImpl: GptRepository {
     func fetchResultData(
         systemContent: String,
         userContent: String
-    ) -> AnyPublisher<ResultEntity, NetworkError> {
+    ) -> AnyPublisher<ReplyEntity, NetworkError> {
         return apiService
             .createChat(systemContent: systemContent,
                         userContent: userContent)
