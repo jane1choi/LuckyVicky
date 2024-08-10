@@ -52,7 +52,8 @@ struct LoginView: View {
             .padding(.horizontal, 22)
             .padding(.bottom, 12)
             .fullScreenCover(isPresented: $isPresented) {
-                SelectCharacterView()
+                let viewModel = SelectCharacterViewModel()
+                SelectCharacterView(viewModel: viewModel)
             }
         }
         .background(Color(.mainBlack))

@@ -20,7 +20,8 @@ struct LuckyVickyApp: App {
                 case .login:
                     LoginView()
                 case .main:
-                    SelectCharacterView()
+                    let viewModel = SelectCharacterViewModel()
+                    SelectCharacterView(viewModel: viewModel)
                 }
             }
             .environmentObject(appRootManager)
