@@ -14,6 +14,8 @@
 		771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BF2C6609D700DB130D /* ImageSaveManager.swift */; };
 		771004C82C67C94500DB130D /* ConvertThoughtPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004C72C67C94500DB130D /* ConvertThoughtPath.swift */; };
 		771004D12C68913200DB130D /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D02C68913200DB130D /* UserDefault.swift */; };
+		771004D72C68D78000DB130D /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D62C68D78000DB130D /* KeyChain.swift */; };
+		771004D92C68D92F00DB130D /* KeyChain+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D82C68D92F00DB130D /* KeyChain+.swift */; };
 		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
 		771650702C4E3061004D5868 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */; };
 		771650722C4E3074004D5868 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771650712C4E3074004D5868 /* Pretendard-Regular.otf */; };
@@ -82,6 +84,8 @@
 		771004BF2C6609D700DB130D /* ImageSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveManager.swift; sourceTree = "<group>"; };
 		771004C72C67C94500DB130D /* ConvertThoughtPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertThoughtPath.swift; sourceTree = "<group>"; };
 		771004D02C68913200DB130D /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		771004D62C68D78000DB130D /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		771004D82C68D92F00DB130D /* KeyChain+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyChain+.swift"; sourceTree = "<group>"; };
 		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
 		7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		771650712C4E3074004D5868 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				771004BF2C6609D700DB130D /* ImageSaveManager.swift */,
+				771004D62C68D78000DB130D /* KeyChain.swift */,
 			);
 			path = Manager;
 		771004CF2C68912300DB130D /* Wrapper */ = {
@@ -373,6 +378,7 @@
 				7716507C2C4E3A45004D5868 /* Image+.swift */,
 				77716EC52C5762DD00ADE967 /* UIApplication+.swift */,
 				77716EC92C57B48900ADE967 /* View+.swift */,
+				771004D82C68D92F00DB130D /* KeyChain+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -652,6 +658,7 @@
 				771004B42C650D5900DB130D /* SelectCharacterViewModel.swift in Sources */,
 				773EB1E82C59F98200ED1345 /* GptCommonDTO.swift in Sources */,
 				773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */,
+				771004D92C68D92F00DB130D /* KeyChain+.swift in Sources */,
 				77D65EFF2C53948600B4A2EC /* LuckyVickyNavigationBar.swift in Sources */,
 				77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */,
 				77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */,
@@ -675,6 +682,7 @@
 				771004D12C68913200DB130D /* UserDefault.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
 				773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */,
+				771004D72C68D78000DB130D /* KeyChain.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,
 				773B6F052C590CBE0035524B /* NetworkError.swift in Sources */,
 			);
