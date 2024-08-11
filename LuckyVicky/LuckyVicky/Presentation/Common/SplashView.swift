@@ -21,7 +21,7 @@ struct SplashView: View {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation(.smooth) {
-                    appRootManager.currentflow = .login
+                    appRootManager.currentflow =  UserDefaults.isFirstLaunch ? .login : .main
                 }
             }
         }
