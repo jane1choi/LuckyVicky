@@ -86,7 +86,10 @@ struct SelectCharacterView: View {
         
         HStack(alignment: .center) {
             Image(entity.imageName)
-                .frame(width: 100, height: 82)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100 * (screenSize?.width ?? 0) / 375,
+                       height: 82 * ((screenSize?.height ?? 0) / 812))
                 .padding(.top, 4)
                 .padding(.leading, 25)
                 .padding(.trailing, 28)
