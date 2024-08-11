@@ -36,7 +36,7 @@ struct SelectCharacterView: View {
                 }
                 
                 Spacer()
-                    .frame(maxHeight: 56)
+
                 VStack(spacing: 15) {
                     ForEach(viewModel.state.characterList, id: \.self) { character in
                         characterCell(entity: character)
@@ -45,11 +45,19 @@ struct SelectCharacterView: View {
                 .padding(.horizontal, 29)
                 
                 Spacer()
+                Text("오늘 남은 횟수 \(viewModel.state.chanceCount)/10")
+                    .font(.pretendardM(12))
+                    .foregroundStyle(.white)
+                    .padding(.bottom, 18)
+    
                 LuckyVickyButton(
                     title: "선택하기",
                     isActive: viewModel.state.selectedId != nil,
                     action: {
-                        path.append(ConvertThoughtPath.inputTrouble)
+                        viewModel.action(.onTapSelectButton)
+                        if !viewModel.state.isAlertPresented {
+                            path.append(ConvertThoughtPath.inputTrouble)
+                        }
                     }
                 )
                 .padding(.horizontal, 22)
@@ -63,6 +71,10 @@ struct SelectCharacterView: View {
                         let viewModel = ResultViewModel()
                         ResultView(viewModel: viewModel, path: $path)
                     }
+                }
+                .presentAlert(isPresented: $viewModel.state.isAlertPresented) {
+                    LuckyVickyAlertView(isPresented: $viewModel.state.isAlertPresented,
+                                        message: "오늘 이용 가능 횟수를\n모두 소진했습니다.")
                 }
             }
             .background(Color(.mainBlack))
@@ -97,6 +109,9 @@ struct SelectCharacterView: View {
             viewModel.action(.onTapCharacterCell(id: entity.id))
         }
     }
-    
+}
+
+#Preview {
+    SelectCharacterView(viewModel: SelectCharacterViewModel())
 }
 
