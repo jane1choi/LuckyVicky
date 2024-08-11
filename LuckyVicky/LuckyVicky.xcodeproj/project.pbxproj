@@ -14,6 +14,7 @@
 		771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BF2C6609D700DB130D /* ImageSaveManager.swift */; };
 		771004C82C67C94500DB130D /* ConvertThoughtPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004C72C67C94500DB130D /* ConvertThoughtPath.swift */; };
 		771004D12C68913200DB130D /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D02C68913200DB130D /* UserDefault.swift */; };
+		771004D32C68919900DB130D /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D22C68919900DB130D /* UserDefaults+.swift */; };
 		771004D72C68D78000DB130D /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D62C68D78000DB130D /* KeyChain.swift */; };
 		771004D92C68D92F00DB130D /* KeyChain+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D82C68D92F00DB130D /* KeyChain+.swift */; };
 		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
@@ -84,6 +85,7 @@
 		771004BF2C6609D700DB130D /* ImageSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveManager.swift; sourceTree = "<group>"; };
 		771004C72C67C94500DB130D /* ConvertThoughtPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertThoughtPath.swift; sourceTree = "<group>"; };
 		771004D02C68913200DB130D /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		771004D22C68919900DB130D /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		771004D62C68D78000DB130D /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		771004D82C68D92F00DB130D /* KeyChain+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyChain+.swift"; sourceTree = "<group>"; };
 		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				7716507C2C4E3A45004D5868 /* Image+.swift */,
 				77716EC52C5762DD00ADE967 /* UIApplication+.swift */,
 				77716EC92C57B48900ADE967 /* View+.swift */,
+				771004D22C68919900DB130D /* UserDefaults+.swift */,
 				771004D82C68D92F00DB130D /* KeyChain+.swift */,
 			);
 			path = Extension;
@@ -675,6 +678,7 @@
 				773EB1EA2C59F9C900ED1345 /* GptRequestDTO.swift in Sources */,
 				77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */,
 				77D65EFD2C538FE900B4A2EC /* ResultView.swift in Sources */,
+				771004D32C68919900DB130D /* UserDefaults+.swift in Sources */,
 				77CEE96E2C5886060056C315 /* LoginView.swift in Sources */,
 				77716ECA2C57B48900ADE967 /* View+.swift in Sources */,
 				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
