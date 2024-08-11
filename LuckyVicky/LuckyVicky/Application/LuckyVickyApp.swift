@@ -18,7 +18,8 @@ struct LuckyVickyApp: App {
                 case .splash:
                     SplashView()
                 case .login:
-                    LoginView()
+                    let viewModel = LoginViewModel()
+                    LoginView(viewModel: viewModel)
                 case .main:
                     let viewModel = SelectCharacterViewModel()
                     SelectCharacterView(viewModel: viewModel)
