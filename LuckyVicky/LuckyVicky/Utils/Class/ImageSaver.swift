@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class ImageSaveManager: NSObject {
+final class ImageSaver: NSObject {
     private var completion: ((Bool) -> Void)?
     
     func saveToPhotoAlbum(data: Data, completion: @escaping (Bool) -> Void) {

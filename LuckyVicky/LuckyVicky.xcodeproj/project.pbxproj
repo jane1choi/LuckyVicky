@@ -11,7 +11,7 @@
 		771004B42C650D5900DB130D /* SelectCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004B32C650D5900DB130D /* SelectCharacterViewModel.swift */; };
 		771004BB2C6603DE00DB130D /* InputTroubleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BA2C6603DE00DB130D /* InputTroubleViewModel.swift */; };
 		771004BD2C6607B600DB130D /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BC2C6607B600DB130D /* ResultViewModel.swift */; };
-		771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BF2C6609D700DB130D /* ImageSaveManager.swift */; };
+		771004C02C6609D700DB130D /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BF2C6609D700DB130D /* ImageSaver.swift */; };
 		771004C82C67C94500DB130D /* ConvertThoughtPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004C72C67C94500DB130D /* ConvertThoughtPath.swift */; };
 		771004CE2C687D5F00DB130D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004CD2C687D5F00DB130D /* LoginViewModel.swift */; };
 		771004D12C68913200DB130D /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D02C68913200DB130D /* UserDefault.swift */; };
@@ -84,7 +84,7 @@
 		771004B32C650D5900DB130D /* SelectCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterViewModel.swift; sourceTree = "<group>"; };
 		771004BA2C6603DE00DB130D /* InputTroubleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTroubleViewModel.swift; sourceTree = "<group>"; };
 		771004BC2C6607B600DB130D /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
-		771004BF2C6609D700DB130D /* ImageSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveManager.swift; sourceTree = "<group>"; };
+		771004BF2C6609D700DB130D /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		771004C72C67C94500DB130D /* ConvertThoughtPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertThoughtPath.swift; sourceTree = "<group>"; };
 		771004CD2C687D5F00DB130D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		771004D02C68913200DB130D /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
@@ -195,13 +195,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		771004BE2C6609BA00DB130D /* Manager */ = {
+		771004C92C68796600DB130D /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				771004BF2C6609D700DB130D /* ImageSaveManager.swift */,
+				771004BF2C6609D700DB130D /* ImageSaver.swift */,
 				771004D62C68D78000DB130D /* KeyChain.swift */,
 			);
-			path = Manager;
+			path = Class;
+			sourceTree = "<group>";
+		};
 		771004CC2C687D4C00DB130D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				771004CF2C68912300DB130D /* Wrapper */,
+				771004C92C68796600DB130D /* Class */,
 				77EFFD942C3F84FF009E64BB /* Interface */,
 				77EFFD952C3F852B009E64BB /* Constant */,
 				77EFFD962C3F854C009E64BB /* Extension */,
@@ -669,7 +672,7 @@
 				77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */,
 				771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */,
 				771650762C4E331C004D5868 /* Font+.swift in Sources */,
-				771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */,
+				771004C02C6609D700DB130D /* ImageSaver.swift in Sources */,
 				771004D52C68CDE700DB130D /* Date+.swift in Sources */,
 				77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */,
 				773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */,

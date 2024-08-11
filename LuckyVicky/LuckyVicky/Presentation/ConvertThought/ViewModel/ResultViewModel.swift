@@ -32,7 +32,7 @@ final class ResultViewModel: ViewModelable {
     }
     
     private func saveImage(imageData: Data) {
-        let manager = ImageSaveManager()
+        let manager = ImageSaver()
 
         manager.saveToPhotoAlbum(data: imageData) { success in
             self.state.alertMessage = success ? "이미지가 사진 앨범에\n저장되었습니다."
