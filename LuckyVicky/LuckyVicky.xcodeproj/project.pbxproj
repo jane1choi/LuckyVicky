@@ -13,6 +13,7 @@
 		771004BD2C6607B600DB130D /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BC2C6607B600DB130D /* ResultViewModel.swift */; };
 		771004C02C6609D700DB130D /* ImageSaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004BF2C6609D700DB130D /* ImageSaveManager.swift */; };
 		771004C82C67C94500DB130D /* ConvertThoughtPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004C72C67C94500DB130D /* ConvertThoughtPath.swift */; };
+		771004D12C68913200DB130D /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D02C68913200DB130D /* UserDefault.swift */; };
 		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
 		771650702C4E3061004D5868 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */; };
 		771650722C4E3074004D5868 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771650712C4E3074004D5868 /* Pretendard-Regular.otf */; };
@@ -80,6 +81,7 @@
 		771004BC2C6607B600DB130D /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		771004BF2C6609D700DB130D /* ImageSaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveManager.swift; sourceTree = "<group>"; };
 		771004C72C67C94500DB130D /* ConvertThoughtPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertThoughtPath.swift; sourceTree = "<group>"; };
+		771004D02C68913200DB130D /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
 		7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		771650712C4E3074004D5868 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -189,6 +191,12 @@
 				771004BF2C6609D700DB130D /* ImageSaveManager.swift */,
 			);
 			path = Manager;
+		771004CF2C68912300DB130D /* Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				771004D02C68913200DB130D /* UserDefault.swift */,
+			);
+			path = Wrapper;
 			sourceTree = "<group>";
 		};
 		773B6EFD2C58BA110035524B /* Common */ = {
@@ -331,7 +339,7 @@
 		77EFFD932C3F84A2009E64BB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				771004BE2C6609BA00DB130D /* Manager */,
+				771004CF2C68912300DB130D /* Wrapper */,
 				77EFFD942C3F84FF009E64BB /* Interface */,
 				77EFFD952C3F852B009E64BB /* Constant */,
 				77EFFD962C3F854C009E64BB /* Extension */,
@@ -664,6 +672,7 @@
 				77716ECA2C57B48900ADE967 /* View+.swift in Sources */,
 				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
 				77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */,
+				771004D12C68913200DB130D /* UserDefault.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
 				773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,
