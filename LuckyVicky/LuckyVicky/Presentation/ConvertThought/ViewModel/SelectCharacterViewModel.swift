@@ -11,14 +11,16 @@ final class SelectCharacterViewModel: ViewModelable {
     @Published var state: State
     
     init() {
-        self.state = State(chanceCount: 10,
+        self.state = State(chanceCount: 0,
                            characterList: CharacterEntity.characters,
-                           isAlertPresented: false)
+                           isAlertPresented: false, 
+                           hasErrorOccurred: false)
     }
     
     enum Action {
         case onTapCharacterCell(id: Int)
         case onTapSelectButton
+        case onAppear
     }
     
     struct State {
@@ -26,6 +28,7 @@ final class SelectCharacterViewModel: ViewModelable {
         var chanceCount: Int
         var characterList: [CharacterEntity]
         var isAlertPresented: Bool
+        var hasErrorOccurred: Bool
     }
     
     func action(_ action: Action) {
@@ -33,7 +36,17 @@ final class SelectCharacterViewModel: ViewModelable {
         case .onTapCharacterCell(let id):
             state.selectedId = id
         case .onTapSelectButton:
-            state.isAlertPresented = state.chanceCount <= 0
+            state.isAlertPresented = state.chanceCount >= 10
+        case .onAppear:
+            checkUserChance()
+            state.selectedId = nil
         }
+    }
+}
+
+extension SelectCharacterViewModel {
+    
+    private func checkUserChance() {
+        
     }
 }

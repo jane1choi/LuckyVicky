@@ -45,7 +45,7 @@ struct SelectCharacterView: View {
                 .padding(.horizontal, 29)
                 
                 Spacer()
-                Text("오늘 남은 횟수 \(viewModel.state.chanceCount)/10")
+                Text("오늘 이용 횟수 \(viewModel.state.chanceCount)/10")
                     .font(.pretendardM(12))
                     .foregroundStyle(.white)
                     .padding(.bottom, 18)
@@ -78,6 +78,9 @@ struct SelectCharacterView: View {
                 }
             }
             .background(Color(.mainBlack))
+            .onAppear {
+                viewModel.action(.onAppear)
+            }
         }
     }
     
