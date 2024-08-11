@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var isPresented: Bool = false
+    @StateObject private var viewModel: LoginViewModel
+    
+    init(viewModel: LoginViewModel) {
+        self._viewModel = .init(wrappedValue: viewModel)
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -46,20 +50,26 @@ struct LoginView: View {
                 title: "Apple로 로그인",
                 isActive: true,
                 action: {
-                    isPresented = true
+                    viewModel.action(.onTapLoginButton)
                 }
             )
             .padding(.horizontal, 22)
             .padding(.bottom, 12)
-            .fullScreenCover(isPresented: $isPresented) {
+            .fullScreenCover(isPresented: $viewModel.state.isPresented) {
                 let viewModel = SelectCharacterViewModel()
                 SelectCharacterView(viewModel: viewModel)
             }
         }
         .background(Color(.mainBlack))
+        .presentAlert(isPresented: $viewModel.state.hasErrorOccurred) {
+            LuckyVickyAlertView(
+                isPresented: $viewModel.state.hasErrorOccurred,
+                message: "네트워크 오류가 발생했습니다.\n잠시 후 다시 시도해주세요."
+            )
+        }
     }
 }
 
 #Preview {
-    LoginView()
+    LoginView(viewModel: LoginViewModel())
 }
