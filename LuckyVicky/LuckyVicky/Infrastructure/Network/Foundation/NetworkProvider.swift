@@ -59,10 +59,13 @@ final class NetworkProvider<API: BaseAPI>: Requestable {
                 return data
             }
             .mapError { error in
-                if let moyaError = error as? MoyaError {
-                    // TODO: 에러 핸들링
-                    print(moyaError.response?.statusCode ?? 500)
-                    return NetworkError.invalidURL // 수정 필요
+                if let moyaError = error as? MoyaError,
+                   let statusCode = moyaError.response?.statusCode {
+                    if statusCode >= 429 {
+                        return NetworkError.serverError
+                    } else {
+                        return NetworkError.invalidURL
+                    }
                 } else {
                     return NetworkError.serverError
                 }
