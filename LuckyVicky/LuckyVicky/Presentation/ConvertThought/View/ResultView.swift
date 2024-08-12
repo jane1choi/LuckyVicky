@@ -59,7 +59,11 @@ struct ResultView: View {
             .padding(.bottom, 12)
         }
         .background(Color(.mainBlack))
-        .navigationBarBackButtonHidden()
+        .navigationBarBackButtonHidden(true)
+        .overlay {
+            LoadingView()
+                .hidden(!viewModel.state.isLoading)
+        }
         .presentAlert(isPresented: $viewModel.state.isAlertPresented) {
             LuckyVickyAlertView(
                 isPresented: $viewModel.state.isAlertPresented,

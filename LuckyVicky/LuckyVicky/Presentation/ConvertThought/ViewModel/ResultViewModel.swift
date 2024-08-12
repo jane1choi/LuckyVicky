@@ -15,7 +15,8 @@ final class ResultViewModel: ViewModelable {
         self.state = State(isAlertPresented: false,
                            alertMessage: "",
                            characterNickname: CharacterEntity.characters[id].nickname,
-                           characterProfile:  CharacterEntity.characters[id].profileImage)
+                           characterProfile:  CharacterEntity.characters[id].profileImage, 
+                           isLoading: false)
     }
     
     enum Action {
@@ -27,11 +28,13 @@ final class ResultViewModel: ViewModelable {
         var alertMessage: String
         let characterNickname: String
         let characterProfile: LuckyVickyImage
+        var isLoading: Bool
     }
     
     func action(_ action: Action) {
         switch action {
         case .onTapSaveImageButton(let data):
+            state.isLoading = true
             saveImage(imageData: data)
         }
     }
@@ -45,6 +48,7 @@ extension ResultViewModel {
         manager.saveToPhotoAlbum(data: imageData) { [weak self] success in
             self?.state.alertMessage = success ? "이미지가 사진 앨범에\n저장되었습니다."
             : "이미지 저장에 실패했습니다.\n다시 시도해주세요"
+            self?.state.isLoading = false
             self?.state.isAlertPresented = true
         }
     }
