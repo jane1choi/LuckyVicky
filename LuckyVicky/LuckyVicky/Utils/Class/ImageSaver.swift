@@ -16,8 +16,8 @@ final class ImageSaver: NSObject {
             return
         }
         
-        self.completion = completion
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCompleted), nil)
+        self.completion = completion
     }
     
     @objc func saveCompleted(

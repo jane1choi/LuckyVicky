@@ -10,10 +10,19 @@ import SwiftUI
 struct ResultView: View {
     @StateObject private var viewModel: ResultViewModel
     @Binding var path: NavigationPath
+    private let inputText: String
+    private let result: String
     
-    init(viewModel: ResultViewModel, path: Binding<NavigationPath>) {
+    init(
+        viewModel: ResultViewModel,
+        path: Binding<NavigationPath>,
+        inputText: String,
+        result: String
+    ) {
         self._viewModel = .init(wrappedValue: viewModel)
         self._path = path
+        self.inputText = inputText
+        self.result = result
     }
     
     var body: some View {
@@ -21,7 +30,12 @@ struct ResultView: View {
             LuckyVickyNavigationBar(
                 rightItemList: [
                     (LuckyVickyImage.save, {
-                        guard let imageData = resultChatView().convertToImage()
+                        guard let imageData = resultChatView(
+                            nickname: viewModel.state.characterNickname, 
+                            profile: viewModel.state.characterProfile, 
+                            userInput: inputText, 
+                            result: result
+                        ).convertToImage()
                         else {
                             return
                         }
@@ -29,7 +43,10 @@ struct ResultView: View {
                     }), (LuckyVickyImage.share, {})]
             )
             
-            resultChatView()
+            resultChatView(nickname: viewModel.state.characterNickname, 
+                           profile: viewModel.state.characterProfile, 
+                           userInput: inputText, 
+                           result: result)
             
             LuckyVickyButton(
                 title: "처음으로",
@@ -53,13 +70,18 @@ struct ResultView: View {
 }
 
 @ViewBuilder 
-func resultChatView() -> some View {
+func resultChatView(
+    nickname: String,
+    profile: LuckyVickyImage,
+    userInput: String,
+    result: String
+) -> some View {
     VStack(spacing: 0) {
         Spacer()
             .frame(height: 8)
         HStack {
             VStack(alignment: .leading) {
-                Text("초긍정의 힘!\n원영이가 생각하기엔..")
+                Text("초긍정의 힘!\n\(nickname) 생각하기엔..")
                     .font(.pretendardSB(22))
                     .foregroundStyle(.white)
                     .lineSpacing(10)
@@ -73,8 +95,9 @@ func resultChatView() -> some View {
         .padding(.leading, 28)
         .padding(.bottom, 52)
         
-        Text("안녕하세요")
+        Text(userInput)
             .font(.pretendardM(14))
+            .lineSpacing(5)
             .padding(.leading, 20)
             .padding(.trailing, 39)
             .padding(.vertical, 20)
@@ -91,11 +114,12 @@ func resultChatView() -> some View {
             .frame(height: 40)
         
         HStack(alignment: .top, spacing: 8) {
-            Image(LuckyVickyImage.profileWonyoung)
+            Image(profile)
                 .frame(width: 42, height: 42)
             
-            Text("안녕하세요")
+            Text(result)
                 .font(.pretendardM(14))
+                .lineSpacing(5)
                 .padding(.leading, 39)
                 .padding(.trailing, 20)
                 .padding(.vertical, 20)
