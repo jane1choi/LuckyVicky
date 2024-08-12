@@ -70,6 +70,13 @@ extension View {
             .background(TransparentBackground())
         }
     }
+    
+    @ViewBuilder func hidden(_ isHidden: Bool) -> some View {
+        switch isHidden {
+        case true: self.hidden()
+        case false: self
+        }
+    }
 }
 
 struct TransparentBackground: UIViewRepresentable {
