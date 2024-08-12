@@ -26,4 +26,31 @@ enum Config {
         }
         return content
     }
+    
+    static var heejinSystemContent: String {
+        guard let content = Bundle.main.infoDictionary?["HEEJIN_SYSTEM_CONTENT"] as? String
+        else {
+            assertionFailure("HEEJIN_SYSTEM_CONTENT could not found.")
+            return ""
+        }
+        return content
+    }
+    
+    static var wooheeSystemContent: String {
+        guard let content = Bundle.main.infoDictionary?["WOOHEE_SYSTEM_CONTENT"] as? String
+        else {
+            assertionFailure("WOOHEE_SYSTEM_CONTENT could not found.")
+            return ""
+        }
+        return content
+    }
+    
+    static var heungminSystemContent: String {
+        guard let content = Bundle.main.infoDictionary?["HEUNGMIN_SYSTEM_CONTENT"] as? String
+        else {
+            assertionFailure("HEUNGMIN_SYSTEM_CONTENT could not found.")
+            return ""
+        }
+        return content
+    }
 }
