@@ -36,6 +36,7 @@ final class SelectCharacterViewModel: ViewModelable {
         case .onTapCharacterCell(let id):
             state.selectedId = id
         case .onTapSelectButton:
+            UserDefaults.selectedCharacterId = state.selectedId ?? 0
             state.isAlertPresented = state.chanceCount >= 10
         case .onAppear:
             checkUserChance()

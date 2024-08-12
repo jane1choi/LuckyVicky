@@ -9,5 +9,5 @@ import Foundation
 
 enum ConvertThoughtPath: Hashable {
     case inputTrouble
-    case showResult
+    case showResult(userInput: String, result: String)
 }

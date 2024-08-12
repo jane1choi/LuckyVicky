@@ -65,11 +65,16 @@ struct SelectCharacterView: View {
                 .navigationDestination(for: ConvertThoughtPath.self) { path in
                     switch path {
                     case .inputTrouble:
-                        let viewModel = InputTroubleViewModel()
+                        let service = GptAPIService()
+                        let repository = GptRepositoryImpl(apiService: service)
+                        let viewModel = InputTroubleViewModel(repository: repository)
                         InputTroubleView(viewModel: viewModel, path: $path)
-                    case .showResult:
+                    case .showResult(let userInput, let result):
                         let viewModel = ResultViewModel()
-                        ResultView(viewModel: viewModel, path: $path)
+                        ResultView(viewModel: viewModel, 
+                                   path: $path,
+                                   inputText: userInput, 
+                                   result: result)
                     }
                 }
                 .presentAlert(isPresented: $viewModel.state.isAlertPresented) {
@@ -88,7 +93,7 @@ struct SelectCharacterView: View {
     func characterCell(entity: CharacterEntity) -> some View {
         
         HStack(alignment: .center) {
-            Image(entity.imageName)
+            Image(entity.iconImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100 * (screenSize?.width ?? 0) / 375,
