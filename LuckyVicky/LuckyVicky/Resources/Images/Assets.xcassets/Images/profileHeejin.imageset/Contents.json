@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "profileHeeJin.png",
+      "filename" : "profileHeejin.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "profileHeeJin@2x.png",
+      "filename" : "profileHeejin@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "profileHeeJin@3x.png",
+      "filename" : "profileHeejin@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

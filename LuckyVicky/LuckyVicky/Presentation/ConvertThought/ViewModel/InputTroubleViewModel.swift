@@ -19,7 +19,8 @@ final class InputTroubleViewModel: ViewModelable {
                            inputText: "", 
                            result: "", 
                            hasErrorOccurred: false, 
-                           onCompleted: false)
+                           onCompleted: false,
+                           isLoading: false)
         self.repository = repository
     }
     
@@ -34,6 +35,7 @@ final class InputTroubleViewModel: ViewModelable {
         var result: String
         var hasErrorOccurred: Bool
         var onCompleted: Bool
+        var isLoading: Bool
     }
     
     func action(_ action: Action) {
@@ -41,6 +43,7 @@ final class InputTroubleViewModel: ViewModelable {
         case .isTextEditorEditing(let text):
             state.inputText = text
         case .onTapConvertButton:
+            state.isLoading = true
             fetchData(systemContent: state.characterContent,
                       userContent: state.inputText)
         }
@@ -59,9 +62,10 @@ extension InputTroubleViewModel {
             switch completion {
             case .finished:
                 self?.state.hasErrorOccurred = false
-            case .failure(let error):
+            case .failure(_):
                 self?.state.hasErrorOccurred = true
             }
+            self?.state.isLoading = false
         }, receiveValue: { [weak self] result in
             self?.state.result = result.reply
             self?.state.onCompleted = true
