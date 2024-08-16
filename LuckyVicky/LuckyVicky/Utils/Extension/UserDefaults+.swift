@@ -9,14 +9,24 @@ import Foundation
 
 extension UserDefaults {
     
+    typealias UserDefaultKeys = UserDefaults.Keys
+    
     enum Keys: String {
         case isFirstLaunch
+        case userId
         case selectedCharacterId
+        case usedCount
     }
     
-    @UserDefault<Bool>(key: UserDefaults.Keys.isFirstLaunch.rawValue, defaultValue: true)
+    @UserDefault<Bool>(key: UserDefaultKeys.isFirstLaunch.rawValue, defaultValue: true)
     static var isFirstLaunch
     
-    @UserDefault<Int>(key: UserDefaults.Keys.selectedCharacterId.rawValue, defaultValue: 0)
+    @UserDefault<String>(key: UserDefaultKeys.userId.rawValue, defaultValue: "")
+    static var userId
+    
+    @UserDefault<Int>(key: UserDefaultKeys.selectedCharacterId.rawValue, defaultValue: 0)
     static var selectedCharacterId
+    
+    @UserDefault<Int>(key:UserDefaultKeys.usedCount.rawValue, defaultValue: 0)
+    static var usedCount
 }
