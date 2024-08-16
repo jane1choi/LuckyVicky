@@ -20,6 +20,7 @@
 		771004D72C68D78000DB130D /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D62C68D78000DB130D /* KeyChain.swift */; };
 		771004D92C68D92F00DB130D /* KeyChain+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D82C68D92F00DB130D /* KeyChain+.swift */; };
 		771004DB2C69F17E00DB130D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004DA2C69F17D00DB130D /* LoadingView.swift */; };
+		771004DD2C6A39F300DB130D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 771004DC2C6A39F300DB130D /* GoogleService-Info.plist */; };
 		771004E02C6A3BAF00DB130D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 771004DF2C6A3BAF00DB130D /* FirebaseAuth */; };
 		771004E22C6A3C0F00DB130D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E12C6A3C0F00DB130D /* AppDelegate.swift */; };
 		771004E82C6E5CC200DB130D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 771004E72C6E5CC200DB130D /* FirebaseDatabase */; };
@@ -99,6 +100,7 @@
 		771004D62C68D78000DB130D /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		771004D82C68D92F00DB130D /* KeyChain+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyChain+.swift"; sourceTree = "<group>"; };
 		771004DA2C69F17D00DB130D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		771004DC2C6A39F300DB130D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		771004E12C6A3C0F00DB130D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		771004EB2C6E5F5100DB130D /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		771004ED2C6E630500DB130D /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				771650772C4E3465004D5868 /* Info.plist */,
+				771004DC2C6A39F300DB130D /* GoogleService-Info.plist */,
 				773EB1FC2C5A35C100ED1345 /* Config.xcconfig */,
 			);
 			path = Supports;
@@ -660,6 +663,7 @@
 				771650742C4E3081004D5868 /* Pretendard-SemiBold.otf in Resources */,
 				77EFFDA62C3F87C5009E64BB /* Color.xcassets in Resources */,
 				771650702C4E3061004D5868 /* Pretendard-Medium.otf in Resources */,
+				771004DD2C6A39F300DB130D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
