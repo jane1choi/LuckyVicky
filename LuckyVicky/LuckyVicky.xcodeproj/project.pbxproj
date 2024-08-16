@@ -20,7 +20,9 @@
 		771004D72C68D78000DB130D /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D62C68D78000DB130D /* KeyChain.swift */; };
 		771004D92C68D92F00DB130D /* KeyChain+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004D82C68D92F00DB130D /* KeyChain+.swift */; };
 		771004DB2C69F17E00DB130D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004DA2C69F17D00DB130D /* LoadingView.swift */; };
+		771004E02C6A3BAF00DB130D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 771004DF2C6A3BAF00DB130D /* FirebaseAuth */; };
 		771004E22C6A3C0F00DB130D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E12C6A3C0F00DB130D /* AppDelegate.swift */; };
+		771004E82C6E5CC200DB130D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 771004E72C6E5CC200DB130D /* FirebaseDatabase */; };
 		771004EC2C6E5F5100DB130D /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004EB2C6E5F5100DB130D /* UserDTO.swift */; };
 		771004EE2C6E630500DB130D /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004ED2C6E630500DB130D /* UserEntity.swift */; };
 		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
@@ -160,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				773B6F032C5908B20035524B /* Moya in Frameworks */,
+				771004E02C6A3BAF00DB130D /* FirebaseAuth in Frameworks */,
+				771004E82C6E5CC200DB130D /* FirebaseDatabase in Frameworks */,
 				773B6F012C5908B20035524B /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +570,8 @@
 			packageProductDependencies = (
 				773B6F002C5908B20035524B /* CombineMoya */,
 				773B6F022C5908B20035524B /* Moya */,
+				771004DF2C6A3BAF00DB130D /* FirebaseAuth */,
+				771004E72C6E5CC200DB130D /* FirebaseDatabase */,
 			);
 			productName = LuckyVicky;
 			productReference = 77EFFD652C3F8418009E64BB /* LuckyVicky.app */;
@@ -623,6 +629,7 @@
 			mainGroup = 77EFFD5C2C3F8418009E64BB;
 			packageReferences = (
 				773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */,
+				771004DE2C6A3BAF00DB130D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 77EFFD662C3F8418009E64BB /* Products */;
 			projectDirPath = "";
@@ -1065,6 +1072,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		771004DE2C6A3BAF00DB130D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
 		773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1076,6 +1091,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		771004DF2C6A3BAF00DB130D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 771004DE2C6A3BAF00DB130D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		771004E72C6E5CC200DB130D /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 771004DE2C6A3BAF00DB130D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		773B6F002C5908B20035524B /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */;
