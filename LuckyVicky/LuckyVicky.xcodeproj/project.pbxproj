@@ -23,6 +23,7 @@
 		771004DD2C6A39F300DB130D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 771004DC2C6A39F300DB130D /* GoogleService-Info.plist */; };
 		771004E02C6A3BAF00DB130D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 771004DF2C6A3BAF00DB130D /* FirebaseAuth */; };
 		771004E22C6A3C0F00DB130D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E12C6A3C0F00DB130D /* AppDelegate.swift */; };
+		771004E42C6A65DC00DB130D /* SignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E32C6A65DC00DB130D /* SignRepository.swift */; };
 		771004E82C6E5CC200DB130D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 771004E72C6E5CC200DB130D /* FirebaseDatabase */; };
 		771004EC2C6E5F5100DB130D /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004EB2C6E5F5100DB130D /* UserDTO.swift */; };
 		771004EE2C6E630500DB130D /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004ED2C6E630500DB130D /* UserEntity.swift */; };
@@ -102,6 +103,7 @@
 		771004DA2C69F17D00DB130D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		771004DC2C6A39F300DB130D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		771004E12C6A3C0F00DB130D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		771004E32C6A65DC00DB130D /* SignRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRepository.swift; sourceTree = "<group>"; };
 		771004EB2C6E5F5100DB130D /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		771004ED2C6E630500DB130D /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				773EB1F42C5A0CD300ED1345 /* GptRepository.swift */,
+				771004E32C6A65DC00DB130D /* SignRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */,
 				77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */,
 				773EB1FE2C5A386100ED1345 /* Config.swift in Sources */,
+				771004E42C6A65DC00DB130D /* SignRepository.swift in Sources */,
 				77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */,
 				771004EE2C6E630500DB130D /* UserEntity.swift in Sources */,
 				771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */,
