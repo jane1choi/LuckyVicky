@@ -19,10 +19,14 @@ struct LuckyVickyApp: App {
                 case .splash:
                     SplashView()
                 case .login:
-                    let viewModel = LoginViewModel()
+                    let signRepository = SignRepositoryImpl()
+                    let userRepository = UserDBRepositoryImpl()
+                    let useCase = LoginUseCaseImpl(signRepository: signRepository, userRepository: userRepository)
+                    let viewModel = LoginViewModel(useCase: useCase)
                     LoginView(viewModel: viewModel)
                 case .main:
-                    let viewModel = SelectCharacterViewModel()
+                    let useCase = UserDataUseCaseImpl(repository: UserDBRepositoryImpl())
+                    let viewModel = SelectCharacterViewModel(useCase: useCase)
                     SelectCharacterView(viewModel: viewModel)
                 }
             }
