@@ -28,6 +28,9 @@
 		771004EA2C6E5E9C00DB130D /* UserDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E92C6E5E9C00DB130D /* UserDBRepository.swift */; };
 		771004EC2C6E5F5100DB130D /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004EB2C6E5F5100DB130D /* UserDTO.swift */; };
 		771004EE2C6E630500DB130D /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004ED2C6E630500DB130D /* UserEntity.swift */; };
+		771004F12C6E63C700DB130D /* UserDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004F02C6E63C700DB130D /* UserDataUseCase.swift */; };
+		771004F52C6F553B00DB130D /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004F42C6F553B00DB130D /* LoginUseCase.swift */; };
+		771004F72C6F6C8F00DB130D /* ConvertTroubleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004F62C6F6C8F00DB130D /* ConvertTroubleUseCase.swift */; };
 		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
 		771650702C4E3061004D5868 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */; };
 		771650722C4E3074004D5868 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771650712C4E3074004D5868 /* Pretendard-Regular.otf */; };
@@ -108,6 +111,9 @@
 		771004E92C6E5E9C00DB130D /* UserDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBRepository.swift; sourceTree = "<group>"; };
 		771004EB2C6E5F5100DB130D /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		771004ED2C6E630500DB130D /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		771004F02C6E63C700DB130D /* UserDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataUseCase.swift; sourceTree = "<group>"; };
+		771004F42C6F553B00DB130D /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		771004F62C6F6C8F00DB130D /* ConvertTroubleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTroubleUseCase.swift; sourceTree = "<group>"; };
 		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
 		7716506F2C4E3061004D5868 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		771650712C4E3074004D5868 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -237,6 +243,16 @@
 				771004D02C68913200DB130D /* UserDefault.swift */,
 			);
 			path = Wrapper;
+			sourceTree = "<group>";
+		};
+		771004EF2C6E63A300DB130D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				771004F02C6E63C700DB130D /* UserDataUseCase.swift */,
+				771004F42C6F553B00DB130D /* LoginUseCase.swift */,
+				771004F62C6F6C8F00DB130D /* ConvertTroubleUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		773B6EFD2C58BA110035524B /* Common */ = {
@@ -454,6 +470,7 @@
 		77EFFD9C2C3F86B8009E64BB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				771004EF2C6E63A300DB130D /* UseCases */,
 				77EFFD9D2C3F86C7009E64BB /* Repositories */,
 				77EFFD9E2C3F86D8009E64BB /* Network */,
 			);
@@ -712,8 +729,10 @@
 				773EB1EC2C59FAD900ED1345 /* GptResponseDTO.swift in Sources */,
 				771004B42C650D5900DB130D /* SelectCharacterViewModel.swift in Sources */,
 				773EB1E82C59F98200ED1345 /* GptCommonDTO.swift in Sources */,
+				771004F72C6F6C8F00DB130D /* ConvertTroubleUseCase.swift in Sources */,
 				773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */,
 				771004D92C68D92F00DB130D /* KeyChain+.swift in Sources */,
+				771004F52C6F553B00DB130D /* LoginUseCase.swift in Sources */,
 				77D65EFF2C53948600B4A2EC /* LuckyVickyNavigationBar.swift in Sources */,
 				77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */,
 				77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */,
@@ -738,6 +757,7 @@
 				77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */,
 				771004D12C68913200DB130D /* UserDefault.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
+				771004F12C6E63C700DB130D /* UserDataUseCase.swift in Sources */,
 				773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */,
 				771004D72C68D78000DB130D /* KeyChain.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,
