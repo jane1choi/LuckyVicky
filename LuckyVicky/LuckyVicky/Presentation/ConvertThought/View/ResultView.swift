@@ -40,7 +40,8 @@ struct ResultView: View {
                             return
                         }
                         viewModel.action(.onTapSaveImageButton(data: imageData))
-                    }), (LuckyVickyImage.share, {})]
+                    })
+                ]
             )
             
             resultChatView(nickname: viewModel.state.characterNickname, 
