@@ -104,6 +104,9 @@ iOSInjectionProject/
 ### DS_Store ###
 .DS_Store
 
+## plist
+GoogleService-Info.plist
+
 ## Config
 *.xcconfig
 
