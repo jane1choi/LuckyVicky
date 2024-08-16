@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     @StateObject private var viewModel: LoginViewModel
@@ -44,23 +45,28 @@ struct LoginView: View {
                 .font(.pretendardM(10))
                 .foregroundStyle(.white)
                 .padding(.bottom, 19)
-            
-            LuckyVickyButton(
-                image: LuckyVickyImage.appleLogo,
-                title: "Apple로 로그인",
-                isActive: true,
-                action: {
-                    viewModel.action(.onTapLoginButton)
-                }
-            )
+
+            SignInWithAppleButton(onRequest: { request in
+                viewModel.action(.onTapAppleLoginButton(request: request))
+            }, onCompletion: { result in
+                viewModel.action(.onCompletedAuthorization(result: result))
+            })
+            .signInWithAppleButtonStyle(.white)
+            .frame(height: 52)
+            .cornerRadius(10)
             .padding(.horizontal, 22)
             .padding(.bottom, 12)
             .fullScreenCover(isPresented: $viewModel.state.isPresented) {
-                let viewModel = SelectCharacterViewModel()
+                let useCase = UserDataUseCaseImpl(repository: UserDBRepositoryImpl())
+                let viewModel = SelectCharacterViewModel(useCase: useCase)
                 SelectCharacterView(viewModel: viewModel)
             }
         }
         .background(Color(.mainBlack))
+        .overlay {
+            LoadingView()
+                .hidden(!viewModel.state.isLoading)
+        }
         .presentAlert(isPresented: $viewModel.state.hasErrorOccurred) {
             LuckyVickyAlertView(
                 isPresented: $viewModel.state.hasErrorOccurred,
@@ -68,8 +74,4 @@ struct LoginView: View {
             )
         }
     }
-}
-
-#Preview {
-    LoginView(viewModel: LoginViewModel())
 }

@@ -66,8 +66,11 @@ struct SelectCharacterView: View {
                     switch path {
                     case .inputTrouble:
                         let service = GptAPIService()
-                        let repository = GptRepositoryImpl(apiService: service)
-                        let viewModel = InputTroubleViewModel(repository: repository)
+                        let gptRepository = GptRepositoryImpl(apiService: service)
+                        let userRepository = UserDBRepositoryImpl()
+                        let useCase = ConvertTroubleUseCaseImpl(gptRepository: gptRepository,
+                                                                userRepository: userRepository)
+                        let viewModel = InputTroubleViewModel(useCase: useCase)
                         InputTroubleView(viewModel: viewModel, path: $path)
                     case .showResult(let userInput, let result):
                         let viewModel = ResultViewModel()
@@ -83,6 +86,11 @@ struct SelectCharacterView: View {
                 }
             }
             .background(Color(.mainBlack))
+            .navigationBarBackButtonHidden(true)
+            .overlay {
+                LoadingView()
+                    .hidden(!viewModel.state.isLoading)
+            }
             .onAppear {
                 viewModel.action(.onAppear)
             }
@@ -120,9 +128,5 @@ struct SelectCharacterView: View {
             viewModel.action(.onTapCharacterCell(id: entity.id))
         }
     }
-}
-
-#Preview {
-    SelectCharacterView(viewModel: SelectCharacterViewModel())
 }
 

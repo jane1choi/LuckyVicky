@@ -16,6 +16,7 @@ enum LuckyVickyImage: String {
     case backArrow
     case share
     case save
+    case setting
     case profileWonyoung
     case profileWoohee
     case profileHeejin

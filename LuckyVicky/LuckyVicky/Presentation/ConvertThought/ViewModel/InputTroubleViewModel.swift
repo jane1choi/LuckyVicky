@@ -10,10 +10,10 @@ import Combine
 
 final class InputTroubleViewModel: ViewModelable {
     @Published var state: State
-    private let repository: GptRepository
     private var cancellables = Set<AnyCancellable>()
+    private let useCase: ConvertTroubleUseCase
     
-    init(repository: GptRepository) {
+    init(useCase: ConvertTroubleUseCase) {
         let id = UserDefaults.selectedCharacterId
         self.state = State(characterContent: CharacterEntity.characters[id].systemContent,
                            inputText: "", 
@@ -21,7 +21,7 @@ final class InputTroubleViewModel: ViewModelable {
                            hasErrorOccurred: false, 
                            onCompleted: false,
                            isLoading: false)
-        self.repository = repository
+        self.useCase = useCase
     }
     
     enum Action {
@@ -56,12 +56,12 @@ extension InputTroubleViewModel {
         systemContent: String,
         userContent: String
     ) {
-        repository.fetchResultData(systemContent: systemContent,
+        useCase.fetchResultData(systemContent: systemContent,
                                    userContent: userContent)
         .sink(receiveCompletion: { [weak self] completion in
             switch completion {
             case .finished:
-                self?.state.hasErrorOccurred = false
+                self?.saveData()
             case .failure(_):
                 self?.state.hasErrorOccurred = true
             }
@@ -70,5 +70,18 @@ extension InputTroubleViewModel {
             self?.state.result = result.reply
             self?.state.onCompleted = true
         }).store(in: &cancellables)
+    }
+    
+    private func saveData() {
+        useCase.updateUserData(userId: UserDefaults.userId,
+                               lastUsedDate: Date().today,
+                               usedCount: UserDefaults.usedCount + 1)
+        .sink(receiveCompletion: { [weak self] completion in
+            if case let .failure(error) = completion {
+                self?.state.hasErrorOccurred = true
+            }
+        },
+              receiveValue: { }
+        ).store(in: &cancellables)
     }
 }

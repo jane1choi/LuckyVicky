@@ -6,15 +6,20 @@
 //
 
 import Foundation
+import Combine
 
 final class SelectCharacterViewModel: ViewModelable {
     @Published var state: State
+    private let useCase: UserDataUseCase
+    private var cancellables = Set<AnyCancellable>()
     
-    init() {
-        self.state = State(chanceCount: 0,
+    init(useCase: UserDataUseCase) {
+        self.state = State(isLoading: false,
+                           chanceCount: 0,
                            characterList: CharacterEntity.characters,
                            isAlertPresented: false, 
                            hasErrorOccurred: false)
+        self.useCase = useCase
     }
     
     enum Action {
@@ -24,6 +29,7 @@ final class SelectCharacterViewModel: ViewModelable {
     }
     
     struct State {
+        var isLoading: Bool
         var selectedId: Int?
         var chanceCount: Int
         var characterList: [CharacterEntity]
@@ -39,6 +45,7 @@ final class SelectCharacterViewModel: ViewModelable {
             UserDefaults.selectedCharacterId = state.selectedId ?? 0
             state.isAlertPresented = state.chanceCount >= 10
         case .onAppear:
+            state.isLoading = true
             checkUserChance()
             state.selectedId = nil
         }
@@ -48,6 +55,25 @@ final class SelectCharacterViewModel: ViewModelable {
 extension SelectCharacterViewModel {
     
     private func checkUserChance() {
-        
+        useCase.fetchUserData(userId: UserDefaults.userId)
+            .sink { [weak self] completion in
+    
+                switch completion {
+                case .failure(_):
+                    self?.state.isLoading = false
+                    self?.state.hasErrorOccurred = true
+                case .finished:
+                    self?.state.isLoading = false
+                }
+            } receiveValue: { [weak self] value in
+                if value.lastUsedDate != Date().today {
+                    self?.state.chanceCount = 0
+                    UserDefaults.usedCount = 0
+                } else {
+                    self?.state.chanceCount = value.usedCount
+                    UserDefaults.usedCount = value.usedCount
+                }
+            }.store(in: &cancellables)
+
     }
 }
