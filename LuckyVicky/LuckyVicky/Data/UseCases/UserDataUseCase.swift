@@ -11,6 +11,7 @@ import Combine
 protocol UserDataUseCase {
     func fetchUserData(userId: String) -> AnyPublisher<UserEntity, NetworkError>
     func updateUserData(userId: String, lastUsedDate: String, usedCount: Int) -> AnyPublisher<Void, NetworkError>
+    func deleteAccount() -> AnyPublisher<Void, NetworkError>
 }
 
 final class UserDataUseCaseImpl: UserDataUseCase {
@@ -43,6 +44,14 @@ final class UserDataUseCaseImpl: UserDataUseCase {
         
         return repository.updateUserData(userId: userId, value: data)
             .mapError { _ in NetworkError.serverError }
+            .eraseToAnyPublisher()
+    }
+    
+    func deleteAccount() -> AnyPublisher<Void, NetworkError> {
+        repository.deleteUserData(userId: UserDefaults.userId)
+            .mapError{ _ in
+                return .serverError
+            }
             .eraseToAnyPublisher()
     }
 }

@@ -13,7 +13,7 @@ import Combine
 import FirebaseAuth
 
 enum AuthenticationError: Error {
-    case clinetIDError
+    case clientIDError
     case tokenError
     case invalidated
 }
@@ -133,7 +133,7 @@ extension SignRepositoryImpl {
             case let .success(user):
                 completion(.success(user))
             case let .failure(error):
-                completion(.failure(AuthenticationError.clinetIDError))
+                completion(.failure(AuthenticationError.clientIDError))
             }
         }
     }
