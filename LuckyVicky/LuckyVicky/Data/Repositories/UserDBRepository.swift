@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+import FirebaseAuth
 import FirebaseDatabase
 
 enum DBError: Error {
@@ -19,6 +20,7 @@ protocol UserDBRepository {
     func createUser(_ dto: UserDTO) -> AnyPublisher<Void, DBError>
     func getUser(userId: String) -> AnyPublisher<UserDTO, DBError>
     func updateUserData(userId: String, value: [String: Any]) -> AnyPublisher<Void, DBError>
+    func deleteUserData(userId: String) -> AnyPublisher<Void, DBError>
 }
 
 final class UserDBRepositoryImpl: UserDBRepository {
@@ -75,6 +77,24 @@ final class UserDBRepositoryImpl: UserDBRepository {
                     promise(.failure(.error(error)))
                 } else {
                     promise (.success(()))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func deleteUserData(userId: String) -> AnyPublisher<Void, DBError> {
+        return Future<Void, DBError> { [weak self] promise in
+            self?.db.child("Users/\(userId)").removeValue() { error, snapshot in
+                if let error {
+                    promise(.failure(.error(error)))
+                } else {
+                    do {
+                        try Auth.auth().signOut()
+                        promise(.success(()))
+                    } catch {
+                        promise(.failure(.error(error)))
+                    }
                 }
             }
         }

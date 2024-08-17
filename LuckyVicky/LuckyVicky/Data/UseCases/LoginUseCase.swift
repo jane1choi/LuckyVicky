@@ -30,6 +30,20 @@ final class LoginUseCaseImpl: LoginUseCase {
     func executeSignIn(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<UserEntity, NetworkError> {
         if let uuid = signRepository.checkAuthenticationState() {
             return fetchUserData(userId: uuid)
+                .catch { [weak self] _ -> AnyPublisher<UserEntity, NetworkError> in
+                    guard let self = self else {
+                        return Empty().eraseToAnyPublisher()
+                    }
+                    return self.signRepository.handleSignInWithAppleCompletion(authorization, none: nonce)
+                        .mapError { _ in
+                            NetworkError.unauthorized
+                        }
+                        .flatMap { user -> AnyPublisher<UserEntity, NetworkError> in
+                            self.createUser(user.toEntity())
+                        }
+                        .eraseToAnyPublisher()
+                }
+                .eraseToAnyPublisher()
         } else {
             return signRepository.handleSignInWithAppleCompletion(authorization, none: nonce)
                 .mapError { _ in

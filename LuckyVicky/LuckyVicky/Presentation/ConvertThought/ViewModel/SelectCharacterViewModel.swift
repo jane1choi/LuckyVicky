@@ -18,7 +18,9 @@ final class SelectCharacterViewModel: ViewModelable {
                            chanceCount: 0,
                            characterList: CharacterEntity.characters,
                            isAlertPresented: false, 
-                           hasErrorOccurred: false)
+                           isDeleteAccountAlertPresented: false, 
+                           hasErrorOccurred: false, 
+                           hasAccountDeleted: false)
         self.useCase = useCase
     }
     
@@ -26,6 +28,8 @@ final class SelectCharacterViewModel: ViewModelable {
         case onTapCharacterCell(id: Int)
         case onTapSelectButton
         case onAppear
+        case onTapSettingButton
+        case onTapdeleteAccountButton
     }
     
     struct State {
@@ -34,7 +38,9 @@ final class SelectCharacterViewModel: ViewModelable {
         var chanceCount: Int
         var characterList: [CharacterEntity]
         var isAlertPresented: Bool
+        var isDeleteAccountAlertPresented: Bool
         var hasErrorOccurred: Bool
+        var hasAccountDeleted: Bool
     }
     
     func action(_ action: Action) {
@@ -48,6 +54,21 @@ final class SelectCharacterViewModel: ViewModelable {
             state.isLoading = true
             checkUserChance()
             state.selectedId = nil
+        case .onTapSettingButton:
+            state.isDeleteAccountAlertPresented = true
+        case .onTapdeleteAccountButton:
+            state.isLoading = true
+            useCase.deleteAccount()
+                .delay(for: .seconds(2), scheduler: RunLoop.main)
+                .sink { [weak self] _ in
+                    self?.state.isLoading = false
+                    self?.state.hasErrorOccurred = true
+                } receiveValue: { [weak self] _ in
+                    self?.state.isLoading = false
+                    UserDefaults.standard.removeAllUserDefaulsKeys()
+                    self?.state.hasAccountDeleted = true
+                }.store(in: &cancellables)
+            
         }
     }
 }

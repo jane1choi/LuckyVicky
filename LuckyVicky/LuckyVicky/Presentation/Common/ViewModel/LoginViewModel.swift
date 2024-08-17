@@ -53,14 +53,15 @@ extension LoginViewModel {
             
             useCase.executeSignIn(authorization, nonce: nonce)
                 .sink { [weak self] completion in
-                    if case .failure = completion {
-                        self?.state.isLoading = false
+                    if case .failure( _) = completion {
+                        self?.state.hasErrorOccurred = true
                     }
+                    self?.state.isLoading = false
                 } receiveValue: { [weak self] user in
                     self?.updateStateAfterLoginSuccess(user: user)
                 }.store(in: &cancellables)
       
-        } else if case let .failure(error) = result {
+        } else if case .failure(_) = result {
             state.isLoading = false
             state.hasErrorOccurred = true
         }
