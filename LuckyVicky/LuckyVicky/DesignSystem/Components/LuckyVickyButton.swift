@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LuckyVickyButton: View {
+    private let type: ButtonType
     private let size: ButtonSize
     private let image: LuckyVickyImage?
     private let title: String
@@ -15,12 +16,14 @@ struct LuckyVickyButton: View {
     private let action: () -> Void
     
     init(
+        type: ButtonType = .confirm,
         size: ButtonSize = .normal,
         image: LuckyVickyImage? = .none,
         title: String,
         isActive: Bool = false,
         action: @escaping () -> Void
     ) {
+        self.type = type
         self.size = size
         self.image = image
         self.title = title
@@ -45,25 +48,51 @@ struct LuckyVickyButton: View {
             .frame(maxWidth: .infinity)
             .frame(height: size.height)
         })
-        .buttonStyle(CommonButtonStyle(isActive: isActive))
+        .buttonStyle(CommonButtonStyle(isActive: isActive, type: type))
     }
 }
 
 struct CommonButtonStyle: ButtonStyle {
     private let isActive: Bool
+    private let type: ButtonType
     
     init(
-        isActive: Bool
+        isActive: Bool,
+        type: ButtonType
     ) {
         self.isActive = isActive
+        self.type = type
     }
     
     func makeBody(configuration: Configuration) -> some View {
+        var foregroundColor: Color {
+            switch type {
+            case .confirm:
+                isActive ? .mainBlack : .white
+            case .cancel:
+                Color.white
+            }
+        }
+        
+        var backgroundColor: Color {
+            switch type {
+            case .confirm:
+                isActive ? .mainGreen : .lightGreen
+            case .cancel:
+                Color(.gray2)
+            }
+        }
+        
         configuration.label
-            .foregroundStyle(isActive ? .mainBlack : .white)
-            .background(isActive ? .mainGreen : .lightGreen)
+            .foregroundStyle(foregroundColor)
+            .background(backgroundColor)
             .cornerRadius(10)
     }
+}
+
+enum ButtonType {
+    case confirm
+    case cancel
 }
 
 enum ButtonSize {

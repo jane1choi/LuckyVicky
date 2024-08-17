@@ -18,8 +18,15 @@ struct SelectCharacterView: View {
     var body: some View {
         NavigationStack(path: $path) {
             VStack(spacing: 0) {
-                Spacer()
-                    .frame(height: 52)
+                LuckyVickyNavigationBar(
+                    rightItemList: [(
+                        LuckyVickyImage.setting, {
+                            viewModel.action(.onTapSettingButton)
+                        }
+                    )]
+                )
+                .padding(.bottom, 8)
+                
                 HStack {
                     VStack(alignment: .leading) {
                         Text("오늘 하루\n힘든 일이 있었나요?")
@@ -80,10 +87,6 @@ struct SelectCharacterView: View {
                                    result: result)
                     }
                 }
-                .presentAlert(isPresented: $viewModel.state.isAlertPresented) {
-                    LuckyVickyAlertView(isPresented: $viewModel.state.isAlertPresented,
-                                        message: "오늘 이용 가능 횟수를\n모두 소진했습니다.")
-                }
             }
             .background(Color(.mainBlack))
             .navigationBarBackButtonHidden(true)
@@ -93,6 +96,28 @@ struct SelectCharacterView: View {
             }
             .onAppear {
                 viewModel.action(.onAppear)
+            }
+            .fullScreenCover(isPresented: $viewModel.state.hasAccountDeleted) {
+                let signRepository = SignRepositoryImpl()
+                let userRepository = UserDBRepositoryImpl()
+                let useCase = LoginUseCaseImpl(signRepository: signRepository, userRepository: userRepository)
+                let viewModel = LoginViewModel(useCase: useCase)
+                LoginView(viewModel: viewModel)
+            }
+            .presentAlert(isPresented: $viewModel.state.isAlertPresented) {
+                LuckyVickyAlertView(isPresented: $viewModel.state.isAlertPresented,
+                                    message: "오늘 이용권을 모두 사용했습니다.\n내일 다시 이용해주세요.")
+            }
+            .presentAlert(isPresented: $viewModel.state.isDeleteAccountAlertPresented) {
+                LuckyVickyAlertView(type: .twoButton,
+                                    isPresented: $viewModel.state.isDeleteAccountAlertPresented,
+                                    title: "정말로 계정을 삭제하시겠습니까?",
+                                    message: "회원 정보는 안전하게 삭제되며,\n언제든 다시 가입할 수 있습니다.",
+                                    action: { viewModel.action(.onTapdeleteAccountButton)})
+            }
+            .presentAlert(isPresented: $viewModel.state.hasErrorOccurred) {
+                LuckyVickyAlertView(isPresented: $viewModel.state.hasErrorOccurred,
+                                    message: "네트워크 오류가 발생했습니다.\n잠시 후 다시 시도해주세요.")
             }
         }
     }
