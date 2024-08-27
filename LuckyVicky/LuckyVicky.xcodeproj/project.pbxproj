@@ -107,7 +107,7 @@
 		771004DA2C69F17D00DB130D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		771004DC2C6A39F300DB130D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		771004E12C6A3C0F00DB130D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		771004E32C6A65DC00DB130D /* SignRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRepository.swift; sourceTree = "<group>"; };
+		771004E32C6A65DC00DB130D /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 		771004E92C6E5E9C00DB130D /* UserDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBRepository.swift; sourceTree = "<group>"; };
 		771004EB2C6E5F5100DB130D /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		771004ED2C6E630500DB130D /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
@@ -299,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				773EB1EE2C59FC3400ED1345 /* GptAPI.swift */,
-				773EB1F02C5A069B00ED1345 /* GptAPIService.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -317,6 +316,16 @@
 				773EB2212C5B521100ED1345 /* LuckyVickyTests.swift */,
 			);
 			path = LuckyVickyTests;
+			sourceTree = "<group>";
+		};
+		775029A92C7C7FFE00C8C5FC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				771004E32C6A65DC00DB130D /* SignService.swift */,
+				771004E92C6E5E9C00DB130D /* FirebaseDBService.swift */,
+				773EB1F02C5A069B00ED1345 /* GptAPIService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
@@ -718,6 +727,7 @@
 				77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */,
 				773EB1FE2C5A386100ED1345 /* Config.swift in Sources */,
 				771004E42C6A65DC00DB130D /* SignRepository.swift in Sources */,
+				771004E42C6A65DC00DB130D /* SignService.swift in Sources */,
 				77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */,
 				771004EE2C6E630500DB130D /* UserEntity.swift in Sources */,
 				771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */,
