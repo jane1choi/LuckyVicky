@@ -19,14 +19,20 @@ struct LuckyVickyApp: App {
                 case .splash:
                     SplashView()
                 case .login:
-                    let signRepository = SignRepositoryImpl()
-                    let userRepository = UserDBRepositoryImpl()
+                    let signService = SignService()
+                    let dbService = FirebaseDBService()
+                    let signRepository = SignRepositoryImpl(service: signService)
+                    let userRepository = UserRepositoryImpl(service: dbService)
                     let useCase = LoginUseCaseImpl(signRepository: signRepository, userRepository: userRepository)
                     let viewModel = LoginViewModel(useCase: useCase)
                     LoginView(viewModel: viewModel)
                 case .main:
-                    let useCase = UserDataUseCaseImpl(repository: UserDBRepositoryImpl())
-                    let viewModel = SelectCharacterViewModel(useCase: useCase)
+                    let dbService = FirebaseDBService()
+                    let userRepository = UserRepositoryImpl(service: dbService)
+                    let fetchUserDataUseCase = FetchUserDataUseCaseImpl(userRepository: userRepository)
+                    let deleteAccountUseCase = DeleteAccountUseCaseImpl(userRepository: userRepository)
+                    let viewModel = SelectCharacterViewModel(fetchUserDataUseCase: fetchUserDataUseCase,
+                                                             deleteAccountUseCase: deleteAccountUseCase)
                     SelectCharacterView(viewModel: viewModel)
                 }
             }

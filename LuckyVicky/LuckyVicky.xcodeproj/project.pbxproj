@@ -23,12 +23,11 @@
 		771004DD2C6A39F300DB130D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 771004DC2C6A39F300DB130D /* GoogleService-Info.plist */; };
 		771004E02C6A3BAF00DB130D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 771004DF2C6A3BAF00DB130D /* FirebaseAuth */; };
 		771004E22C6A3C0F00DB130D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E12C6A3C0F00DB130D /* AppDelegate.swift */; };
-		771004E42C6A65DC00DB130D /* SignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E32C6A65DC00DB130D /* SignRepository.swift */; };
+		771004E42C6A65DC00DB130D /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E32C6A65DC00DB130D /* SignService.swift */; };
 		771004E82C6E5CC200DB130D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 771004E72C6E5CC200DB130D /* FirebaseDatabase */; };
-		771004EA2C6E5E9C00DB130D /* UserDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E92C6E5E9C00DB130D /* UserDBRepository.swift */; };
+		771004EA2C6E5E9C00DB130D /* FirebaseDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004E92C6E5E9C00DB130D /* FirebaseDBService.swift */; };
 		771004EC2C6E5F5100DB130D /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004EB2C6E5F5100DB130D /* UserDTO.swift */; };
 		771004EE2C6E630500DB130D /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004ED2C6E630500DB130D /* UserEntity.swift */; };
-		771004F12C6E63C700DB130D /* UserDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004F02C6E63C700DB130D /* UserDataUseCase.swift */; };
 		771004F52C6F553B00DB130D /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004F42C6F553B00DB130D /* LoginUseCase.swift */; };
 		771004F72C6F6C8F00DB130D /* ConvertTroubleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771004F62C6F6C8F00DB130D /* ConvertTroubleUseCase.swift */; };
 		7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */; };
@@ -55,6 +54,10 @@
 		773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F42C5A0CD300ED1345 /* GptRepository.swift */; };
 		773EB1FE2C5A386100ED1345 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1FD2C5A386100ED1345 /* Config.swift */; };
 		773EB2222C5B521100ED1345 /* LuckyVickyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB2212C5B521100ED1345 /* LuckyVickyTests.swift */; };
+		775029AB2C7C923500C8C5FC /* FetchUserDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AA2C7C923500C8C5FC /* FetchUserDataUseCase.swift */; };
+		775029AD2C7C926300C8C5FC /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AC2C7C926300C8C5FC /* UserRepository.swift */; };
+		775029AF2C7CC24300C8C5FC /* SignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AE2C7CC24300C8C5FC /* SignRepository.swift */; };
+		775029B12C7D92CC00C8C5FC /* DeleteAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029B02C7D92CC00C8C5FC /* DeleteAccountUseCase.swift */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
 		77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */; };
@@ -107,11 +110,10 @@
 		771004DA2C69F17D00DB130D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		771004DC2C6A39F300DB130D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		771004E12C6A3C0F00DB130D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		771004E32C6A65DC00DB130D /* SignRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRepository.swift; sourceTree = "<group>"; };
-		771004E92C6E5E9C00DB130D /* UserDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBRepository.swift; sourceTree = "<group>"; };
+		771004E32C6A65DC00DB130D /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
+		771004E92C6E5E9C00DB130D /* FirebaseDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDBService.swift; sourceTree = "<group>"; };
 		771004EB2C6E5F5100DB130D /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		771004ED2C6E630500DB130D /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
-		771004F02C6E63C700DB130D /* UserDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataUseCase.swift; sourceTree = "<group>"; };
 		771004F42C6F553B00DB130D /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		771004F62C6F6C8F00DB130D /* ConvertTroubleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTroubleUseCase.swift; sourceTree = "<group>"; };
 		7716506D2C4D6CDB004D5868 /* SelectCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,10 @@
 		773EB1FD2C5A386100ED1345 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		773EB21F2C5B521100ED1345 /* LuckyVickyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuckyVickyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		773EB2212C5B521100ED1345 /* LuckyVickyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyTests.swift; sourceTree = "<group>"; };
+		775029AA2C7C923500C8C5FC /* FetchUserDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserDataUseCase.swift; sourceTree = "<group>"; };
+		775029AC2C7C926300C8C5FC /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		775029AE2C7CC24300C8C5FC /* SignRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRepository.swift; sourceTree = "<group>"; };
+		775029B02C7D92CC00C8C5FC /* DeleteAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountUseCase.swift; sourceTree = "<group>"; };
 		77716EC52C5762DD00ADE967 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		77716EC92C57B48900ADE967 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		7798B2992C59541A00BC7D1A /* LuckyVicky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LuckyVicky.entitlements; sourceTree = "<group>"; };
@@ -248,9 +254,10 @@
 		771004EF2C6E63A300DB130D /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				771004F02C6E63C700DB130D /* UserDataUseCase.swift */,
 				771004F42C6F553B00DB130D /* LoginUseCase.swift */,
+				775029B02C7D92CC00C8C5FC /* DeleteAccountUseCase.swift */,
 				771004F62C6F6C8F00DB130D /* ConvertTroubleUseCase.swift */,
+				775029AA2C7C923500C8C5FC /* FetchUserDataUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -299,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				773EB1EE2C59FC3400ED1345 /* GptAPI.swift */,
-				773EB1F02C5A069B00ED1345 /* GptAPIService.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -317,6 +323,16 @@
 				773EB2212C5B521100ED1345 /* LuckyVickyTests.swift */,
 			);
 			path = LuckyVickyTests;
+			sourceTree = "<group>";
+		};
+		775029A92C7C7FFE00C8C5FC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				771004E32C6A65DC00DB130D /* SignService.swift */,
+				771004E92C6E5E9C00DB130D /* FirebaseDBService.swift */,
+				773EB1F02C5A069B00ED1345 /* GptAPIService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
@@ -481,8 +497,8 @@
 			isa = PBXGroup;
 			children = (
 				773EB1F42C5A0CD300ED1345 /* GptRepository.swift */,
-				771004E32C6A65DC00DB130D /* SignRepository.swift */,
-				771004E92C6E5E9C00DB130D /* UserDBRepository.swift */,
+				775029AC2C7C926300C8C5FC /* UserRepository.swift */,
+				775029AE2C7CC24300C8C5FC /* SignRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -490,6 +506,7 @@
 		77EFFD9E2C3F86D8009E64BB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				775029A92C7C7FFE00C8C5FC /* Services */,
 				773EB1E62C59F95C00ED1345 /* DTOs */,
 				773EB1ED2C59FC0800ED1345 /* APIs */,
 			);
@@ -712,12 +729,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				771004EA2C6E5E9C00DB130D /* UserDBRepository.swift in Sources */,
+				771004EA2C6E5E9C00DB130D /* FirebaseDBService.swift in Sources */,
 				771004E22C6A3C0F00DB130D /* AppDelegate.swift in Sources */,
 				773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */,
+				775029AD2C7C926300C8C5FC /* UserRepository.swift in Sources */,
+				775029AF2C7CC24300C8C5FC /* SignRepository.swift in Sources */,
 				77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */,
 				773EB1FE2C5A386100ED1345 /* Config.swift in Sources */,
-				771004E42C6A65DC00DB130D /* SignRepository.swift in Sources */,
+				775029B12C7D92CC00C8C5FC /* DeleteAccountUseCase.swift in Sources */,
+				771004E42C6A65DC00DB130D /* SignService.swift in Sources */,
 				77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */,
 				771004EE2C6E630500DB130D /* UserEntity.swift in Sources */,
 				771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */,
@@ -755,9 +775,9 @@
 				77716ECA2C57B48900ADE967 /* View+.swift in Sources */,
 				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
 				77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */,
+				775029AB2C7C923500C8C5FC /* FetchUserDataUseCase.swift in Sources */,
 				771004D12C68913200DB130D /* UserDefault.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
-				771004F12C6E63C700DB130D /* UserDataUseCase.swift in Sources */,
 				773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */,
 				771004D72C68D78000DB130D /* KeyChain.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,

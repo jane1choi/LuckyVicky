@@ -16,67 +16,50 @@ protocol LoginUseCase {
 
 final class LoginUseCaseImpl: LoginUseCase {
     private let signRepository: SignRepository
-    private let userRepository: UserDBRepository
+    private let userRepository: UserRepository
     
-    init(signRepository: SignRepository, userRepository: UserDBRepository) {
+    init(signRepository: SignRepository, userRepository: UserRepository) {
         self.signRepository = signRepository
         self.userRepository = userRepository
     }
     
     func executeAuthorization(_ request: ASAuthorizationAppleIDRequest) -> String {
-        return signRepository.handleSignInWithAppleRequest(request)
+        return signRepository.requestAuthorization(request)
     }
     
     func executeSignIn(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<UserEntity, NetworkError> {
         if let uuid = signRepository.checkAuthenticationState() {
-            return fetchUserData(userId: uuid)
+            return userRepository.fetchUserData(userId: uuid)
                 .catch { [weak self] _ -> AnyPublisher<UserEntity, NetworkError> in
                     guard let self = self else {
                         return Empty().eraseToAnyPublisher()
                     }
-                    return self.signRepository.handleSignInWithAppleCompletion(authorization, none: nonce)
-                        .mapError { _ in
-                            NetworkError.unauthorized
-                        }
-                        .flatMap { user -> AnyPublisher<UserEntity, NetworkError> in
-                            self.createUser(user.toEntity())
-                        }
-                        .eraseToAnyPublisher()
+                    return self.signUp(authorization, nonce: nonce)
                 }
                 .eraseToAnyPublisher()
         } else {
-            return signRepository.handleSignInWithAppleCompletion(authorization, none: nonce)
-                .mapError { _ in
-                    NetworkError.unauthorized
-                }
-                .flatMap { [weak self] user -> AnyPublisher<UserEntity, NetworkError> in
-                    guard let self = self
-                    else {
-                        return Empty().eraseToAnyPublisher()
-                    }
-                    return self.createUser(user.toEntity())
-                }
-                .eraseToAnyPublisher()
+            return signUp(authorization, nonce: nonce)
         }
     }
 }
 
 extension LoginUseCaseImpl {
-    private func fetchUserData(userId: String) -> AnyPublisher<UserEntity, NetworkError> {
-        userRepository.getUser(userId: userId)
-            .map { $0.toEntity() }
-            .mapError { error in
-                print(error)
-                return .serverError
-            }
-            .eraseToAnyPublisher()
-    }
     
-    private func createUser(_ user: UserEntity) -> AnyPublisher<UserEntity, NetworkError> {
-        userRepository.createUser(user.toDTO())
-            .map { user }
+    private func signUp(_ authorization: ASAuthorization,
+                        nonce: String
+    ) -> AnyPublisher<UserEntity, NetworkError> {
+        return signRepository.signIn(authorization, nonce: nonce)
             .mapError { _ in
-                return .serverError
+                NetworkError.unauthorized
+            }
+            .flatMap { [weak self] user -> AnyPublisher<UserEntity, NetworkError> in
+                guard let self = self
+                else {
+                    return Empty().eraseToAnyPublisher()
+                }
+                return self.userRepository.createUser(user.toDTO())
+                    .map{ _ in user }
+                    .eraseToAnyPublisher()
             }
             .eraseToAnyPublisher()
     }

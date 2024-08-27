@@ -72,12 +72,13 @@ struct SelectCharacterView: View {
                 .navigationDestination(for: ConvertThoughtPath.self) { path in
                     switch path {
                     case .inputTrouble:
-                        let service = GptAPIService()
-                        let gptRepository = GptRepositoryImpl(apiService: service)
-                        let userRepository = UserDBRepositoryImpl()
+                        let gptAPIService = GptAPIService()
+                        let dbService = FirebaseDBService()
+                        let gptRepository = GptRepositoryImpl(apiService: gptAPIService)
+                        let userRepository = UserRepositoryImpl(service: dbService)
                         let useCase = ConvertTroubleUseCaseImpl(gptRepository: gptRepository,
                                                                 userRepository: userRepository)
-                        let viewModel = InputTroubleViewModel(useCase: useCase)
+                        let viewModel = InputTroubleViewModel(convertTroubleUseCase: useCase)
                         InputTroubleView(viewModel: viewModel, path: $path)
                     case .showResult(let userInput, let result):
                         let viewModel = ResultViewModel()
@@ -98,8 +99,10 @@ struct SelectCharacterView: View {
                 viewModel.action(.onAppear)
             }
             .fullScreenCover(isPresented: $viewModel.state.hasAccountDeleted) {
-                let signRepository = SignRepositoryImpl()
-                let userRepository = UserDBRepositoryImpl()
+                let signService = SignService()
+                let dbService = FirebaseDBService()
+                let signRepository = SignRepositoryImpl(service: signService)
+                let userRepository = UserRepositoryImpl(service: dbService)
                 let useCase = LoginUseCaseImpl(signRepository: signRepository, userRepository: userRepository)
                 let viewModel = LoginViewModel(useCase: useCase)
                 LoginView(viewModel: viewModel)

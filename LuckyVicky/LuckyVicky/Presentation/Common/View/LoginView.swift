@@ -57,8 +57,12 @@ struct LoginView: View {
             .padding(.horizontal, 22)
             .padding(.bottom, 12)
             .fullScreenCover(isPresented: $viewModel.state.isPresented) {
-                let useCase = UserDataUseCaseImpl(repository: UserDBRepositoryImpl())
-                let viewModel = SelectCharacterViewModel(useCase: useCase)
+                let dbService = FirebaseDBService()
+                let userRepository = UserRepositoryImpl(service: dbService)
+                let fetchUserDataUseCase = FetchUserDataUseCaseImpl(userRepository: userRepository)
+                let deleteAccountUseCase = DeleteAccountUseCaseImpl(userRepository: userRepository)
+                let viewModel = SelectCharacterViewModel(fetchUserDataUseCase: fetchUserDataUseCase,
+                                                         deleteAccountUseCase: deleteAccountUseCase)
                 SelectCharacterView(viewModel: viewModel)
             }
         }

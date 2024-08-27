@@ -11,9 +11,9 @@ import Combine
 final class InputTroubleViewModel: ViewModelable {
     @Published var state: State
     private var cancellables = Set<AnyCancellable>()
-    private let useCase: ConvertTroubleUseCase
+    private let convertTroubleUseCase: ConvertTroubleUseCase
     
-    init(useCase: ConvertTroubleUseCase) {
+    init(convertTroubleUseCase: ConvertTroubleUseCase) {
         let id = UserDefaults.selectedCharacterId
         self.state = State(characterContent: CharacterEntity.characters[id].systemContent,
                            inputText: "", 
@@ -21,7 +21,7 @@ final class InputTroubleViewModel: ViewModelable {
                            hasErrorOccurred: false, 
                            onCompleted: false,
                            isLoading: false)
-        self.useCase = useCase
+        self.convertTroubleUseCase = convertTroubleUseCase
     }
     
     enum Action {
@@ -56,13 +56,10 @@ extension InputTroubleViewModel {
         systemContent: String,
         userContent: String
     ) {
-        useCase.fetchResultData(systemContent: systemContent,
-                                   userContent: userContent)
+        convertTroubleUseCase
+            .execute(systemContent: systemContent,userContent: userContent)
         .sink(receiveCompletion: { [weak self] completion in
-            switch completion {
-            case .finished:
-                self?.saveData()
-            case .failure(_):
+            if case .failure(_) = completion {
                 self?.state.hasErrorOccurred = true
             }
             self?.state.isLoading = false
@@ -70,18 +67,5 @@ extension InputTroubleViewModel {
             self?.state.result = result.reply
             self?.state.onCompleted = true
         }).store(in: &cancellables)
-    }
-    
-    private func saveData() {
-        useCase.updateUserData(userId: UserDefaults.userId,
-                               lastUsedDate: Date().today,
-                               usedCount: UserDefaults.usedCount + 1)
-        .sink(receiveCompletion: { [weak self] completion in
-            if case let .failure(error) = completion {
-                self?.state.hasErrorOccurred = true
-            }
-        },
-              receiveValue: { }
-        ).store(in: &cancellables)
     }
 }

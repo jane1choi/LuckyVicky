@@ -10,10 +10,13 @@ import Combine
 
 final class SelectCharacterViewModel: ViewModelable {
     @Published var state: State
-    private let useCase: UserDataUseCase
+    private let fetchUserDataUseCase: FetchUserDataUseCase
+    private let deleteAccountUseCase: DeleteAccountUseCase
     private var cancellables = Set<AnyCancellable>()
     
-    init(useCase: UserDataUseCase) {
+    init(fetchUserDataUseCase: FetchUserDataUseCase,
+         deleteAccountUseCase: DeleteAccountUseCase
+    ) {
         self.state = State(isLoading: false,
                            chanceCount: 0,
                            characterList: CharacterEntity.characters,
@@ -21,7 +24,8 @@ final class SelectCharacterViewModel: ViewModelable {
                            isDeleteAccountAlertPresented: false, 
                            hasErrorOccurred: false, 
                            hasAccountDeleted: false)
-        self.useCase = useCase
+        self.fetchUserDataUseCase = fetchUserDataUseCase
+        self.deleteAccountUseCase = deleteAccountUseCase
     }
     
     enum Action {
@@ -58,13 +62,17 @@ final class SelectCharacterViewModel: ViewModelable {
             state.isDeleteAccountAlertPresented = true
         case .onTapdeleteAccountButton:
             state.isLoading = true
-            useCase.deleteAccount()
+            deleteAccountUseCase.execute()
                 .delay(for: .seconds(2), scheduler: RunLoop.main)
-                .sink { [weak self] _ in
-                    self?.state.isLoading = false
-                    self?.state.hasErrorOccurred = true
+                .sink { [weak self] completion in
+                    switch completion {
+                    case .failure(_):
+                        self?.state.isLoading = false
+                        self?.state.hasErrorOccurred = true
+                    case .finished:
+                        self?.state.isLoading = false
+                    }
                 } receiveValue: { [weak self] _ in
-                    self?.state.isLoading = false
                     UserDefaults.standard.removeAllUserDefaulsKeys()
                     self?.state.hasAccountDeleted = true
                 }.store(in: &cancellables)
@@ -76,9 +84,8 @@ final class SelectCharacterViewModel: ViewModelable {
 extension SelectCharacterViewModel {
     
     private func checkUserChance() {
-        useCase.fetchUserData(userId: UserDefaults.userId)
+        fetchUserDataUseCase.execute(userId: UserDefaults.userId)
             .sink { [weak self] completion in
-    
                 switch completion {
                 case .failure(_):
                     self?.state.isLoading = false

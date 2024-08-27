@@ -53,26 +53,21 @@ extension LoginViewModel {
             
             useCase.executeSignIn(authorization, nonce: nonce)
                 .sink { [weak self] completion in
-                    if case .failure( _) = completion {
+                    if case .failure(_) = completion {
                         self?.state.hasErrorOccurred = true
                     }
                     self?.state.isLoading = false
-                } receiveValue: { [weak self] user in
-                    self?.updateStateAfterLoginSuccess(user: user)
+                    self?.state.isPresented = true
+                } receiveValue: { user in
+                    UserDefaults.userId = user.id
+                    UserDefaults.usedCount = user.usedCount
+                    UserDefaults.isFirstLaunch = false
                 }.store(in: &cancellables)
       
         } else if case .failure(_) = result {
             state.isLoading = false
             state.hasErrorOccurred = true
         }
-    }
-    
-    private func updateStateAfterLoginSuccess(user: UserEntity) {
-        state.isLoading = false
-        UserDefaults.userId = user.id
-        UserDefaults.usedCount = user.usedCount
-        state.isPresented = true
-        UserDefaults.isFirstLaunch = false
     }
 }
 

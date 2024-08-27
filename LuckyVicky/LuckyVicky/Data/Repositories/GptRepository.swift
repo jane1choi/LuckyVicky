@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol GptRepository {
-    func fetchResultData(systemContent: String, userContent: String) -> AnyPublisher<GptResponseDTO, NetworkError>
+    func fetchResultData(systemContent: String, userContent: String) -> AnyPublisher<ReplyEntity, NetworkError>
 }
 
 final class GptRepositoryImpl: GptRepository {
@@ -22,12 +22,12 @@ final class GptRepositoryImpl: GptRepository {
     func fetchResultData(
         systemContent: String,
         userContent: String
-    ) -> AnyPublisher<GptResponseDTO, NetworkError> {
+    ) -> AnyPublisher<ReplyEntity, NetworkError> {
         return apiService
             .createChat(systemContent: systemContent,
                         userContent: userContent)
             .map { dto in
-                return dto
+                return dto.toEntity()
             }
             .mapError { error in
                 return error
