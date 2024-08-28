@@ -58,6 +58,7 @@
 		775029AD2C7C926300C8C5FC /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AC2C7C926300C8C5FC /* UserRepository.swift */; };
 		775029AF2C7CC24300C8C5FC /* SignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AE2C7CC24300C8C5FC /* SignRepository.swift */; };
 		775029B12C7D92CC00C8C5FC /* DeleteAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029B02C7D92CC00C8C5FC /* DeleteAccountUseCase.swift */; };
+		775029B62C7EF01300C8C5FC /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 775029B52C7EF01300C8C5FC /* Swinject */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
 		77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */; };
@@ -180,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				773B6F032C5908B20035524B /* Moya in Frameworks */,
+				775029B62C7EF01300C8C5FC /* Swinject in Frameworks */,
 				771004E02C6A3BAF00DB130D /* FirebaseAuth in Frameworks */,
 				771004E82C6E5CC200DB130D /* FirebaseDatabase in Frameworks */,
 				773B6F012C5908B20035524B /* CombineMoya in Frameworks */,
@@ -615,6 +617,7 @@
 				773B6F022C5908B20035524B /* Moya */,
 				771004DF2C6A3BAF00DB130D /* FirebaseAuth */,
 				771004E72C6E5CC200DB130D /* FirebaseDatabase */,
+				775029B52C7EF01300C8C5FC /* Swinject */,
 			);
 			productName = LuckyVicky;
 			productReference = 77EFFD652C3F8418009E64BB /* LuckyVicky.app */;
@@ -673,6 +676,7 @@
 			packageReferences = (
 				773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */,
 				771004DE2C6A3BAF00DB130D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				775029B42C7EF01300C8C5FC /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 77EFFD662C3F8418009E64BB /* Products */;
 			projectDirPath = "";
@@ -1148,6 +1152,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		775029B42C7EF01300C8C5FC /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1170,6 +1182,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		775029B52C7EF01300C8C5FC /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 775029B42C7EF01300C8C5FC /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
