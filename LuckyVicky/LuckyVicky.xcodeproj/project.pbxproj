@@ -261,7 +261,8 @@
 				771004F62C6F6C8F00DB130D /* ConvertTroubleUseCase.swift */,
 				775029AA2C7C923500C8C5FC /* FetchUserDataUseCase.swift */,
 			);
-			path = UseCases;
+			name = UseCases;
+			path = ../Data/UseCases;
 			sourceTree = "<group>";
 		};
 		773B6EFD2C58BA110035524B /* Common */ = {
@@ -462,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				77EFFD982C3F859E009E64BB /* Entities */,
+				771004EF2C6E63A300DB130D /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -488,7 +490,6 @@
 		77EFFD9C2C3F86B8009E64BB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				771004EF2C6E63A300DB130D /* UseCases */,
 				77EFFD9D2C3F86C7009E64BB /* Repositories */,
 				77EFFD9E2C3F86D8009E64BB /* Network */,
 			);
