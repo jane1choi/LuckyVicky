@@ -126,7 +126,7 @@ extension SignService {
             switch result {
             case let .success(user):
                 completion(.success(user))
-            case let .failure(error):
+            case .failure(_):
                 completion(.failure(AuthenticationError.clientIDError))
             }
         }
