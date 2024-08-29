@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>mainBlack</string>
+		<key>UIImageName</key>
+		<string>clover</string>
+	</dict>
 	<key>HEEJIN_SYSTEM_CONTENT</key>
 	<string>${HEEJIN_SYSTEM_CONTENT}</string>
 	<key>HEUNGMIN_SYSTEM_CONTENT</key>
