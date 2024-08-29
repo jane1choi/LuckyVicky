@@ -71,6 +71,10 @@
 		77D65EFF2C53948600B4A2EC /* LuckyVickyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationBar.swift */; };
 		77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65F002C549BE500B4A2EC /* SplashView.swift */; };
 		77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65F022C54A04900B4A2EC /* AppFlow.swift */; };
+		77E675B72C8015DF003F74A6 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675B62C8015DF003F74A6 /* DependencyInjector.swift */; };
+		77E675B92C801653003F74A6 /* DataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675B82C801653003F74A6 /* DataAssembly.swift */; };
+		77E675BB2C8016A7003F74A6 /* DomainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675BA2C8016A7003F74A6 /* DomainAssembly.swift */; };
+		77E675BD2C8016DA003F74A6 /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675BC2C8016DA003F74A6 /* PresentationAssembly.swift */; };
 		77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */; };
 		77EFFD702C3F841F009E64BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */; };
 		77EFFD842C3F8420009E64BB /* LuckyVickyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD832C3F8420009E64BB /* LuckyVickyUITests.swift */; };
@@ -159,6 +163,10 @@
 		77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyNavigationBar.swift; sourceTree = "<group>"; };
 		77D65F002C549BE500B4A2EC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashView.swift; path = ../SplashView.swift; sourceTree = "<group>"; };
 		77D65F022C54A04900B4A2EC /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		77E675B62C8015DF003F74A6 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		77E675B82C801653003F74A6 /* DataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
+		77E675BA2C8016A7003F74A6 /* DomainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainAssembly.swift; sourceTree = "<group>"; };
+		77E675BC2C8016DA003F74A6 /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
 		77EFFD652C3F8418009E64BB /* LuckyVicky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyVicky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyApp.swift; sourceTree = "<group>"; };
 		77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -338,6 +346,17 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		775029B92C7F014700C8C5FC /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				77E675B62C8015DF003F74A6 /* DependencyInjector.swift */,
+				77E675BA2C8016A7003F74A6 /* DomainAssembly.swift */,
+				77E675BC2C8016DA003F74A6 /* PresentationAssembly.swift */,
+				77E675B82C801653003F74A6 /* DataAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +427,7 @@
 		77EFFD922C3F8497009E64BB /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				775029B92C7F014700C8C5FC /* DI */,
 				77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */,
 				771004E12C6A3C0F00DB130D /* AppDelegate.swift */,
 			);
@@ -737,6 +757,8 @@
 				771004EA2C6E5E9C00DB130D /* FirebaseDBService.swift in Sources */,
 				771004E22C6A3C0F00DB130D /* AppDelegate.swift in Sources */,
 				773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */,
+				77E675B92C801653003F74A6 /* DataAssembly.swift in Sources */,
+				77E675BB2C8016A7003F74A6 /* DomainAssembly.swift in Sources */,
 				775029AD2C7C926300C8C5FC /* UserRepository.swift in Sources */,
 				775029AF2C7CC24300C8C5FC /* SignRepository.swift in Sources */,
 				77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */,
@@ -764,9 +786,11 @@
 				773B6F0E2C591BF10035524B /* BaseAPI.swift in Sources */,
 				771004C82C67C94500DB130D /* ConvertThoughtPath.swift in Sources */,
 				771004DB2C69F17E00DB130D /* LoadingView.swift in Sources */,
+				77E675BD2C8016DA003F74A6 /* PresentationAssembly.swift in Sources */,
 				773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */,
 				7716507D2C4E3A45004D5868 /* Image+.swift in Sources */,
 				771004BD2C6607B600DB130D /* ResultViewModel.swift in Sources */,
+				77E675B72C8015DF003F74A6 /* DependencyInjector.swift in Sources */,
 				771004BB2C6603DE00DB130D /* InputTroubleViewModel.swift in Sources */,
 				7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */,
 				773B6F072C590D910035524B /* NetworkProvider.swift in Sources */,
