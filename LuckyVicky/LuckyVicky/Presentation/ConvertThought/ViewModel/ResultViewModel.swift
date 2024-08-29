@@ -9,18 +9,21 @@ import Foundation
 
 final class ResultViewModel: ViewModelable {
     @Published var state: State
+    private let coordinator: Coordinator
     
-    init() {
+    init(coordinator: Coordinator) {
         let id = UserDefaults.selectedCharacterId
         self.state = State(isAlertPresented: false,
                            alertMessage: "",
                            characterNickname: CharacterEntity.characters[id].nickname,
                            characterProfile:  CharacterEntity.characters[id].profileImage, 
                            isLoading: false)
+        self.coordinator = coordinator
     }
     
     enum Action {
         case onTapSaveImageButton(data: Data)
+        case onTapPopToRootButton
     }
     
     struct State {
@@ -36,6 +39,8 @@ final class ResultViewModel: ViewModelable {
         case .onTapSaveImageButton(let data):
             state.isLoading = true
             saveImage(imageData: data)
+        case .onTapPopToRootButton:
+            coordinator.popToRoot()
         }
     }
 }

@@ -10,11 +10,13 @@ import Combine
 
 final class SelectCharacterViewModel: ViewModelable {
     @Published var state: State
+    private let coordinator: Coordinator
     private let fetchUserDataUseCase: FetchUserDataUseCase
     private let deleteAccountUseCase: DeleteAccountUseCase
     private var cancellables = Set<AnyCancellable>()
     
-    init(fetchUserDataUseCase: FetchUserDataUseCase,
+    init(coordinator: Coordinator,
+         fetchUserDataUseCase: FetchUserDataUseCase,
          deleteAccountUseCase: DeleteAccountUseCase
     ) {
         self.state = State(isLoading: false,
@@ -22,8 +24,8 @@ final class SelectCharacterViewModel: ViewModelable {
                            characterList: CharacterEntity.characters,
                            isAlertPresented: false, 
                            isDeleteAccountAlertPresented: false, 
-                           hasErrorOccurred: false, 
-                           hasAccountDeleted: false)
+                           hasErrorOccurred: false)
+        self.coordinator = coordinator
         self.fetchUserDataUseCase = fetchUserDataUseCase
         self.deleteAccountUseCase = deleteAccountUseCase
     }
@@ -44,7 +46,7 @@ final class SelectCharacterViewModel: ViewModelable {
         var isAlertPresented: Bool
         var isDeleteAccountAlertPresented: Bool
         var hasErrorOccurred: Bool
-        var hasAccountDeleted: Bool
+//        var hasAccountDeleted: Bool
     }
     
     func action(_ action: Action) {
@@ -54,6 +56,9 @@ final class SelectCharacterViewModel: ViewModelable {
         case .onTapSelectButton:
             UserDefaults.selectedCharacterId = state.selectedId ?? 0
             state.isAlertPresented = state.chanceCount >= 10
+            if !state.isAlertPresented {
+                coordinator.push(.inputTrouble)
+            }
         case .onAppear:
             state.isLoading = true
             checkUserChance()
@@ -74,7 +79,7 @@ final class SelectCharacterViewModel: ViewModelable {
                     }
                 } receiveValue: { [weak self] _ in
                     UserDefaults.standard.removeAllUserDefaulsKeys()
-                    self?.state.hasAccountDeleted = true
+                    self?.coordinator.present(sheet: .login)
                 }.store(in: &cancellables)
             
         }

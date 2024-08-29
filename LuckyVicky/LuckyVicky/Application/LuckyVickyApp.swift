@@ -7,40 +7,35 @@
 
 import SwiftUI
 
+import Swinject
+
 @main
 struct LuckyVickyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject private var appRootManager = AppRootManager()
+    @ObservedObject private var coordinator: MainCoordinator
+    private let injector: Injector
+    
+    init() {
+        coordinator = MainCoordinator(UserDefaults.isFirstLaunch ? .login: .selectCharacter)
+        injector = DependencyInjector(container: Container())
+        injector.assemble([DomainAssembly(),
+                           DataAssembly(),
+                           PresentationAssembly(coordinator: coordinator)
+                          ])
+        coordinator.injector = injector
+    }
     
     var body: some Scene {
         WindowGroup {
-            Group {
-                switch appRootManager.currentflow {
-                case .splash:
-                    SplashView()
-                case .login:
-                    let signService = SignService()
-                    let dbService = FirebaseDBService()
-                    let signRepository = SignRepositoryImpl(service: signService)
-                    let userRepository = UserRepositoryImpl(service: dbService)
-                    let useCase = LoginUseCaseImpl(signRepository: signRepository, userRepository: userRepository)
-                    let viewModel = LoginViewModel(useCase: useCase)
-                    LoginView(viewModel: viewModel)
-                case .main:
-                    let dbService = FirebaseDBService()
-                    let userRepository = UserRepositoryImpl(service: dbService)
-                    let fetchUserDataUseCase = FetchUserDataUseCaseImpl(userRepository: userRepository)
-                    let deleteAccountUseCase = DeleteAccountUseCaseImpl(userRepository: userRepository)
-                    let viewModel = SelectCharacterViewModel(fetchUserDataUseCase: fetchUserDataUseCase,
-                                                             deleteAccountUseCase: deleteAccountUseCase)
-                    SelectCharacterView(viewModel: viewModel)
-                }
+            NavigationStack(path: $coordinator.path) {
+                coordinator.buildInitialScene()
+                    .navigationDestination(for: AppScene.self) { scene in
+                        coordinator.buildScene(scene: scene)
+                    }
+                    .fullScreenCover(item: $coordinator.sheet) { scene in
+                        coordinator.buildScene(scene: scene)
+                    }
             }
-            .environmentObject(appRootManager)
         }
     }
-}
-
-final class AppRootManager: ObservableObject {
-    @Published var currentflow: AppFlow = .splash
 }

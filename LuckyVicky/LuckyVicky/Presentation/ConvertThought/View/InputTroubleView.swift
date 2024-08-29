@@ -9,11 +9,9 @@ import SwiftUI
 
 struct InputTroubleView: View {
     @StateObject private var viewModel: InputTroubleViewModel
-    @Binding var path: NavigationPath
     
-    init(viewModel: InputTroubleViewModel, path: Binding<NavigationPath>) {
+    init(viewModel: InputTroubleViewModel) {
         self._viewModel = .init(wrappedValue: viewModel)
-        self._path = path
     }
     
     var body: some View {
@@ -21,7 +19,7 @@ struct InputTroubleView: View {
             LuckyVickyNavigationBar(
                 leftItem: (
                     LuckyVickyImage.backArrow, {
-                        path.removeLast()
+                        viewModel.action(.onTapBackButton)
                     }
                 )
             )
@@ -81,14 +79,6 @@ struct InputTroubleView: View {
         .navigationBarBackButtonHidden(true)
         .onTapGesture {
             UIApplication.shared.endEditing()
-        }
-        .onChange(of: viewModel.state.onCompleted) { completed in
-            if completed {
-                path.append(ConvertThoughtPath.showResult(
-                    userInput: viewModel.state.inputText,
-                    result: viewModel.state.result)
-                )
-            }
         }
     }
 }

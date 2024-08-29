@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SplashView: View {
-    @EnvironmentObject private var appRootManager: AppRootManager
     
     var body: some View {
         ZStack {
@@ -17,13 +16,6 @@ struct SplashView: View {
             Image(LuckyVickyImage.clover)
                 .resizable()
                 .frame(width: 110, height: 110)
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation(.smooth) {
-                    appRootManager.currentflow =  UserDefaults.isFirstLaunch ? .login : .main
-                }
-            }
         }
     }
 }

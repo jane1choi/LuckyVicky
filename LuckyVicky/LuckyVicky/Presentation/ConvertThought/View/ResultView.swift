@@ -9,18 +9,15 @@ import SwiftUI
 
 struct ResultView: View {
     @StateObject private var viewModel: ResultViewModel
-    @Binding var path: NavigationPath
     private let inputText: String
     private let result: String
     
     init(
         viewModel: ResultViewModel,
-        path: Binding<NavigationPath>,
         inputText: String,
         result: String
     ) {
         self._viewModel = .init(wrappedValue: viewModel)
-        self._path = path
         self.inputText = inputText
         self.result = result
     }
@@ -53,7 +50,7 @@ struct ResultView: View {
                 title: "처음으로",
                 isActive: true,
                 action: {
-                    path.removeLast(path.count)
+                    viewModel.action(.onTapPopToRootButton)
                 }
             )
             .padding(.horizontal, 22)
