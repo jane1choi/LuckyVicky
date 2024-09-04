@@ -48,7 +48,7 @@ final class UserRepositoryImpl: UserRepository {
                         .mapError { _ in NetworkError.serverError }
                         .eraseToAnyPublisher()
                 } else {
-                    return Empty().eraseToAnyPublisher()
+                    return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
                 }
             }
             .eraseToAnyPublisher()

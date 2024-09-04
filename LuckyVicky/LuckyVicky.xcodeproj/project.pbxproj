@@ -58,18 +58,26 @@
 		775029AD2C7C926300C8C5FC /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AC2C7C926300C8C5FC /* UserRepository.swift */; };
 		775029AF2C7CC24300C8C5FC /* SignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AE2C7CC24300C8C5FC /* SignRepository.swift */; };
 		775029B12C7D92CC00C8C5FC /* DeleteAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029B02C7D92CC00C8C5FC /* DeleteAccountUseCase.swift */; };
+		775029B62C7EF01300C8C5FC /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 775029B52C7EF01300C8C5FC /* Swinject */; };
+		775029B82C7EFF1300C8C5FC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029B72C7EFF1300C8C5FC /* Coordinator.swift */; };
 		77716EC62C5762DD00ADE967 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC52C5762DD00ADE967 /* UIApplication+.swift */; };
 		77716ECA2C57B48900ADE967 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77716EC92C57B48900ADE967 /* View+.swift */; };
 		77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */; };
 		77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */; };
 		77CEE96E2C5886060056C315 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEE96D2C5886060056C315 /* LoginView.swift */; };
+		77D0FD9C2C8819F300EA4C14 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0FD9B2C8819F300EA4C14 /* AlertPresenter.swift */; };
+		77D0FD9E2C88723300EA4C14 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0FD9D2C88723300EA4C14 /* AlertMessage.swift */; };
 		77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */; };
 		77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */; };
 		77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */; };
 		77D65EFD2C538FE900B4A2EC /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFC2C538FE900B4A2EC /* ResultView.swift */; };
 		77D65EFF2C53948600B4A2EC /* LuckyVickyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationBar.swift */; };
-		77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65F002C549BE500B4A2EC /* SplashView.swift */; };
-		77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65F022C54A04900B4A2EC /* AppFlow.swift */; };
+		77E675B72C8015DF003F74A6 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675B62C8015DF003F74A6 /* DependencyInjector.swift */; };
+		77E675B92C801653003F74A6 /* DataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675B82C801653003F74A6 /* DataAssembly.swift */; };
+		77E675BB2C8016A7003F74A6 /* DomainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675BA2C8016A7003F74A6 /* DomainAssembly.swift */; };
+		77E675BD2C8016DA003F74A6 /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675BC2C8016DA003F74A6 /* PresentationAssembly.swift */; };
+		77E675C02C80CCFB003F74A6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675BF2C80CCFB003F74A6 /* MainCoordinator.swift */; };
+		77E675C22C80CE83003F74A6 /* AppScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E675C12C80CE83003F74A6 /* AppScene.swift */; };
 		77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */; };
 		77EFFD702C3F841F009E64BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */; };
 		77EFFD842C3F8420009E64BB /* LuckyVickyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFFD832C3F8420009E64BB /* LuckyVickyUITests.swift */; };
@@ -145,19 +153,26 @@
 		775029AC2C7C926300C8C5FC /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		775029AE2C7CC24300C8C5FC /* SignRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRepository.swift; sourceTree = "<group>"; };
 		775029B02C7D92CC00C8C5FC /* DeleteAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountUseCase.swift; sourceTree = "<group>"; };
+		775029B72C7EFF1300C8C5FC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		77716EC52C5762DD00ADE967 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		77716EC92C57B48900ADE967 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		7798B2992C59541A00BC7D1A /* LuckyVicky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LuckyVicky.entitlements; sourceTree = "<group>"; };
 		77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyChatBubble.swift; sourceTree = "<group>"; };
 		77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyAlertView.swift; sourceTree = "<group>"; };
 		77CEE96D2C5886060056C315 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		77D0FD9B2C8819F300EA4C14 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		77D0FD9D2C88723300EA4C14 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyButton.swift; sourceTree = "<group>"; };
 		77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTroubleView.swift; sourceTree = "<group>"; };
 		77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyTextEditor.swift; sourceTree = "<group>"; };
 		77D65EFC2C538FE900B4A2EC /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		77D65EFE2C53948600B4A2EC /* LuckyVickyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyNavigationBar.swift; sourceTree = "<group>"; };
-		77D65F002C549BE500B4A2EC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashView.swift; path = ../SplashView.swift; sourceTree = "<group>"; };
-		77D65F022C54A04900B4A2EC /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		77E675B62C8015DF003F74A6 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		77E675B82C801653003F74A6 /* DataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
+		77E675BA2C8016A7003F74A6 /* DomainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainAssembly.swift; sourceTree = "<group>"; };
+		77E675BC2C8016DA003F74A6 /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
+		77E675BF2C80CCFB003F74A6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		77E675C12C80CE83003F74A6 /* AppScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScene.swift; sourceTree = "<group>"; };
 		77EFFD652C3F8418009E64BB /* LuckyVicky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyVicky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyApp.swift; sourceTree = "<group>"; };
 		77EFFD6F2C3F841F009E64BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -180,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				773B6F032C5908B20035524B /* Moya in Frameworks */,
+				775029B62C7EF01300C8C5FC /* Swinject in Frameworks */,
 				771004E02C6A3BAF00DB130D /* FirebaseAuth in Frameworks */,
 				771004E82C6E5CC200DB130D /* FirebaseDatabase in Frameworks */,
 				773B6F012C5908B20035524B /* CombineMoya in Frameworks */,
@@ -210,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				77CEE96D2C5886060056C315 /* LoginView.swift */,
-				77D65F002C549BE500B4A2EC /* SplashView.swift */,
 				771004DA2C69F17D00DB130D /* LoadingView.swift */,
 			);
 			path = View;
@@ -259,7 +274,8 @@
 				771004F62C6F6C8F00DB130D /* ConvertTroubleUseCase.swift */,
 				775029AA2C7C923500C8C5FC /* FetchUserDataUseCase.swift */,
 			);
-			path = UseCases;
+			name = UseCases;
+			path = ../Data/UseCases;
 			sourceTree = "<group>";
 		};
 		773B6EFD2C58BA110035524B /* Common */ = {
@@ -335,6 +351,43 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		775029B92C7F014700C8C5FC /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				77E675B62C8015DF003F74A6 /* DependencyInjector.swift */,
+				77E675BA2C8016A7003F74A6 /* DomainAssembly.swift */,
+				77E675BC2C8016DA003F74A6 /* PresentationAssembly.swift */,
+				77E675B82C801653003F74A6 /* DataAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		77D0FD9A2C880F0300EA4C14 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */,
+				771004E12C6A3C0F00DB130D /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		77D0FD9F2C8872A500EA4C14 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				77D0FD9B2C8819F300EA4C14 /* AlertPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		77D0FDA02C8872EB00EA4C14 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				773B6EFD2C58BA110035524B /* Common */,
+				773B6EFE2C58BA200035524B /* ConvertThought */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +406,16 @@
 				77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		77E675BE2C80CCD0003F74A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				77E675C12C80CE83003F74A6 /* AppScene.swift */,
+				775029B72C7EFF1300C8C5FC /* Coordinator.swift */,
+				77E675BF2C80CCFB003F74A6 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		77EFFD5C2C3F8418009E64BB = {
@@ -383,8 +446,8 @@
 				77D65EF42C4F632E00B4A2EC /* DesignSystem */,
 				77EFFD932C3F84A2009E64BB /* Utils */,
 				77EFFD922C3F8497009E64BB /* Application */,
-				77EFFD972C3F8586009E64BB /* Domain */,
 				77EFFD9B2C3F85E8009E64BB /* Presentation */,
+				77EFFD972C3F8586009E64BB /* Domain */,
 				77EFFD9C2C3F86B8009E64BB /* Data */,
 				77EFFD9F2C3F86F1009E64BB /* Infrastructure */,
 				77EFFDA12C3F8765009E64BB /* Resources */,
@@ -405,8 +468,8 @@
 		77EFFD922C3F8497009E64BB /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */,
-				771004E12C6A3C0F00DB130D /* AppDelegate.swift */,
+				77D0FD9A2C880F0300EA4C14 /* App */,
+				775029B92C7F014700C8C5FC /* DI */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -435,9 +498,9 @@
 			isa = PBXGroup;
 			children = (
 				7716507A2C4E3A08004D5868 /* LuckyVickyImage.swift */,
-				77D65F022C54A04900B4A2EC /* AppFlow.swift */,
 				773EB1FD2C5A386100ED1345 /* Config.swift */,
 				771004C72C67C94500DB130D /* ConvertThoughtPath.swift */,
+				77D0FD9D2C88723300EA4C14 /* AlertMessage.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -460,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				77EFFD982C3F859E009E64BB /* Entities */,
+				771004EF2C6E63A300DB130D /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -477,8 +541,9 @@
 		77EFFD9B2C3F85E8009E64BB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				773B6EFD2C58BA110035524B /* Common */,
-				773B6EFE2C58BA200035524B /* ConvertThought */,
+				77D0FD9F2C8872A500EA4C14 /* Presenter */,
+				77E675BE2C80CCD0003F74A6 /* Coordinator */,
+				77D0FDA02C8872EB00EA4C14 /* Scenes */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -486,7 +551,6 @@
 		77EFFD9C2C3F86B8009E64BB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				771004EF2C6E63A300DB130D /* UseCases */,
 				77EFFD9D2C3F86C7009E64BB /* Repositories */,
 				77EFFD9E2C3F86D8009E64BB /* Network */,
 			);
@@ -615,6 +679,7 @@
 				773B6F022C5908B20035524B /* Moya */,
 				771004DF2C6A3BAF00DB130D /* FirebaseAuth */,
 				771004E72C6E5CC200DB130D /* FirebaseDatabase */,
+				775029B52C7EF01300C8C5FC /* Swinject */,
 			);
 			productName = LuckyVicky;
 			productReference = 77EFFD652C3F8418009E64BB /* LuckyVicky.app */;
@@ -673,6 +738,7 @@
 			packageReferences = (
 				773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */,
 				771004DE2C6A3BAF00DB130D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				775029B42C7EF01300C8C5FC /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 77EFFD662C3F8418009E64BB /* Products */;
 			projectDirPath = "";
@@ -732,15 +798,18 @@
 				771004EA2C6E5E9C00DB130D /* FirebaseDBService.swift in Sources */,
 				771004E22C6A3C0F00DB130D /* AppDelegate.swift in Sources */,
 				773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */,
+				77E675B92C801653003F74A6 /* DataAssembly.swift in Sources */,
+				77E675BB2C8016A7003F74A6 /* DomainAssembly.swift in Sources */,
 				775029AD2C7C926300C8C5FC /* UserRepository.swift in Sources */,
 				775029AF2C7CC24300C8C5FC /* SignRepository.swift in Sources */,
-				77D65F032C54A04900B4A2EC /* AppFlow.swift in Sources */,
 				773EB1FE2C5A386100ED1345 /* Config.swift in Sources */,
 				775029B12C7D92CC00C8C5FC /* DeleteAccountUseCase.swift in Sources */,
 				771004E42C6A65DC00DB130D /* SignService.swift in Sources */,
 				77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */,
 				771004EE2C6E630500DB130D /* UserEntity.swift in Sources */,
+				77E675C22C80CE83003F74A6 /* AppScene.swift in Sources */,
 				771004AF2C63A6E100DB130D /* ViewModelable.swift in Sources */,
+				77D0FD9E2C88723300EA4C14 /* AlertMessage.swift in Sources */,
 				771650762C4E331C004D5868 /* Font+.swift in Sources */,
 				771004C02C6609D700DB130D /* ImageSaver.swift in Sources */,
 				771004D52C68CDE700DB130D /* Date+.swift in Sources */,
@@ -759,23 +828,27 @@
 				773B6F0E2C591BF10035524B /* BaseAPI.swift in Sources */,
 				771004C82C67C94500DB130D /* ConvertThoughtPath.swift in Sources */,
 				771004DB2C69F17E00DB130D /* LoadingView.swift in Sources */,
+				77E675BD2C8016DA003F74A6 /* PresentationAssembly.swift in Sources */,
 				773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */,
 				7716507D2C4E3A45004D5868 /* Image+.swift in Sources */,
+				77D0FD9C2C8819F300EA4C14 /* AlertPresenter.swift in Sources */,
 				771004BD2C6607B600DB130D /* ResultViewModel.swift in Sources */,
+				77E675B72C8015DF003F74A6 /* DependencyInjector.swift in Sources */,
 				771004BB2C6603DE00DB130D /* InputTroubleViewModel.swift in Sources */,
 				7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */,
 				773B6F072C590D910035524B /* NetworkProvider.swift in Sources */,
 				773B6F0A2C5910440035524B /* NetworkEnvironment.swift in Sources */,
 				7716507B2C4E3A08004D5868 /* LuckyVickyImage.swift in Sources */,
 				773EB1EA2C59F9C900ED1345 /* GptRequestDTO.swift in Sources */,
-				77D65F012C549BE500B4A2EC /* SplashView.swift in Sources */,
 				77D65EFD2C538FE900B4A2EC /* ResultView.swift in Sources */,
 				771004D32C68919900DB130D /* UserDefaults+.swift in Sources */,
 				77CEE96E2C5886060056C315 /* LoginView.swift in Sources */,
 				77716ECA2C57B48900ADE967 /* View+.swift in Sources */,
+				77E675C02C80CCFB003F74A6 /* MainCoordinator.swift in Sources */,
 				771650792C4E38A3004D5868 /* CharacterEntity.swift in Sources */,
 				77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */,
 				775029AB2C7C923500C8C5FC /* FetchUserDataUseCase.swift in Sources */,
+				775029B82C7EFF1300C8C5FC /* Coordinator.swift in Sources */,
 				771004D12C68913200DB130D /* UserDefault.swift in Sources */,
 				77EFFD692C3F8418009E64BB /* LuckyVickyApp.swift in Sources */,
 				773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */,
@@ -1148,6 +1221,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		775029B42C7EF01300C8C5FC /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1170,6 +1251,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 773B6EFF2C5908B20035524B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		775029B52C7EF01300C8C5FC /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 775029B42C7EF01300C8C5FC /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

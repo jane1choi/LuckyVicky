@@ -9,11 +9,9 @@ import SwiftUI
 
 struct InputTroubleView: View {
     @StateObject private var viewModel: InputTroubleViewModel
-    @Binding var path: NavigationPath
     
-    init(viewModel: InputTroubleViewModel, path: Binding<NavigationPath>) {
+    init(viewModel: InputTroubleViewModel) {
         self._viewModel = .init(wrappedValue: viewModel)
-        self._path = path
     }
     
     var body: some View {
@@ -21,7 +19,7 @@ struct InputTroubleView: View {
             LuckyVickyNavigationBar(
                 leftItem: (
                     LuckyVickyImage.backArrow, {
-                        path.removeLast()
+                        viewModel.action(.onTapBackButton)
                     }
                 )
             )
@@ -69,10 +67,6 @@ struct InputTroubleView: View {
             .padding(.horizontal, 22)
             .padding(.bottom, 12)
         }
-        .presentAlert(isPresented: $viewModel.state.hasErrorOccurred) {
-            LuckyVickyAlertView(isPresented: $viewModel.state.hasErrorOccurred,
-                                message: "네트워크 오류가 발생했습니다.\n잠시 후 다시 시도해주세요.")
-        }
         .background(Color(.mainBlack))
         .overlay {
             LoadingView()
@@ -81,14 +75,6 @@ struct InputTroubleView: View {
         .navigationBarBackButtonHidden(true)
         .onTapGesture {
             UIApplication.shared.endEditing()
-        }
-        .onChange(of: viewModel.state.onCompleted) { completed in
-            if completed {
-                path.append(ConvertThoughtPath.showResult(
-                    userInput: viewModel.state.inputText,
-                    result: viewModel.state.result)
-                )
-            }
         }
     }
 }

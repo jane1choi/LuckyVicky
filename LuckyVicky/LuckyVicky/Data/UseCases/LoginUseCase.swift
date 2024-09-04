@@ -58,7 +58,7 @@ extension LoginUseCaseImpl {
                     return Empty().eraseToAnyPublisher()
                 }
                 return self.userRepository.createUser(user.toDTO())
-                    .map{ _ in user }
+                    .map { _ in user }
                     .eraseToAnyPublisher()
             }
             .eraseToAnyPublisher()

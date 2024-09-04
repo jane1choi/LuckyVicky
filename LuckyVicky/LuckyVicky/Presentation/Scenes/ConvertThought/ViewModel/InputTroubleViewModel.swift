@@ -11,30 +11,32 @@ import Combine
 final class InputTroubleViewModel: ViewModelable {
     @Published var state: State
     private var cancellables = Set<AnyCancellable>()
+    private let coordinator: Coordinator
+    private let alertPresenter: AlertPresenter
     private let convertTroubleUseCase: ConvertTroubleUseCase
     
-    init(convertTroubleUseCase: ConvertTroubleUseCase) {
+    init(coordinator: Coordinator,
+         alertPresenter: AlertPresenter,
+         convertTroubleUseCase: ConvertTroubleUseCase
+    ) {
         let id = UserDefaults.selectedCharacterId
         self.state = State(characterContent: CharacterEntity.characters[id].systemContent,
-                           inputText: "", 
-                           result: "", 
-                           hasErrorOccurred: false, 
-                           onCompleted: false,
+                           inputText: "",
                            isLoading: false)
         self.convertTroubleUseCase = convertTroubleUseCase
+        self.coordinator = coordinator
+        self.alertPresenter = alertPresenter
     }
     
     enum Action {
         case isTextEditorEditing(text: String)
         case onTapConvertButton
+        case onTapBackButton
     }
     
     struct State {
         let characterContent: String
         var inputText: String
-        var result: String
-        var hasErrorOccurred: Bool
-        var onCompleted: Bool
         var isLoading: Bool
     }
     
@@ -46,6 +48,8 @@ final class InputTroubleViewModel: ViewModelable {
             state.isLoading = true
             fetchData(systemContent: state.characterContent,
                       userContent: state.inputText)
+        case .onTapBackButton:
+            coordinator.pop()
         }
     }
 }
@@ -60,12 +64,11 @@ extension InputTroubleViewModel {
             .execute(systemContent: systemContent,userContent: userContent)
         .sink(receiveCompletion: { [weak self] completion in
             if case .failure(_) = completion {
-                self?.state.hasErrorOccurred = true
+                self?.alertPresenter.presentAlert(message: .networkError)
             }
             self?.state.isLoading = false
         }, receiveValue: { [weak self] result in
-            self?.state.result = result.reply
-            self?.state.onCompleted = true
+            self?.coordinator.push(.result(userInput: self?.state.inputText ?? "", result: result.reply))
         }).store(in: &cancellables)
     }
 }

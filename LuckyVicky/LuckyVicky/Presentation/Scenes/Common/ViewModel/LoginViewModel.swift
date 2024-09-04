@@ -11,14 +11,15 @@ import Combine
 
 final class LoginViewModel: ViewModelable {
     @Published var state: State
+    private let coordinator: Coordinator
     private let useCase: LoginUseCase
     private var cancellables = Set<AnyCancellable>()
     private var currentNonce: String?
     
-    init(useCase: LoginUseCase) {
+    init(coordinator: Coordinator, useCase: LoginUseCase) {
         self.state = State(isLoading: false,
-                           isPresented: false,
                            hasErrorOccurred: false)
+        self.coordinator = coordinator
         self.useCase = useCase
     }
     
@@ -29,7 +30,6 @@ final class LoginViewModel: ViewModelable {
     
     struct State {
         var isLoading: Bool
-        var isPresented: Bool
         var hasErrorOccurred: Bool
     }
     
@@ -57,13 +57,12 @@ extension LoginViewModel {
                         self?.state.hasErrorOccurred = true
                     }
                     self?.state.isLoading = false
-                    self?.state.isPresented = true
-                } receiveValue: { user in
+                } receiveValue: { [weak self] user in
                     UserDefaults.userId = user.id
                     UserDefaults.usedCount = user.usedCount
                     UserDefaults.isFirstLaunch = false
+                    self?.coordinator.present(sheet: .selectCharacter)
                 }.store(in: &cancellables)
-      
         } else if case .failure(_) = result {
             state.isLoading = false
             state.hasErrorOccurred = true

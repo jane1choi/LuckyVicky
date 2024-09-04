@@ -56,26 +56,11 @@ struct LoginView: View {
             .cornerRadius(10)
             .padding(.horizontal, 22)
             .padding(.bottom, 12)
-            .fullScreenCover(isPresented: $viewModel.state.isPresented) {
-                let dbService = FirebaseDBService()
-                let userRepository = UserRepositoryImpl(service: dbService)
-                let fetchUserDataUseCase = FetchUserDataUseCaseImpl(userRepository: userRepository)
-                let deleteAccountUseCase = DeleteAccountUseCaseImpl(userRepository: userRepository)
-                let viewModel = SelectCharacterViewModel(fetchUserDataUseCase: fetchUserDataUseCase,
-                                                         deleteAccountUseCase: deleteAccountUseCase)
-                SelectCharacterView(viewModel: viewModel)
-            }
         }
         .background(Color(.mainBlack))
         .overlay {
             LoadingView()
                 .hidden(!viewModel.state.isLoading)
-        }
-        .presentAlert(isPresented: $viewModel.state.hasErrorOccurred) {
-            LuckyVickyAlertView(
-                isPresented: $viewModel.state.hasErrorOccurred,
-                message: "네트워크 오류가 발생했습니다.\n잠시 후 다시 시도해주세요."
-            )
         }
     }
 }

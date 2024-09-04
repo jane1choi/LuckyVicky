@@ -34,10 +34,20 @@ extension View {
 extension View {
     
     func presentAlert(
+        type: Binding<AlertType>,
         isPresented: Binding<Bool>,
-        alert: @escaping () -> LuckyVickyAlertView
+        title: Binding<String?>,
+        message: Binding<String>,
+        action: Binding<(() -> Void)?>
     ) -> some View {
-        return modifier(LuckyVickyAlertModifier(isPresented: isPresented, alert: alert()))
+        let alertView = LuckyVickyAlertView(
+            type: type,
+            isPresented: isPresented,
+            title: title,
+            message: message,
+            action: action
+        )
+        return modifier(LuckyVickyAlertModifier(isPresented: isPresented, alert: alertView))
     }
     
     func convertToImage() -> Data? {
@@ -82,7 +92,7 @@ extension View {
 struct TransparentBackground: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIView {
-        let view = UIView()
+        let view = TransparentBackgroundView()
         DispatchQueue.main.async {
             view.superview?.superview?.backgroundColor = .clear
         }
@@ -90,4 +100,13 @@ struct TransparentBackground: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UIView, context: Context) {}
+}
+
+final class TransparentBackgroundView: UIView {
+    override func layoutSubviews() {
+        guard let parentView = superview?.superview else {
+            return
+        }
+        parentView.backgroundColor = .clear
+    }
 }

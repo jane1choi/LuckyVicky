@@ -14,23 +14,23 @@ enum AlertType {
 
 struct LuckyVickyAlertView: View {
     @Binding var isPresented: Bool
-    private let title: String?
-    private let message: String
-    private let type: AlertType
-    private let aciton: (() -> Void)?
+    @Binding var title: String?
+    @Binding var message: String
+    @Binding var type: AlertType
+    @Binding var aciton: (() -> Void)?
     
     init(
-        type: AlertType = .basic,
+        type: Binding<AlertType>,
         isPresented: Binding<Bool>,
-        title: String? = .none,
-        message: String,
-        action: (() -> Void)? = .none
+        title: Binding<String?>,
+        message: Binding<String>,
+        action: Binding<(() -> Void)?>
     ) {
-        self.type = type
+        self._type = type
         self._isPresented = isPresented
-        self.title = title
-        self.message = message
-        self.aciton = action
+        self._title = title
+        self._message = message
+        self._aciton = action
     }
     
     var body: some View {
@@ -52,6 +52,7 @@ struct LuckyVickyAlertView: View {
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
         }
+        .background(.clear)
     }
     
     @ViewBuilder private func makeBasicAlert(message: String) -> some View {
@@ -126,9 +127,9 @@ struct LuckyVickyAlertModifier: ViewModifier {
             ) {
                 alert
             }
-            .transaction { transaction in
-                transaction.disablesAnimations = true
-                
-            }
+//            .transaction { transaction in
+//                // 알림 창이 나타날 때와 사라질 때 모두 애니메이션을 비활성화
+//                transaction.disablesAnimations = true
+//            }
     }
 }
