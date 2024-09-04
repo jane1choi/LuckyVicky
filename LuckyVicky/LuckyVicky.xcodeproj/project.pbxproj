@@ -65,6 +65,7 @@
 		77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */; };
 		77CEE96C2C57D3230056C315 /* LuckyVickyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */; };
 		77CEE96E2C5886060056C315 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEE96D2C5886060056C315 /* LoginView.swift */; };
+		77D0FD9C2C8819F300EA4C14 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0FD9B2C8819F300EA4C14 /* AlertPresenter.swift */; };
 		77D0FD9E2C88723300EA4C14 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0FD9D2C88723300EA4C14 /* AlertMessage.swift */; };
 		77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */; };
 		77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */; };
@@ -159,6 +160,7 @@
 		77C7EE472C54B2EF000591EE /* LuckyVickyChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyChatBubble.swift; sourceTree = "<group>"; };
 		77CEE96B2C57D3230056C315 /* LuckyVickyAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyAlertView.swift; sourceTree = "<group>"; };
 		77CEE96D2C5886060056C315 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		77D0FD9B2C8819F300EA4C14 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		77D0FD9D2C88723300EA4C14 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyButton.swift; sourceTree = "<group>"; };
 		77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTroubleView.swift; sourceTree = "<group>"; };
@@ -369,6 +371,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		77D0FD9F2C8872A500EA4C14 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				77D0FD9B2C8819F300EA4C14 /* AlertPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		77D0FDA02C8872EB00EA4C14 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +541,7 @@
 		77EFFD9B2C3F85E8009E64BB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				77D0FD9F2C8872A500EA4C14 /* Presenter */,
 				77E675BE2C80CCD0003F74A6 /* Coordinator */,
 				77D0FDA02C8872EB00EA4C14 /* Scenes */,
 			);
@@ -820,6 +831,7 @@
 				77E675BD2C8016DA003F74A6 /* PresentationAssembly.swift in Sources */,
 				773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */,
 				7716507D2C4E3A45004D5868 /* Image+.swift in Sources */,
+				77D0FD9C2C8819F300EA4C14 /* AlertPresenter.swift in Sources */,
 				771004BD2C6607B600DB130D /* ResultViewModel.swift in Sources */,
 				77E675B72C8015DF003F74A6 /* DependencyInjector.swift in Sources */,
 				771004BB2C6603DE00DB130D /* InputTroubleViewModel.swift in Sources */,
