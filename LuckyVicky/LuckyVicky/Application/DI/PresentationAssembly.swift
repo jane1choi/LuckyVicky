@@ -10,9 +10,12 @@ import Swinject
 struct PresentationAssembly: Assembly {
     
     private let coordinator: Coordinator
+    private let alertPresenter: AlertPresenter
     
-    init(coordinator: Coordinator) {
+    init(coordinator: Coordinator,
+         alertPresenter: AlertPresenter) {
         self.coordinator = coordinator
+        self.alertPresenter = alertPresenter
     }
     
     func assemble(container: Container) {
@@ -23,16 +26,19 @@ struct PresentationAssembly: Assembly {
         container.register(SelectCharacterViewModel.self) { resolver in
             let fetchUserDataUseCase = resolver.resolve(FetchUserDataUseCaseImpl.self)!
             let deleteAccountUseCase = resolver.resolve(DeleteAccountUseCaseImpl.self)!
-            return SelectCharacterViewModel(coordinator: coordinator,
+            return SelectCharacterViewModel(coordinator: coordinator, 
+                                            alertPresenter: alertPresenter,
                                             fetchUserDataUseCase: fetchUserDataUseCase,
                                             deleteAccountUseCase: deleteAccountUseCase)
         }
         container.register(InputTroubleViewModel.self) { resolver in
             let convertTroubleUseCase = resolver.resolve(ConvertTroubleUseCaseImpl.self)!
-            return InputTroubleViewModel(coordinator: coordinator, convertTroubleUseCase: convertTroubleUseCase)
+            return InputTroubleViewModel(coordinator: coordinator,
+                                         alertPresenter: alertPresenter,
+                                         convertTroubleUseCase: convertTroubleUseCase)
         }
         container.register(ResultViewModel.self) { _ in
-            return ResultViewModel(coordinator: coordinator)
+            return ResultViewModel(coordinator: coordinator, alertPresenter: alertPresenter)
         }
         
         container.register(LoginView.self) { resolver in

@@ -13,14 +13,17 @@ import Swinject
 struct LuckyVickyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @ObservedObject private var coordinator: MainCoordinator
+    @ObservedObject private var alertPresenter: AlertPresenter
     private let injector: Injector
     
     init() {
         coordinator = MainCoordinator(UserDefaults.isFirstLaunch ? .login: .selectCharacter)
+        alertPresenter = AlertPresenter(alertMessage: "")
         injector = DependencyInjector(container: Container())
         injector.assemble([DomainAssembly(),
                            DataAssembly(),
-                           PresentationAssembly(coordinator: coordinator)
+                           PresentationAssembly(coordinator: coordinator, 
+                                                alertPresenter: alertPresenter)
                           ])
         coordinator.injector = injector
     }
@@ -33,9 +36,14 @@ struct LuckyVickyApp: App {
                         coordinator.buildScene(scene: scene)
                     }
                     .fullScreenCover(item: $coordinator.sheet) { scene in
-                        coordinator.buildScene(scene: scene)
+                        coordinator.buildSheet(scene: scene)
                     }
             }
+            .presentAlert(type: $alertPresenter.alertType,
+                          isPresented: $alertPresenter.isAlertPresented,
+                          title: $alertPresenter.alertTitle,
+                          message: $alertPresenter.alertMessage,
+                          action: $alertPresenter.action)
         }
     }
 }
