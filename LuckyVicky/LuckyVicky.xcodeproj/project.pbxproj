@@ -358,6 +358,15 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		77D0FD9A2C880F0300EA4C14 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */,
+				771004E12C6A3C0F00DB130D /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,9 +447,8 @@
 		77EFFD922C3F8497009E64BB /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				77D0FD9A2C880F0300EA4C14 /* App */,
 				775029B92C7F014700C8C5FC /* DI */,
-				77EFFD682C3F8418009E64BB /* LuckyVickyApp.swift */,
-				771004E12C6A3C0F00DB130D /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
