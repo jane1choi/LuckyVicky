@@ -9,8 +9,8 @@ import SwiftUI
 
 final class MainCoordinator: ObservableObject, Coordinator {
     
-    @Published public var path: NavigationPath
-    @Published public var sheet: AppScene?
+    @Published var path: NavigationPath
+    @Published var sheet: AppScene?
     private let initialScene: AppScene
     var injector: Injector?
     
@@ -42,6 +42,9 @@ final class MainCoordinator: ObservableObject, Coordinator {
     func dismissSheet() {
         self.sheet = nil
     }
+}
+
+extension MainCoordinator {
     
     @ViewBuilder
     func buildScene(scene: AppScene) -> some View {
