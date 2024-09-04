@@ -12,16 +12,20 @@ final class InputTroubleViewModel: ViewModelable {
     @Published var state: State
     private var cancellables = Set<AnyCancellable>()
     private let coordinator: Coordinator
+    private let alertPresenter: AlertPresenter
     private let convertTroubleUseCase: ConvertTroubleUseCase
     
-    init(coordinator: Coordinator, convertTroubleUseCase: ConvertTroubleUseCase) {
+    init(coordinator: Coordinator,
+         alertPresenter: AlertPresenter,
+         convertTroubleUseCase: ConvertTroubleUseCase
+    ) {
         let id = UserDefaults.selectedCharacterId
         self.state = State(characterContent: CharacterEntity.characters[id].systemContent,
                            inputText: "",
-                           hasErrorOccurred: false, 
                            isLoading: false)
         self.convertTroubleUseCase = convertTroubleUseCase
         self.coordinator = coordinator
+        self.alertPresenter = alertPresenter
     }
     
     enum Action {
@@ -33,9 +37,6 @@ final class InputTroubleViewModel: ViewModelable {
     struct State {
         let characterContent: String
         var inputText: String
-//        var result: String
-        var hasErrorOccurred: Bool
-//        var onCompleted: Bool
         var isLoading: Bool
     }
     
@@ -63,13 +64,11 @@ extension InputTroubleViewModel {
             .execute(systemContent: systemContent,userContent: userContent)
         .sink(receiveCompletion: { [weak self] completion in
             if case .failure(_) = completion {
-                self?.state.hasErrorOccurred = true
+                self?.alertPresenter.presentAlert(message: .networkError)
             }
             self?.state.isLoading = false
         }, receiveValue: { [weak self] result in
-//            self?.state.result = result.reply
             self?.coordinator.push(.result(userInput: self?.state.inputText ?? "", result: result.reply))
-//            self?.state.onCompleted = true
         }).store(in: &cancellables)
     }
 }

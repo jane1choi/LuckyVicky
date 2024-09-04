@@ -367,6 +367,15 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		77D0FDA02C8872EB00EA4C14 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				773B6EFD2C58BA110035524B /* Common */,
+				773B6EFE2C58BA200035524B /* ConvertThought */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,8 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				77E675BE2C80CCD0003F74A6 /* Coordinator */,
-				773B6EFD2C58BA110035524B /* Common */,
-				773B6EFE2C58BA200035524B /* ConvertThought */,
+				77D0FDA02C8872EB00EA4C14 /* Scenes */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";

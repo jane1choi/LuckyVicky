@@ -67,10 +67,6 @@ struct InputTroubleView: View {
             .padding(.horizontal, 22)
             .padding(.bottom, 12)
         }
-        .presentAlert(isPresented: $viewModel.state.hasErrorOccurred) {
-            LuckyVickyAlertView(isPresented: $viewModel.state.hasErrorOccurred,
-                                message: "네트워크 오류가 발생했습니다.\n잠시 후 다시 시도해주세요.")
-        }
         .background(Color(.mainBlack))
         .overlay {
             LoadingView()

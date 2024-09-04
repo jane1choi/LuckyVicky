@@ -75,21 +75,6 @@ struct SelectCharacterView: View {
         .onAppear {
             viewModel.action(.onAppear)
         }
-        .presentAlert(isPresented: $viewModel.state.isAlertPresented) {
-            LuckyVickyAlertView(isPresented: $viewModel.state.isAlertPresented,
-                                message: "오늘 이용권을 모두 사용했습니다.\n내일 다시 이용해주세요.")
-        }
-        .presentAlert(isPresented: $viewModel.state.isDeleteAccountAlertPresented) {
-            LuckyVickyAlertView(type: .twoButton,
-                                isPresented: $viewModel.state.isDeleteAccountAlertPresented,
-                                title: "정말로 계정을 삭제하시겠습니까?",
-                                message: "회원 정보는 안전하게 삭제되며,\n언제든 다시 가입할 수 있습니다.",
-                                action: { viewModel.action(.onTapdeleteAccountButton)})
-        }
-        .presentAlert(isPresented: $viewModel.state.hasErrorOccurred) {
-            LuckyVickyAlertView(isPresented: $viewModel.state.hasErrorOccurred,
-                                message: "네트워크 오류가 발생했습니다.\n잠시 후 다시 시도해주세요.")
-        }
     }
     
     

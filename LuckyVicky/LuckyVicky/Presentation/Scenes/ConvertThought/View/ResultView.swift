@@ -62,12 +62,6 @@ struct ResultView: View {
             LoadingView()
                 .hidden(!viewModel.state.isLoading)
         }
-        .presentAlert(isPresented: $viewModel.state.isAlertPresented) {
-            LuckyVickyAlertView(
-                isPresented: $viewModel.state.isAlertPresented,
-                message: viewModel.state.alertMessage
-            )
-        }
     }
 }
 

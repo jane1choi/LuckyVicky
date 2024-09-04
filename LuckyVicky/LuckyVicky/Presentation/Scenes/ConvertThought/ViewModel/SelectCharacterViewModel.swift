@@ -11,23 +11,23 @@ import Combine
 final class SelectCharacterViewModel: ViewModelable {
     @Published var state: State
     private let coordinator: Coordinator
+    private let alertPresenter: AlertPresenter
     private let fetchUserDataUseCase: FetchUserDataUseCase
     private let deleteAccountUseCase: DeleteAccountUseCase
     private var cancellables = Set<AnyCancellable>()
     
     init(coordinator: Coordinator,
+         alertPresenter: AlertPresenter,
          fetchUserDataUseCase: FetchUserDataUseCase,
          deleteAccountUseCase: DeleteAccountUseCase
     ) {
         self.state = State(isLoading: false,
                            chanceCount: 0,
-                           characterList: CharacterEntity.characters,
-                           isAlertPresented: false, 
-                           isDeleteAccountAlertPresented: false, 
-                           hasErrorOccurred: false)
+                           characterList: CharacterEntity.characters)
         self.coordinator = coordinator
         self.fetchUserDataUseCase = fetchUserDataUseCase
         self.deleteAccountUseCase = deleteAccountUseCase
+        self.alertPresenter = alertPresenter
     }
     
     enum Action {
@@ -35,7 +35,6 @@ final class SelectCharacterViewModel: ViewModelable {
         case onTapSelectButton
         case onAppear
         case onTapSettingButton
-        case onTapdeleteAccountButton
     }
     
     struct State {
@@ -43,10 +42,6 @@ final class SelectCharacterViewModel: ViewModelable {
         var selectedId: Int?
         var chanceCount: Int
         var characterList: [CharacterEntity]
-        var isAlertPresented: Bool
-        var isDeleteAccountAlertPresented: Bool
-        var hasErrorOccurred: Bool
-//        var hasAccountDeleted: Bool
     }
     
     func action(_ action: Action) {
@@ -55,38 +50,47 @@ final class SelectCharacterViewModel: ViewModelable {
             state.selectedId = id
         case .onTapSelectButton:
             UserDefaults.selectedCharacterId = state.selectedId ?? 0
-            state.isAlertPresented = state.chanceCount >= 10
-            if !state.isAlertPresented {
+            if state.chanceCount < 10 {
                 coordinator.push(.inputTrouble)
+            } else {
+                alertPresenter.presentAlert(message: .exhaustedChance)
             }
         case .onAppear:
             state.isLoading = true
             checkUserChance()
             state.selectedId = nil
         case .onTapSettingButton:
-            state.isDeleteAccountAlertPresented = true
-        case .onTapdeleteAccountButton:
-            state.isLoading = true
-            deleteAccountUseCase.execute()
-                .delay(for: .seconds(2), scheduler: RunLoop.main)
-                .sink { [weak self] completion in
-                    switch completion {
-                    case .failure(_):
-                        self?.state.isLoading = false
-                        self?.state.hasErrorOccurred = true
-                    case .finished:
-                        self?.state.isLoading = false
+            alertPresenter
+                .presentTwoButtonAlert(
+                    title: .deleteAccountTitle,
+                    message: .deleteAccount,
+                    action: { [weak self] in
+                        self?.deleteUserAccount()
                     }
-                } receiveValue: { [weak self] _ in
-                    UserDefaults.standard.removeAllUserDefaulsKeys()
-                    self?.coordinator.present(sheet: .login)
-                }.store(in: &cancellables)
-            
+                )
         }
     }
 }
-
+    
 extension SelectCharacterViewModel {
+    
+    private func deleteUserAccount() {
+        state.isLoading = true
+        deleteAccountUseCase.execute()
+            .delay(for: .seconds(2), scheduler: RunLoop.main)
+            .sink { [weak self] completion in
+                switch completion {
+                case .failure(_):
+                    self?.state.isLoading = false
+                    self?.alertPresenter.presentAlert(message: .networkError)
+                case .finished:
+                    self?.state.isLoading = false
+                }
+            } receiveValue: { [weak self] _ in
+                UserDefaults.standard.removeAllUserDefaulsKeys()
+                self?.coordinator.present(sheet: .login)
+            }.store(in: &cancellables)
+    }
     
     private func checkUserChance() {
         fetchUserDataUseCase.execute(userId: UserDefaults.userId)
@@ -94,7 +98,7 @@ extension SelectCharacterViewModel {
                 switch completion {
                 case .failure(_):
                     self?.state.isLoading = false
-                    self?.state.hasErrorOccurred = true
+                    self?.alertPresenter.presentAlert(message: .networkError)
                 case .finished:
                     self?.state.isLoading = false
                 }
@@ -107,6 +111,5 @@ extension SelectCharacterViewModel {
                     UserDefaults.usedCount = value.usedCount
                 }
             }.store(in: &cancellables)
-
     }
 }

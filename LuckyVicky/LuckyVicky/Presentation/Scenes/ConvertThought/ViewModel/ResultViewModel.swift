@@ -10,15 +10,17 @@ import Foundation
 final class ResultViewModel: ViewModelable {
     @Published var state: State
     private let coordinator: Coordinator
+    private let alertPresenter: AlertPresenter
     
-    init(coordinator: Coordinator) {
+    init(coordinator: Coordinator,
+         alertPresenter: AlertPresenter
+    ) {
         let id = UserDefaults.selectedCharacterId
-        self.state = State(isAlertPresented: false,
-                           alertMessage: "",
-                           characterNickname: CharacterEntity.characters[id].nickname,
+        self.state = State(characterNickname: CharacterEntity.characters[id].nickname,
                            characterProfile:  CharacterEntity.characters[id].profileImage, 
                            isLoading: false)
         self.coordinator = coordinator
+        self.alertPresenter = alertPresenter
     }
     
     enum Action {
@@ -27,8 +29,6 @@ final class ResultViewModel: ViewModelable {
     }
     
     struct State {
-        var isAlertPresented: Bool
-        var alertMessage: String
         let characterNickname: String
         let characterProfile: LuckyVickyImage
         var isLoading: Bool
@@ -51,10 +51,8 @@ extension ResultViewModel {
         let manager = ImageSaver()
 
         manager.saveToPhotoAlbum(data: imageData) { [weak self] success in
-            self?.state.alertMessage = success ? "이미지가 사진 앨범에\n저장되었습니다."
-            : "이미지 저장에 실패했습니다.\n다시 시도해주세요"
             self?.state.isLoading = false
-            self?.state.isAlertPresented = true
+            self?.alertPresenter.presentAlert(message: success ? .imagehasSaved : .imageSaveError)
         }
     }
 }
