@@ -51,12 +51,12 @@
 		773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1EE2C59FC3400ED1345 /* GptAPI.swift */; };
 		773EB1F12C5A069B00ED1345 /* GptAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F02C5A069B00ED1345 /* GptAPIService.swift */; };
 		773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F22C5A0B2200ED1345 /* ReplyEntity.swift */; };
-		773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F42C5A0CD300ED1345 /* GptRepository.swift */; };
+		773EB1F52C5A0CD300ED1345 /* GptRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1F42C5A0CD300ED1345 /* GptRepositoryImpl.swift */; };
 		773EB1FE2C5A386100ED1345 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB1FD2C5A386100ED1345 /* Config.swift */; };
 		773EB2222C5B521100ED1345 /* LuckyVickyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EB2212C5B521100ED1345 /* LuckyVickyTests.swift */; };
 		775029AB2C7C923500C8C5FC /* FetchUserDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AA2C7C923500C8C5FC /* FetchUserDataUseCase.swift */; };
-		775029AD2C7C926300C8C5FC /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AC2C7C926300C8C5FC /* UserRepository.swift */; };
-		775029AF2C7CC24300C8C5FC /* SignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AE2C7CC24300C8C5FC /* SignRepository.swift */; };
+		775029AD2C7C926300C8C5FC /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AC2C7C926300C8C5FC /* UserRepositoryImpl.swift */; };
+		775029AF2C7CC24300C8C5FC /* SignRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029AE2C7CC24300C8C5FC /* SignRepositoryImpl.swift */; };
 		775029B12C7D92CC00C8C5FC /* DeleteAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029B02C7D92CC00C8C5FC /* DeleteAccountUseCase.swift */; };
 		775029B62C7EF01300C8C5FC /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 775029B52C7EF01300C8C5FC /* Swinject */; };
 		775029B82C7EFF1300C8C5FC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775029B72C7EFF1300C8C5FC /* Coordinator.swift */; };
@@ -67,6 +67,9 @@
 		77CEE96E2C5886060056C315 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEE96D2C5886060056C315 /* LoginView.swift */; };
 		77D0FD9C2C8819F300EA4C14 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0FD9B2C8819F300EA4C14 /* AlertPresenter.swift */; };
 		77D0FD9E2C88723300EA4C14 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0FD9D2C88723300EA4C14 /* AlertMessage.swift */; };
+		77D0FDA42C89637500EA4C14 /* GptRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0FDA32C89637500EA4C14 /* GptRepository.swift */; };
+		77D0FDA62C89637D00EA4C14 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0FDA52C89637D00EA4C14 /* UserRepository.swift */; };
+		77D0FDA82C89638400EA4C14 /* SignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0FDA72C89638400EA4C14 /* SignRepository.swift */; };
 		77D65EF72C4F637500B4A2EC /* LuckyVickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */; };
 		77D65EF92C4FDEEA00B4A2EC /* InputTroubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */; };
 		77D65EFB2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */; };
@@ -144,14 +147,14 @@
 		773EB1EE2C59FC3400ED1345 /* GptAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPI.swift; sourceTree = "<group>"; };
 		773EB1F02C5A069B00ED1345 /* GptAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptAPIService.swift; sourceTree = "<group>"; };
 		773EB1F22C5A0B2200ED1345 /* ReplyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyEntity.swift; sourceTree = "<group>"; };
-		773EB1F42C5A0CD300ED1345 /* GptRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptRepository.swift; sourceTree = "<group>"; };
+		773EB1F42C5A0CD300ED1345 /* GptRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptRepositoryImpl.swift; sourceTree = "<group>"; };
 		773EB1FC2C5A35C100ED1345 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		773EB1FD2C5A386100ED1345 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		773EB21F2C5B521100ED1345 /* LuckyVickyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuckyVickyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		773EB2212C5B521100ED1345 /* LuckyVickyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyTests.swift; sourceTree = "<group>"; };
 		775029AA2C7C923500C8C5FC /* FetchUserDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserDataUseCase.swift; sourceTree = "<group>"; };
-		775029AC2C7C926300C8C5FC /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
-		775029AE2C7CC24300C8C5FC /* SignRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRepository.swift; sourceTree = "<group>"; };
+		775029AC2C7C926300C8C5FC /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
+		775029AE2C7CC24300C8C5FC /* SignRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRepositoryImpl.swift; sourceTree = "<group>"; };
 		775029B02C7D92CC00C8C5FC /* DeleteAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountUseCase.swift; sourceTree = "<group>"; };
 		775029B72C7EFF1300C8C5FC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		77716EC52C5762DD00ADE967 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
@@ -162,6 +165,9 @@
 		77CEE96D2C5886060056C315 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		77D0FD9B2C8819F300EA4C14 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		77D0FD9D2C88723300EA4C14 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		77D0FDA32C89637500EA4C14 /* GptRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptRepository.swift; sourceTree = "<group>"; };
+		77D0FDA52C89637D00EA4C14 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		77D0FDA72C89638400EA4C14 /* SignRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRepository.swift; sourceTree = "<group>"; };
 		77D65EF62C4F637500B4A2EC /* LuckyVickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyButton.swift; sourceTree = "<group>"; };
 		77D65EF82C4FDEEA00B4A2EC /* InputTroubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTroubleView.swift; sourceTree = "<group>"; };
 		77D65EFA2C4FECDB00B4A2EC /* LuckyVickyTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyVickyTextEditor.swift; sourceTree = "<group>"; };
@@ -388,6 +394,24 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		77D0FDA12C89631400EA4C14 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				77D0FDA22C89631D00EA4C14 /* Repositories */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		77D0FDA22C89631D00EA4C14 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				77D0FDA32C89637500EA4C14 /* GptRepository.swift */,
+				77D0FDA52C89637D00EA4C14 /* UserRepository.swift */,
+				77D0FDA72C89638400EA4C14 /* SignRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		77D65EF42C4F632E00B4A2EC /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +548,7 @@
 			children = (
 				77EFFD982C3F859E009E64BB /* Entities */,
 				771004EF2C6E63A300DB130D /* UseCases */,
+				77D0FDA12C89631400EA4C14 /* Interfaces */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -560,9 +585,9 @@
 		77EFFD9D2C3F86C7009E64BB /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				773EB1F42C5A0CD300ED1345 /* GptRepository.swift */,
-				775029AC2C7C926300C8C5FC /* UserRepository.swift */,
-				775029AE2C7CC24300C8C5FC /* SignRepository.swift */,
+				773EB1F42C5A0CD300ED1345 /* GptRepositoryImpl.swift */,
+				775029AC2C7C926300C8C5FC /* UserRepositoryImpl.swift */,
+				775029AE2C7CC24300C8C5FC /* SignRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -795,13 +820,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D0FDA82C89638400EA4C14 /* SignRepository.swift in Sources */,
 				771004EA2C6E5E9C00DB130D /* FirebaseDBService.swift in Sources */,
 				771004E22C6A3C0F00DB130D /* AppDelegate.swift in Sources */,
 				773EB1EF2C59FC3400ED1345 /* GptAPI.swift in Sources */,
 				77E675B92C801653003F74A6 /* DataAssembly.swift in Sources */,
 				77E675BB2C8016A7003F74A6 /* DomainAssembly.swift in Sources */,
-				775029AD2C7C926300C8C5FC /* UserRepository.swift in Sources */,
-				775029AF2C7CC24300C8C5FC /* SignRepository.swift in Sources */,
+				775029AD2C7C926300C8C5FC /* UserRepositoryImpl.swift in Sources */,
+				775029AF2C7CC24300C8C5FC /* SignRepositoryImpl.swift in Sources */,
 				773EB1FE2C5A386100ED1345 /* Config.swift in Sources */,
 				775029B12C7D92CC00C8C5FC /* DeleteAccountUseCase.swift in Sources */,
 				771004E42C6A65DC00DB130D /* SignService.swift in Sources */,
@@ -829,10 +855,11 @@
 				771004C82C67C94500DB130D /* ConvertThoughtPath.swift in Sources */,
 				771004DB2C69F17E00DB130D /* LoadingView.swift in Sources */,
 				77E675BD2C8016DA003F74A6 /* PresentationAssembly.swift in Sources */,
-				773EB1F52C5A0CD300ED1345 /* GptRepository.swift in Sources */,
+				773EB1F52C5A0CD300ED1345 /* GptRepositoryImpl.swift in Sources */,
 				7716507D2C4E3A45004D5868 /* Image+.swift in Sources */,
 				77D0FD9C2C8819F300EA4C14 /* AlertPresenter.swift in Sources */,
 				771004BD2C6607B600DB130D /* ResultViewModel.swift in Sources */,
+				77D0FDA62C89637D00EA4C14 /* UserRepository.swift in Sources */,
 				77E675B72C8015DF003F74A6 /* DependencyInjector.swift in Sources */,
 				771004BB2C6603DE00DB130D /* InputTroubleViewModel.swift in Sources */,
 				7716506E2C4D6CDB004D5868 /* SelectCharacterView.swift in Sources */,
@@ -854,6 +881,7 @@
 				773EB1F32C5A0B2200ED1345 /* ReplyEntity.swift in Sources */,
 				771004D72C68D78000DB130D /* KeyChain.swift in Sources */,
 				77C7EE482C54B2EF000591EE /* LuckyVickyChatBubble.swift in Sources */,
+				77D0FDA42C89637500EA4C14 /* GptRepository.swift in Sources */,
 				771004CE2C687D5F00DB130D /* LoginViewModel.swift in Sources */,
 				773B6F052C590CBE0035524B /* NetworkError.swift in Sources */,
 			);

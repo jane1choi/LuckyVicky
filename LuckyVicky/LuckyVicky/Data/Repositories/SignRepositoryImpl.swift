@@ -9,12 +9,6 @@ import Foundation
 import AuthenticationServices
 import Combine
 
-protocol SignRepository {
-    func checkAuthenticationState() -> String?
-    func requestAuthorization(_ request: ASAuthorizationAppleIDRequest) -> String
-    func signIn(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<UserEntity, NetworkError>
-}
-
 final class SignRepositoryImpl: SignRepository {
     
     private let service: SignService

@@ -8,10 +8,6 @@
 import Foundation
 import Combine
 
-protocol GptRepository {
-    func fetchResultData(systemContent: String, userContent: String) -> AnyPublisher<ReplyEntity, NetworkError>
-}
-
 final class GptRepositoryImpl: GptRepository {
     private let apiService: GptAPIService
     
