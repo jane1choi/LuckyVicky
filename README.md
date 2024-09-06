@@ -25,3 +25,46 @@ OpenAI를 활용하여 부정적 상황이나 말을 긍정적으로 바꿔주�
 | <img width=260px src="https://github.com/user-attachments/assets/c1f4da32-f678-4aad-84bd-37031007dc96"> | <img width=260px src="https://github.com/user-attachments/assets/12fd68dd-bf41-4d47-9730-eb9b8987ddd2"> | <img width=260px src="https://github.com/user-attachments/assets/090c9843-1825-4e5d-9267-9a7cdbc1438e"> |
 | :-------------: | :----------: |  :----------: |
 | 인물 선택하기 | 고민 입력하기 | 결과 확인 및 저장하기 |
+
+## 🍀 개발 환경
+<p align="left">
+<img src ="https://img.shields.io/badge/Swift-5.9-ff69b4">
+<img src ="https://img.shields.io/badge/Xcode-15.2-blue">
+<img src ="https://img.shields.io/badge/iOS-16.0+-orange">
+<br>
+  
+## 🍀 Framework/Architecture
+- SwiftUI
+- Combine
+- SPM
+- MVVM + Clean Architecture
+![architecture](https://github.com/user-attachments/assets/62d48588-e33d-4f11-9b39-d9b440c02b7f)
+
+> **Clean Architecture**
+> 
+- Data Layer : DB로부터 데이터를 가져오는 책임을 갖습니다. Repository, API(Network)를 갖습니다.
+- Domain Layer : 앱의 비즈니스 로직을 담당합니다. UseCase, Entity, Repository Protocol을 갖습니다.
+- Presentaion Layer : UI 로직 관련 책임을 갖습니다. MVVM 패턴을 활용했습니다.
+
+> **Coordinator Pattern**
+> 
+- 화면 전환을 담당하는 객체입니다.
+- 화면 간 의존성을 줄이고 화면 이동을 할 수 있게 돕습니다.
+- 뷰 재사용성을 높일 수 있습니다.
+- 화면 전환 로직이 복잡하지 않아 MainCoordinator 만을 사용했습니다.
+
+> **MVVM + Combine**
+> 
+- Presentation, Domain, Data 전반의 비동기 처리를 Combine을 이용해 하였습니다.
+- ViewModel 에서 바뀌는 데이터에 따라 View가 변경되도록 Reactive Programming 을 구현하였습니다.
+
+## 🍀 외부 라이브러리
+| 라이브러리(Library) | 사용목적(Purpose) |
+|:---|:----------|
+| Swinject| DI |
+| Moya / CombineMoya | Network |
+| FirebaseAuth | 애플 소셜 로그인 |
+| FirebaseDatabase | DB |
+
+
+
