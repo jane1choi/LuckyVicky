@@ -65,6 +65,7 @@ OpenAI를 활용하여 부정적 상황이나 말을 긍정적으로 바꿔주�
 | Moya / CombineMoya | Network |
 | FirebaseAuth | 애플 소셜 로그인 |
 | FirebaseDatabase | DB |
+| fastlane | CD |
 
 
 
