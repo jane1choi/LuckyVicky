@@ -67,5 +67,13 @@ OpenAI를 활용하여 부정적 상황이나 말을 긍정적으로 바꿔주�
 | FirebaseDatabase | DB |
 | fastlane | CD |
 
+## 🔫 기술적 도전 & 문제 해결 기록
+- [UseCase 해결기](https://janechoi.tistory.com/87)   
+- [에러처리 잘못해서 DB 날린 썰](https://janechoi.tistory.com/88)   
+- [fastlane을 이용해 배포 자동화하기](https://janechoi.tistory.com/89)   
+
+
+
+
 
 
