@@ -11,7 +11,7 @@ final class MainCoordinator: ObservableObject, Coordinator {
     
     @Published var path: NavigationPath
     @Published var sheet: AppScene?
-    private let initialScene: AppScene
+    private var initialScene: AppScene
     var injector: Injector?
     
     init(_ initialScene: AppScene) {
@@ -21,6 +21,12 @@ final class MainCoordinator: ObservableObject, Coordinator {
     
     func buildInitialScene() -> some View {
         return buildScene(scene: initialScene)
+    }
+    
+    func start(with scene: AppScene) {
+        self.path = NavigationPath()
+        self.sheet = nil
+        self.initialScene = scene
     }
     
     func push(_ scene: AppScene) {

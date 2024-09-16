@@ -61,7 +61,7 @@ extension LoginViewModel {
                     UserDefaults.userId = user.id
                     UserDefaults.usedCount = user.usedCount
                     UserDefaults.isFirstLaunch = false
-                    self?.coordinator.present(sheet: .selectCharacter)
+                    self?.coordinator.start(with: .selectCharacter)
                 }.store(in: &cancellables)
         } else if case .failure(_) = result {
             state.isLoading = false
