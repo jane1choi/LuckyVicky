@@ -8,6 +8,7 @@
 import SwiftUI
 
 protocol Coordinator {
+    func start(with scene: AppScene)
     func push(_ scene: AppScene)
     func pop()
     func popToRoot()

@@ -88,7 +88,7 @@ extension SelectCharacterViewModel {
                 }
             } receiveValue: { [weak self] _ in
                 UserDefaults.standard.removeAllUserDefaulsKeys()
-                self?.coordinator.present(sheet: .login)
+                self?.coordinator.start(with: .login)
             }.store(in: &cancellables)
     }
     
